@@ -29,7 +29,7 @@ You can install the development version of dhis2r from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("pearldatafirm/dhis2r")
+devtools::install_github("amanyiraho/dhis2r")
 ```
 
 ## Example
