@@ -4,23 +4,34 @@
 # dhis2r <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-*100 4.1em helvetica neue,open sans,sans-serif;*
+## Overview
 
-Pull data from a DHIS2 instance in to R.
+**dhis2r** is an R client for the DHIS2 web API.
 
-R client for the dhis2 web API
+Pull data from a DHIS2 instance into R without the hassle of logging
+into the DHIS2 user interface every day, week, month, quarter, or year
+to download the same data or make the same routine data analysis steps
+based on fixed or relative periods.
 
-ubiquity
+In short, make the routine data visualizations, reports, and dashboards
+reproducible to save time and reduce possible errors, with dhis2r and
+the rich r package universal and tools like tidyverse, Rmarkdown,
+Quarto, Shiny, etc.
 
-[DHIS2](https://dhis2.org/) is an open source, web based health
-management information system (HMIS). This DHIS2 core software is
-developed and managed by the [HISP](https://www.mn.uio.no/hisp/english/)
-group at the University of Oslo.
+### Motivation for this package
 
-DHIS2 is at the moment the world’s largest HMIS system and is used in
-more than 72 countries around the world.
+[DHIS2](https://dhis2.org/) is an open-source, web-based Health
+Management Information System (HMIS), and currently being adopted in the
+education sector as the Education Management Information System (EMIS)
+several countries.
+
+DHIS2 is now the world’s most extensive HMIS system and is used in more
+than 72 countries worldwide.
 
 ## Installation
 
@@ -41,3 +52,8 @@ Dhis2 instance.
 #library(dhis2r)
 ## basic example code
 ```
+
+Please note that the dhis2r project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
