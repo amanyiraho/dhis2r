@@ -1,3 +1,107 @@
+
+Dhis2r$set("public", "get_metadata", overwrite = T,
+           function(endpoint = NULL, fields = c("name","id")) {
+
+
+
+
+
+             if(is.null(endpoint)){
+
+               reponse <- self$request_sent |>
+                 req_url_path_append("resources") |>
+                 req_perform()
+
+               response_data  <-  reponse |>
+                 resp_body_json(simplifyVector = TRUE)
+
+               tibble::tibble(response_data$resources)
+
+             }else{
+
+               reponse <- self$request_sent |>
+                 req_url_path_append(endpoint) |>
+                 req_url_query(fields = paste0(fields, collapse = ",")) |>
+                 req_perform()
+
+               response_data  <-  reponse |>
+                 resp_body_json(simplifyVector = TRUE)
+
+
+               tibble::tibble( response_data[[1]])
+
+
+             }
+
+
+
+           }
+)
+
+
+Dhis2r$set("public", "get_metadata_fields", overwrite = T,
+           function(endpoint = NULL) {
+
+               reponse <- self$request_sent |>
+                 req_url_path_append(endpoint) |>
+                 req_url_query(fields = ":all") |>
+                 req_url_query(paging = "true") |>
+                 req_url_query(pageSize = "1") |>
+                 req_perform()
+
+               response_data  <-  reponse |>
+                 resp_body_json(simplifyVector = TRUE)
+
+
+               sort(names(response_data[[2]]))
+             }
+)
+
+
+#paste0("https://epivac.health.go.ug","/api/33/" )
+
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+
+
+
+resources <- dhis2_play_connection$get_metadata()
+
+
+metadata_fields_dataElements <-  dhis2_play_connection$get_metadata_fields(endpoint = "dataElements")
+
+metadata_fields_organisationUnits <-  dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
+
+metadata_fields_indicators <-  dhis2_play_connection$get_metadata_fields(endpoint = "indicators")
+
+dataElements <- dhis2_play_connection$get_metadata(endpoint = "dataElements")
+
+metadata_fields_periodTypes <-  dhis2_play_connection$get_metadata(endpoint = "periodTypes", fields = ":all")
+
+
+organisationUnits <- dhis2_play_connection$get_metadata(endpoint = "organisationUnits",
+                                                        fields =  c("name","id", "level"))
+
+
+indicators <-  dhis2_play_connection$get_metadata(endpoint = "indicators")
+
+
+
+
+
+##
+
+
+
+
+
+
+
+
+
+
+
+
+
 # #We are going to need these two libraries
 # library(httr)
 # library(readr)
