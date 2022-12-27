@@ -15,7 +15,8 @@ my_desc$set("Package", "dhis2r")
 #Set your name
 my_desc$set("Authors@R", "c( person('Robinson', 'Amanyiraho', email = 'amanyiraho@gmail.com',
             role = c('cre', 'aut'), comment = c(ORCID = '0000-0002-7747-1367')),
-            person('AFENET', role = c('cph', 'fnd')))")
+            person('GEEKS', role = c('cph')),
+            person('AFENET', role = c('fnd')))")
 
 # Remove some author fields
 my_desc$del("Maintainer")

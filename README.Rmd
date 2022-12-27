@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/amanyiraho/dhis2r/workflows/R-CMD-check/badge.svg)](https://github.com/amanyiraho/dhis2r/actions)
+[![Codecov test coverage](https://codecov.io/gh/amanyiraho/dhis2r/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amanyiraho/dhis2r?branch=master)
 <!-- badges: end -->
 
 ## Overview
@@ -45,13 +46,46 @@ You can install the development version of dhis2r from [GitHub](https://github.c
 devtools::install_github("amanyiraho/dhis2r")
 ```
 
-## Example
+
+## Examples
 
 This is a basic example which shows you how to solve a get data from a Dhis2 instance.
 
+#### Connect to DHIS2 instance
+
+
+```{r}
+library(dhis2r)
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+```
+
+### Getting metadata
+
+Getting metadata about data Elements
+
+```{r}
+dhis2_play_connection$get_metadata(endpoint = "dataElements")
+```
+
+
+Getting metadata about organisation Units
+
 ```{r example}
-#library(dhis2r)
-## basic example code
+
+dhis2_play_connection$get_metadata(endpoint = "organisationUnits",fields =  c("name","id", "level"))
+
+```
+
+### Getting analytics data 
+
+
+```{r}
+dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths < 5 yrs),
+                                    org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
+                                    period = "LAST_12_MONTHS",
+                                    output_scheme = "NAME"
+                                                 )
+
 ```
 
 Please note that the dhis2r project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
