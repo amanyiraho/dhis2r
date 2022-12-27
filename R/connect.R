@@ -12,20 +12,28 @@
 #' @examples
 #' \dontrun{
 #' # connect to the dhis2 instance
-#' dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+#' dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+#'  username = "admin",  password = "district",api_version = "2.39.0.1")
 #'
 #' # get all the available resources
-#' resources <- dhis2_play_connection$get_metadata()
+#' dhis2_play_connection$get_metadata()
 #'
 #' # get organisation Units with the default fields i.e c("name","id")
-#' organisationUnits <- dhis2_play_connection$get_metadata(endpoint = "organisationUnits")
+#'
+#' dhis2_play_connection$get_metadata(endpoint = "organisationUnits")
 #'
 #' # get a vector of all possible fields of a organisation unit resource
-#' metadata_fields_organisationUnits <-  dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
+#' dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
 #'
 #' # get organisation Units with additional fields i.e c("name","id", "level")
 #'
-#' organisationUnits <- dhis2_play_connection$get_metadata(endpoint = "organisationUnits",fields =  c("name","id", "level"))
+#' dhis2_play_connection$get_metadata(endpoint = "organisationUnits",
+#' fields =  c("name","id", "level"))
+#'
+#' dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
+#' org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
+#' period = "LAST_12_MONTHS",
+#'  output_scheme = "NAME")
 #'
 #' }
 
@@ -173,11 +181,7 @@ Dhis2r <- R6::R6Class(
     #' @param org_unit  vector of ID of specific organisation unit(s) from a DHIS2 instance
     #' @param period  vector of relative or fixed periods from a DHIS2 instance
     #' @param output_scheme  Output type ID or Names of fields
-    #' @examples
-    #' analytics_result <- dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
-    #' org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
-    #' period = "LAST_12_MONTHS",
-    #'  output_scheme = "NAME")
+    #'
 
 
     get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME")) {

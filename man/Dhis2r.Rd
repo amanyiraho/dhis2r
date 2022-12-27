@@ -16,31 +16,30 @@ You can use a DHIS2 instance connection to get data several times without needin
 \examples{
 \dontrun{
 # connect to the dhis2 instance
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+ username = "admin",  password = "district",api_version = "2.39.0.1")
 
 # get all the available resources
-resources <- dhis2_play_connection$get_metadata()
+dhis2_play_connection$get_metadata()
 
 # get organisation Units with the default fields i.e c("name","id")
-organisationUnits <- dhis2_play_connection$get_metadata(endpoint = "organisationUnits")
+
+dhis2_play_connection$get_metadata(endpoint = "organisationUnits")
 
 # get a vector of all possible fields of a organisation unit resource
-metadata_fields_organisationUnits <-  dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
+dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
 
 # get organisation Units with additional fields i.e c("name","id", "level")
 
-organisationUnits <- dhis2_play_connection$get_metadata(endpoint = "organisationUnits",fields =  c("name","id", "level"))
+dhis2_play_connection$get_metadata(endpoint = "organisationUnits",
+fields =  c("name","id", "level"))
 
-}
-
-## ------------------------------------------------
-## Method `Dhis2r$get_analytics`
-## ------------------------------------------------
-
-analytics_result <- dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
+dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
 org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
 period = "LAST_12_MONTHS",
  output_scheme = "NAME")
+
+}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -178,17 +177,6 @@ Get all possible analytics resources from a DHIS2 instance i.e
 \subsection{Returns}{
 A vector of all possible fields for a specific metadata
 }
-\subsection{Examples}{
-\if{html}{\out{<div class="r example copy">}}
-\preformatted{analytics_result <- dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
-org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
-period = "LAST_12_MONTHS",
- output_scheme = "NAME")
-}
-\if{html}{\out{</div>}}
-
-}
-
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

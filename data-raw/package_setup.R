@@ -18,7 +18,7 @@ my_desc$set("Authors@R", "c( person('Robinson', 'Amanyiraho', email = 'amanyirah
             person('AFENET', role = c('cph', 'fnd')))")
 
 # Remove some author fields
-#my_desc$set("Maintainer", )
+my_desc$del("Maintainer")
 
 # Set the version
 my_desc$set_version("0.0.0.9000")
@@ -52,6 +52,9 @@ use_package("curl")
 #Suggestion
 use_package("testthat",type = "Suggests")
 
+#
+
+
 
 # Clean your description
 use_tidy_description()
@@ -64,3 +67,4 @@ usethis::use_package_doc()
 
 usethis::use_import_from("attempt", "stop_if_not")
 usethis::use_import_from("attempt", "stop_if_any")
+use_import_from("curl","has_internet")
