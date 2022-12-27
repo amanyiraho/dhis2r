@@ -68,7 +68,7 @@ Dhis2r <- R6::R6Class(
 
 
       args <- list(base_url = base_url, username = username, password = password, api_version = api_version)
-      # Check that at least one argument is not null
+      #Check that at least one argument is not null
 
       attempt::stop_if_any(args, is.null, "You need to specify all the four arguements")
 
