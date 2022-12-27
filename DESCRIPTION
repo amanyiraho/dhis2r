@@ -11,7 +11,8 @@ Description: Pull data from a DHIS2 instance into R without the hassle of
     or year to download the same data or make the same routine data
     analysis steps based on fixed or relative periods.
 License: MIT + file LICENSE
-URL: https://github.com/amanyiraho/dhis2r
+URL: https://github.com/amanyiraho/dhis2r,
+    http://www.amanyiraho.com/dhis2r/
 BugReports: https://github.com/amanyiraho/dhis2r/issues
 Depends: 
     R (>= 2.10)
@@ -23,6 +24,9 @@ Imports:
     purrr,
     R6
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat
 Encoding: UTF-8
 RoxygenNote: 7.1.2
+VignetteBuilder: knitr

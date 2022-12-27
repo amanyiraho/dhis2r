@@ -43,15 +43,19 @@ Dhis2r <- R6::R6Class(
   "Dhis2r",
   public = list(
 
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @field request_sent The request used to perform an API call
     #' @field name Name of the user
     #' @field  access_rights The access rights the user has on the DHIS2 instance
     #' @field account_info Information of the logged account credentials
+    #'
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     request_sent = NULL,
     name = NULL,
     access_rights = NULL,
     account_info = NULL,
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description
     #' Create a connection to a DHIS2 instance using basic authentication
     #' @param base_url Base url e.g https://play.dhis2.org/
@@ -59,7 +63,7 @@ Dhis2r <- R6::R6Class(
     #' @param password Registered password e.g "district"
     #' @param api_version The api version e.g "33"
     #' @return A new `Dhis2r` object
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     initialize = function(base_url , username ,  password , api_version = "33") {
 
 
@@ -74,16 +78,18 @@ Dhis2r <- R6::R6Class(
         req_auth_basic(username = username, password = password ) |>
         req_url_query(paging = "false") |>
         req_headers("Accept" = "application/json") |>
-        httr2::req_user_agent("dhis2r (https://github.com/pearldatafirm/dhis2r)") |>
+        httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
         httr2::req_retry(max_tries = 5)
 
     },
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description
     #' Get information of the logged in user
     #'
     #' @return A vector
     #'
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_user_info =  function() {
                   # Check for internet
                   check_internet()
@@ -104,6 +110,7 @@ Dhis2r <- R6::R6Class(
                                response_data["email"]))
 
                },
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     #' @description
     #' Get metadata about any available resource from a DHIS2 instance e.g "dataElements",
@@ -114,7 +121,7 @@ Dhis2r <- R6::R6Class(
     #' @param endpoint a resource, get the available resources using `get_metadata()` without any arguments
     #' @param fields The specific columns to be return in the dataframe e.g c("name","id")
     #'
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_metadata = function(endpoint = NULL, fields = c("name","id")) {
 
                 # Check for internet
@@ -147,7 +154,7 @@ Dhis2r <- R6::R6Class(
               }
 
                },
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     #' @description Get all possible fields for a specific metadata resource from a DHIS2 instance
     #'
@@ -155,6 +162,7 @@ Dhis2r <- R6::R6Class(
     #'
     #' @param endpoint a resource, get the available resources using `get_metadata()` without any arguments
     #'
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_metadata_fields = function(endpoint = NULL) {
                   # Check for internet
                   check_internet()
@@ -172,7 +180,7 @@ Dhis2r <- R6::R6Class(
 
                  sort(names(response_data[[2]]))
                },
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description Get all possible analytics resources from a DHIS2 instance i.e
     #'
     #' @return A vector of all possible fields for a specific metadata
@@ -182,7 +190,7 @@ Dhis2r <- R6::R6Class(
     #' @param period  vector of relative or fixed periods from a DHIS2 instance
     #' @param output_scheme  Output type ID or Names of fields
     #'
-
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME")) {
                   # Check for internet

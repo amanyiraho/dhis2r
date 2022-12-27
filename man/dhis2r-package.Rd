@@ -14,6 +14,7 @@ Pull data from a DHIS2 instance into R without the hassle of logging into the DH
 Useful links:
 \itemize{
   \item \url{https://github.com/amanyiraho/dhis2r}
+  \item \url{http://www.amanyiraho.com/dhis2r/}
   \item Report bugs at \url{https://github.com/amanyiraho/dhis2r/issues}
 }
 
