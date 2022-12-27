@@ -13,8 +13,9 @@ my_desc <- description$new("!new")
 my_desc$set("Package", "dhis2r")
 
 #Set your name
-my_desc$set("Authors@R", "person('Robinson', 'Amanyiraho', email = 'amanyiraho@gmail.com',
-            role = c('cre', 'aut'), comment = c(ORCID = '0000-0002-7747-1367'))")
+my_desc$set("Authors@R", "c( person('Robinson', 'Amanyiraho', email = 'amanyiraho@gmail.com',
+            role = c('cre', 'aut'), comment = c(ORCID = '0000-0002-7747-1367')),
+            person('AFENET', role = c('cph', 'fnd')))")
 
 # Remove some author fields
 #my_desc$set("Maintainer", )
@@ -45,6 +46,21 @@ use_package("httr2")
 use_package("jsonlite")
 use_package("attempt")
 use_package("R6")
+use_package("purrr")
+use_package("curl")
+
+#Suggestion
+use_package("testthat",type = "Suggests")
+
 
 # Clean your description
 use_tidy_description()
+
+### NAMESPACE
+
+usethis::use_package_doc()
+
+##
+
+usethis::use_import_from("attempt", "stop_if_not")
+usethis::use_import_from("attempt", "stop_if_any")

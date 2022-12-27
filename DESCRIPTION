@@ -1,9 +1,11 @@
 Package: dhis2r
 Title: An R client for the Dhis2 web API
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut"),
-           comment = c(ORCID = "0000-0002-7747-1367"))
+           comment = c(ORCID = "0000-0002-7747-1367")),
+    person("AFENET", role = c("cph", "fnd"))
+  )
 Maintainer: {{ Maintainer }}
 Description: Pull data from a DHIS2 instance into R without the hassle of
     logging into the DHIS2 user interface every day, week, month, quarter,
@@ -14,7 +16,12 @@ URL: https://github.com/amanyiraho/dhis2r
 BugReports: https://github.com/amanyiraho/dhis2r/issues
 Imports: 
     attempt,
+    curl,
     httr2,
     jsonlite,
+    purrr,
     R6
 Encoding: UTF-8
+RoxygenNote: 7.1.2
+Suggests: 
+    testthat
