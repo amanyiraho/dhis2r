@@ -5,7 +5,7 @@
 #
 # paste0("https://epivac.health.go.ug","/api/33/" )
 #
-# dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+# dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1", api_version_position = "before")
 #
 #
 #

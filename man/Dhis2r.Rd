@@ -57,21 +57,27 @@ period = "LAST_12_MONTHS",
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Dhis2r$new()}}
-\item \href{#method-get_user_info}{\code{Dhis2r$get_user_info()}}
-\item \href{#method-get_metadata}{\code{Dhis2r$get_metadata()}}
-\item \href{#method-get_metadata_fields}{\code{Dhis2r$get_metadata_fields()}}
-\item \href{#method-get_analytics}{\code{Dhis2r$get_analytics()}}
-\item \href{#method-clone}{\code{Dhis2r$clone()}}
+\item \href{#method-Dhis2r-new}{\code{Dhis2r$new()}}
+\item \href{#method-Dhis2r-get_user_info}{\code{Dhis2r$get_user_info()}}
+\item \href{#method-Dhis2r-get_metadata}{\code{Dhis2r$get_metadata()}}
+\item \href{#method-Dhis2r-get_metadata_fields}{\code{Dhis2r$get_metadata_fields()}}
+\item \href{#method-Dhis2r-get_analytics}{\code{Dhis2r$get_analytics()}}
+\item \href{#method-Dhis2r-clone}{\code{Dhis2r$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Dhis2r-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-new}{}}}
 \subsection{Method \code{new()}}{
 Create a connection to a DHIS2 instance using basic authentication
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$new(base_url, username, password, api_version = "33")}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$new(
+  base_url,
+  username,
+  password,
+  api_version = NULL,
+  api_version_position = c("after", "before")
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -84,6 +90,8 @@ Create a connection to a DHIS2 instance using basic authentication
 \item{\code{password}}{Registered password e.g "district"}
 
 \item{\code{api_version}}{The api version e.g "33"}
+
+\item{\code{api_version_position}}{position where the api_version is after or before in web API url i.e /api/}
 }
 \if{html}{\out{</div>}}
 }
@@ -92,8 +100,8 @@ A new `Dhis2r` object
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_user_info"></a>}}
-\if{latex}{\out{\hypertarget{method-get_user_info}{}}}
+\if{html}{\out{<a id="method-Dhis2r-get_user_info"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_user_info}{}}}
 \subsection{Method \code{get_user_info()}}{
 Get information of the logged in user
 \subsection{Usage}{
@@ -105,8 +113,8 @@ A vector
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_metadata"></a>}}
-\if{latex}{\out{\hypertarget{method-get_metadata}{}}}
+\if{html}{\out{<a id="method-Dhis2r-get_metadata"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_metadata}{}}}
 \subsection{Method \code{get_metadata()}}{
 Get metadata about any available resource from a DHIS2 instance e.g "dataElements",
 "organisationUnits", "indicators", "periodTypes"
@@ -128,8 +136,8 @@ A data frame
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_metadata_fields"></a>}}
-\if{latex}{\out{\hypertarget{method-get_metadata_fields}{}}}
+\if{html}{\out{<a id="method-Dhis2r-get_metadata_fields"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_metadata_fields}{}}}
 \subsection{Method \code{get_metadata_fields()}}{
 Get all possible fields for a specific metadata resource from a DHIS2 instance
 \subsection{Usage}{
@@ -148,8 +156,8 @@ A vector of all possible fields for a specific metadata
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_analytics"></a>}}
-\if{latex}{\out{\hypertarget{method-get_analytics}{}}}
+\if{html}{\out{<a id="method-Dhis2r-get_analytics"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_analytics}{}}}
 \subsection{Method \code{get_analytics()}}{
 Get all possible analytics resources from a DHIS2 instance i.e
 \subsection{Usage}{
@@ -179,8 +187,8 @@ A vector of all possible fields for a specific metadata
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Dhis2r-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

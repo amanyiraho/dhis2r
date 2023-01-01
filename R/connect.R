@@ -62,24 +62,52 @@ Dhis2r <- R6::R6Class(
     #' @param username Registered username e.g "admin"
     #' @param password Registered password e.g "district"
     #' @param api_version The api version e.g "33"
+    #' @param api_version_position position where the api_version is after or before in web API url i.e /api/
     #' @return A new `Dhis2r` object
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    initialize = function(base_url , username ,  password , api_version = "33") {
+    initialize = function(base_url , username ,  password , api_version = NULL, api_version_position = c("after", "before")) {
 
+      api_version_position <- match.arg(api_version_position)
 
-      args <- list(base_url = base_url, username = username, password = password, api_version = api_version)
+      args <- list(base_url = base_url, username = username, password = password, api_version_position = api_version_position)
       #Check that at least one argument is not null
 
       attempt::stop_if_any(args, is.null, "You need to specify all the four arguements")
 
-      self$request_sent <- request(base_url = base_url) |>
-        req_url_path_append(api_version) |>
-        req_url_path_append("api") |>
-        req_auth_basic(username = username, password = password ) |>
-        req_url_query(paging = "false") |>
-        req_headers("Accept" = "application/json") |>
-        httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
-        httr2::req_retry(max_tries = 5)
+      if(is.null(api_version)){
+
+        self$request_sent <- request(base_url = base_url) |>
+          req_url_path_append("api") |>
+          req_auth_basic(username = username, password = password ) |>
+          req_url_query(paging = "false") |>
+          req_headers("Accept" = "application/json") |>
+          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
+          httr2::req_retry(max_tries = 5)
+
+      }else if(!is.null(api_version) &  api_version_position == "before"){
+
+        self$request_sent <- request(base_url = base_url) |>
+          req_url_path_append(api_version) |>
+          req_url_path_append("api") |>
+          req_auth_basic(username = username, password = password ) |>
+          req_url_query(paging = "false") |>
+          req_headers("Accept" = "application/json") |>
+          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
+          httr2::req_retry(max_tries = 5)
+
+
+      }else if(!is.null(api_version) &  api_version_position == "after"){
+
+        self$request_sent <- request(base_url = base_url) |>
+          req_url_path_append("api") |>
+          req_url_path_append(api_version) |>
+          req_auth_basic(username = username, password = password ) |>
+          req_url_query(paging = "false") |>
+          req_headers("Accept" = "application/json") |>
+          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
+          httr2::req_retry(max_tries = 5)
+
+      }
 
     },
 

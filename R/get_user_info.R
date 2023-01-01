@@ -1,5 +1,3 @@
-
-
 # Dhis2r$set("public", "get_user_info",
 #            function() {
 #              reponse <- self$request_sent |>
@@ -20,17 +18,3 @@
 #            }
 #            )
 
-#
-# #paste0("https://epivac.health.go.ug","/api/33/" )
-#
-# dhis2_play_connection <- Dhis2r$new(base_url = "https://epivac.health.go.ug/", username = "amanyiraho",  password = "Epivac123.")
-#
-#
-# dhis2_play_connection$request_sent
-#
-# dhis2_play_connection$get_user_info()
-# #class(dhis2_play_connection)
-# dhis2_play_connection$access_rights
-#
-# dhis2_play_connection$account_info <- 2
-#

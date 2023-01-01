@@ -33,8 +33,10 @@ Management Information System (HMIS), and currently being adopted in the
 education sector as the Education Management Information System (EMIS)
 several countries.
 
-DHIS2 is now the world’s most extensive HMIS system and is used in more
-than 72 countries worldwide.
+More than 73 countries worldwide use DHIS2 for collecting and analyzing
+health data. 2.4 billion people (30% of the world’s population) live in
+countries where DHIS2 is used. DHIS2 is offered free of charge as a
+global public good.(source: <https://dhis2.org/>)
 
 ## Installation
 
@@ -55,7 +57,11 @@ Dhis2 instance.
 
 ``` r
 library(dhis2r)
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", 
+                                    username = "admin", 
+                                    password = "district",
+                                    api_version = "2.39.0.1",
+                                    api_version_position = "before")
 ```
 
 ### Getting metadata
@@ -64,20 +70,20 @@ Getting metadata about data Elements
 
 ``` r
 dhis2_play_connection$get_metadata(endpoint = "dataElements")
-#> # A tibble: 1,045 × 2
-#>    name                                        id         
-#>    <chr>                                       <chr>      
-#>  1 "Accute Flaccid Paralysis (Deaths < 5 yrs)" FTRrcoaog83
-#>  2 "Actiontracker_Action status"               f8JYVWLC7rE
-#>  3 "Actiontracker_Description"                 GsbZkewUna5
-#>  4 "Actiontracker_Method"                      W50aguV39tU
-#>  5 "Actiontracker_Remarks / comments"          FnengvwgsQv
-#>  6 "Actiontracker_Review Date"                 nodiP54ocf5
-#>  7 "Actiontracker_Solution "                   upT2cOT6UfJ
-#>  8 "Actiontracker_Solution To Action Linkage"  Y4CIGFwWYJD
-#>  9 "Actiontracker_Solution To Gap Linkage"     kBkyDytdOmC
-#> 10 "Actiontracker_Title"                       JbMaVyglSit
-#> # … with 1,035 more rows
+#> # A tibble: 1,036 × 2
+#>    name                                      id         
+#>    <chr>                                     <chr>      
+#>  1 Accute Flaccid Paralysis (Deaths < 5 yrs) FTRrcoaog83
+#>  2 Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC
+#>  3 Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS
+#>  4 Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0
+#>  5 Additional medication                     WO8yRIZb7nb
+#>  6 Additional notes related to facility      uF1DLnZNlWe
+#>  7 Admission Date                            eMyVanycQSC
+#>  8 Age in years                              qrur9Dvnyt5
+#>  9 Age of LLINs                              JuTpJ2Ywq5b
+#> 10 Albendazole given at ANC (2nd trimester)  hCVSHjcml9g
+#> # … with 1,026 more rows
 ```
 
 Getting metadata about organisation Units
@@ -109,16 +115,17 @@ dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Pa
                                     period = "LAST_12_MONTHS",
                                     output_scheme = "NAME"
                                                  )
-#> # A tibble: 7 × 4
+#> # A tibble: 8 × 4
 #>   analytic                                  org_unit     period         value
 #>   <chr>                                     <chr>        <chr>          <chr>
-#> 1 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Février 2022   61   
-#> 2 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Janvier 2022   23   
-#> 3 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Novembre 2022  1    
-#> 4 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Octobre 2022   3    
-#> 5 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Septembre 2022 101  
-#> 6 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Août 2022      254  
-#> 7 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone Mars 2022      1
+#> 1 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone February 2022  61   
+#> 2 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone December 2022  31   
+#> 3 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone January 2022   23   
+#> 4 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone November 2022  1    
+#> 5 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone October 2022   3    
+#> 6 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone September 2022 101  
+#> 7 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone August 2022    254  
+#> 8 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone March 2022     1
 ```
 
 Please note that the dhis2r project is released with a [Contributor Code

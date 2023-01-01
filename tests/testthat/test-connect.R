@@ -1,5 +1,9 @@
 
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+                                    username = "admin",
+                                    password = "district",
+                                    api_version = "2.39.0.1",
+                                    api_version_position = "before")
 
 test_that("Can connect to DHIS2 instance", {
   expect_equal(dhis2_play_connection$request_sent |> req_perform() |> resp_status(), 200)

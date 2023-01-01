@@ -19,8 +19,6 @@ Imports:
     attempt,
     curl,
     httr2,
-    jsonlite,
-    purrr,
     R6
 Suggests: 
     covr,
@@ -30,3 +28,4 @@ Suggests:
 Depends: R (>= 2.10)
 Encoding: UTF-8
 VignetteBuilder: knitr
+RoxygenNote: 7.2.3

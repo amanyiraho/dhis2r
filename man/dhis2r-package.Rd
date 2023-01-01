@@ -6,7 +6,7 @@
 \alias{dhis2r-package}
 \title{dhis2r: An R client for the Dhis2 web API}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 Pull data from a DHIS2 instance into R without the hassle of logging into the DHIS2 user interface every day, week, month, quarter, or year to download the same data or make the same routine data analysis steps based on fixed or relative periods.
 }
@@ -24,7 +24,8 @@ Useful links:
 
 Other contributors:
 \itemize{
-  \item AFENET [copyright holder, funder]
+  \item GEEKS [copyright holder]
+  \item AFENET [funder]
 }
 
 }

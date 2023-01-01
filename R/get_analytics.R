@@ -29,15 +29,4 @@
 #
 #
 #
-# dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
-#
-#
-#
-# (analytics_result <- dhis2_play_connection$get_analytics(analytic = c("Uvn6LCg7dVU"),
-#                                                  org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
-#                                                  period = "LAST_12_MONTHS",
-#                                                  output_scheme = "NAME"
-#                                                  ))
-#
-#
-#
+

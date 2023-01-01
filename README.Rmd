@@ -35,7 +35,7 @@ In short, make the routine data visualizations, reports, and dashboards reproduc
 
 [DHIS2](https://dhis2.org/) is an open-source, web-based Health Management Information System (HMIS), and currently being adopted in the education sector as the Education Management Information System (EMIS) several countries.
 
-DHIS2 is now the world's most extensive HMIS system and is used in more than 72 countries worldwide.
+More than 73 countries worldwide use DHIS2 for collecting and analyzing health data. 2.4 billion people (30% of the world’s population) live in countries where DHIS2 is used. DHIS2 is offered free of charge as a global public good.(source: https://dhis2.org/)
 
 ## Installation
 
@@ -56,7 +56,11 @@ This is a basic example which shows you how to solve a get data from a Dhis2 ins
 
 ```{r}
 library(dhis2r)
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", 
+                                    username = "admin", 
+                                    password = "district",
+                                    api_version = "2.39.0.1",
+                                    api_version_position = "before")
 ```
 
 ### Getting metadata

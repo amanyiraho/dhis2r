@@ -44,14 +44,17 @@ use_news_md()
 
 # Get the dependencies
 use_package("httr2")
-use_package("jsonlite")
+#use_package("jsonlite")
 use_package("attempt")
 use_package("R6")
-use_package("purrr")
+#use_package("purrr")
 use_package("curl")
 
 #Suggestion
 use_package("testthat",type = "Suggests")
+use_package("covr",type = "Suggests")
+use_package("knitr",type = "Suggests")
+use_package("rmarkdown",type = "Suggests")
 
 #
 
