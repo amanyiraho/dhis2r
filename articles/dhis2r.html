@@ -91,7 +91,8 @@
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>, </span>
 <span>                                    username <span class="op">=</span> <span class="st">"admin"</span>,</span>
 <span>                                    password <span class="op">=</span> <span class="st">"district"</span>,</span>
-<span>                                    api_version <span class="op">=</span> <span class="st">"2.39.0.1"</span><span class="op">)</span></span></code></pre></div>
+<span>                                    api_version <span class="op">=</span> <span class="st">"2.39.0.1"</span>,</span>
+<span>                                    api_version_position <span class="op">=</span> <span class="st">"before"</span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="get-user-information">Get user information<a class="anchor" aria-label="anchor" href="#get-user-information"></a>
 </h3>
@@ -117,37 +118,37 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 4</span></span></span>
-<span><span class="co">#&gt;    displayName            singular            plural               href         </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Data Elements          dataElement         dataElements         https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> File Resources         fileResource        fileResources        https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Sql Views              sqlView             sqlViews             https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Data Element Groups    dataElementGroup    dataElementGroups    https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Event Filters          eventFilter         eventFilters         https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Users                  user                users                https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Visualizations         visualization       visualizations       https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Category Option Groups categoryOptionGroup categoryOptionGroups https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Constants              constant            constants            https://play…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Api Token              apiToken            apiToken             https://play…</span></span>
+<span><span class="co">#&gt;    displayName              singular              plural                 href   </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Category Option Combos   categoryOptionCombo   categoryOptionCombos   https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> User Roles               userRole              userRoles              https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> External File Resources  externalFileResource  externalFileResources  https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Category Option Groups   categoryOptionGroup   categoryOptionGroups   https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Analytics Table Hooks    analyticsTableHook    analyticsTableHooks    https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Sql Views                sqlView               sqlViews               https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Proposals                proposal              proposals              https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Predictors               predictor             predictors             https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Documents                document              documents              https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Tracked Entity Instances trackedEntityInstance trackedEntityInstances https:…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 77 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,045 × 2</span></span></span>
-<span><span class="co">#&gt;    name                                        id         </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Accute Flaccid Paralysis (Deaths &lt; 5 yrs)<span style="color: #949494;">"</span> FTRrcoaog83</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Actiontracker_Action status<span style="color: #949494;">"</span>               f8JYVWLC7rE</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Actiontracker_Description<span style="color: #949494;">"</span>                 GsbZkewUna5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>Actiontracker_Method<span style="color: #949494;">"</span>                      W50aguV39tU</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>Actiontracker_Remarks / comments<span style="color: #949494;">"</span>          FnengvwgsQv</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>Actiontracker_Review Date<span style="color: #949494;">"</span>                 nodiP54ocf5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>Actiontracker_Solution <span style="color: #949494;">"</span>                   upT2cOT6UfJ</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Action Linkage<span style="color: #949494;">"</span>  Y4CIGFwWYJD</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Gap Linkage<span style="color: #949494;">"</span>     kBkyDytdOmC</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>Actiontracker_Title<span style="color: #949494;">"</span>                       JbMaVyglSit</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,035 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 2</span></span></span>
+<span><span class="co">#&gt;    name                                      id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  hCVSHjcml9g</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,026 more rows</span></span></span></code></pre></div>
 <p>The code above only returns it’s name and code/ID used on DHIS2, we
 shall use the code to get analytics.</p>
 <div class="section level4">
@@ -211,20 +212,20 @@ shall use the code to get analytics.</p>
 <p>dataElements</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>,<span class="st">"aggregationType"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,045 × 3</span></span></span>
-<span><span class="co">#&gt;    name                                        aggregationType id         </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Accute Flaccid Paralysis (Deaths &lt; 5 yrs)<span style="color: #949494;">"</span> SUM             FTRrcoaog83</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Actiontracker_Action status<span style="color: #949494;">"</span>               NONE            f8JYVWLC7rE</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Actiontracker_Description<span style="color: #949494;">"</span>                 NONE            GsbZkewUna5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>Actiontracker_Method<span style="color: #949494;">"</span>                      NONE            W50aguV39tU</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>Actiontracker_Remarks / comments<span style="color: #949494;">"</span>          NONE            FnengvwgsQv</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>Actiontracker_Review Date<span style="color: #949494;">"</span>                 NONE            nodiP54ocf5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>Actiontracker_Solution <span style="color: #949494;">"</span>                   NONE            upT2cOT6UfJ</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Action Linkage<span style="color: #949494;">"</span>  NONE            Y4CIGFwWYJD</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Gap Linkage<span style="color: #949494;">"</span>     NONE            kBkyDytdOmC</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>Actiontracker_Title<span style="color: #949494;">"</span>                       NONE            JbMaVyglSit</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,035 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 3</span></span></span>
+<span><span class="co">#&gt;    name                                      aggregationType id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) SUM             FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   SUM             P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         SUM             FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   SUM             M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     NONE            WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      SUM             uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            AVERAGE         eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              AVERAGE         qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              SUM             JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  SUM             hCVSHjcml9g</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,026 more rows</span></span></span></code></pre></div>
 <p>organisationUnits</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span>
@@ -295,16 +296,17 @@ metadata associated with a resources</p>
 <span>                                    org_unit <span class="op">=</span>   <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ImspTQPwCqd"</span><span class="op">)</span>, <span class="co">#Sierra Leone (National level)</span></span>
 <span>                                    period <span class="op">=</span> <span class="st">"LAST_12_MONTHS"</span>,</span>
 <span>                                    output_scheme <span class="op">=</span> <span class="st">"NAME"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 8 × 4</span></span></span>
 <span><span class="co">#&gt;   analytic                                  org_unit     period         value</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Février 2022   61   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Janvier 2022   23   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Novembre 2022  1    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Octobre 2022   3    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Septembre 2022 101  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Août 2022      254  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone Mars 2022      1</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2022  61   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone December 2022  31   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2022   23   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone November 2022  1    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone October 2022   3    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone September 2022 101  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone August 2022    254  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone March 2022     1</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
