@@ -77,37 +77,30 @@ Dhis2r <- R6::R6Class(
       if(is.null(api_version)){
 
         self$request_sent <- request(base_url = base_url) |>
-          req_url_path_append("api") |>
-          req_auth_basic(username = username, password = password ) |>
-          req_url_query(paging = "false") |>
-          req_headers("Accept" = "application/json") |>
-          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
-          httr2::req_retry(max_tries = 5)
+          req_url_path_append("api")
+
 
       }else if(!is.null(api_version) &  api_version_position == "before"){
 
         self$request_sent <- request(base_url = base_url) |>
           req_url_path_append(api_version) |>
-          req_url_path_append("api") |>
-          req_auth_basic(username = username, password = password ) |>
-          req_url_query(paging = "false") |>
-          req_headers("Accept" = "application/json") |>
-          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
-          httr2::req_retry(max_tries = 5)
+          req_url_path_append("api")
 
 
       }else if(!is.null(api_version) &  api_version_position == "after"){
 
         self$request_sent <- request(base_url = base_url) |>
           req_url_path_append("api") |>
-          req_url_path_append(api_version) |>
-          req_auth_basic(username = username, password = password ) |>
-          req_url_query(paging = "false") |>
-          req_headers("Accept" = "application/json") |>
-          httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
-          httr2::req_retry(max_tries = 5)
+          req_url_path_append(api_version)
 
       }
+
+      self$request_sent <-  self$request_sent |>
+        req_auth_basic(username = username, password = password ) |>
+        req_url_query(paging = "false") |>
+        req_headers("Accept" = "application/json") |>
+        httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
+        httr2::req_retry(max_tries = 5)
 
     },
 
@@ -122,7 +115,7 @@ Dhis2r <- R6::R6Class(
                   # Check for internet
                   check_internet()
 
-                 reponse <- self$request_sent |>
+                 reponse <- self$request_sent  |>
                    req_url_path_append("me") |>
                    req_perform()
 
@@ -239,9 +232,17 @@ Dhis2r <- R6::R6Class(
                  response_data  <-  reponse |>
                    resp_body_json(simplifyVector = TRUE, flatten = TRUE)
 
-                 as.data.frame(response_data$rows) |>
-                   setNames(c("analytic", "org_unit", "period", "value")) |>
-                   tibble::as_tibble()
+                 if(length(response_data$rows) == 0){
+
+                   as.data.frame(response_data$rows)
+
+                 }else{
+                   as.data.frame(response_data$rows) |>
+                      setNames(c("analytic", "org_unit", "period", "value")) |>
+                     tibble::as_tibble()
+                   }
+
+
 
                }
 
