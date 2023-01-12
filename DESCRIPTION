@@ -18,6 +18,7 @@ BugReports: https://github.com/amanyiraho/dhis2r/issues
 Imports: 
     attempt,
     curl,
+    dplyr,
     httr2,
     R6
 Suggests: 

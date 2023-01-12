@@ -239,7 +239,10 @@ Dhis2r <- R6::R6Class(
                  }else{
                    as.data.frame(response_data$rows) |>
                       setNames(c("analytic", "org_unit", "period", "value")) |>
-                     tibble::as_tibble()
+                     tibble::as_tibble() |>
+                     dplyr::mutate(analytic = as.factor(analytic),
+                                   org_unit = as.factor(org_unit),
+                                   value = as.numeric(value))
                    }
 
 
