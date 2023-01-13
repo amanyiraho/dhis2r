@@ -118,18 +118,18 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 4</span></span></span>
-<span><span class="co">#&gt;    displayName                    singular                    plural       href </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Sms Commands                   smsCommand                  smsCommands  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Data Element Groups            dataElementGroup            dataElement… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Aggregate Data Exchanges       aggregateDataExchange       aggregateDa… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Program Rules                  programRule                 programRules http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Program Notification Templates programNotificationTemplate programNoti… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Categories                     category                    categories   http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Constants                      constant                    constants    http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Program Stage Sections         programStageSection         programStag… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Tracked Entity Types           trackedEntityType           trackedEnti… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Users                          user                        users        http…</span></span>
+<span><span class="co">#&gt;    displayName             singular             plural                href      </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Program Rule Actions    programRuleAction    programRuleActions    https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Icons                   icon                 icons                 https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Indicators              indicator            indicators            https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Push Analysis           pushAnalysis         pushAnalysis          https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Data Entry Forms        dataEntryForm        dataEntryForms        https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Data Elements   programDataElement   programDataElements   https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> External File Resources externalFileResource externalFileResources https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Program Stage Sections  programStageSection  programStageSections  https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Category Option Groups  categoryOptionGroup  categoryOptionGroups  https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Data Approval Levels    dataApprovalLevel    dataApprovalLevels    https://p…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 77 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
@@ -273,7 +273,7 @@ metadata associated with a resources</p>
 <p>indicators</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 109 × 2</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 78 × 2</span></span></span>
 <span><span class="co">#&gt;    name                                 id         </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> ANC 1-3 Dropout Rate                 ReUHfIn0pTQ</span></span>
@@ -286,7 +286,7 @@ metadata associated with a resources</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> ANC LLITN coverage                   Tt5TAvdfdVK</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> ANC TT2 coverage                     puykO1tbcdi</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> ANC visits per clinical professional Lzg9LtG1xg3</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 99 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 68 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get-analtyics">Get analtyics<a class="anchor" aria-label="anchor" href="#get-analtyics"></a>

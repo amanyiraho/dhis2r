@@ -87,13 +87,35 @@
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p><strong>dhis2r</strong> is an R client for the DHIS2 web API.</p>
-<p>Pull data from a DHIS2 instance into R without the hassle of logging into the DHIS2 user interface every day, week, month, quarter, or year to download the same data or make the same routine data analysis steps based on fixed or relative periods.</p>
-<p>In short, make the routine data visualizations, reports, and dashboards reproducible to save time and reduce possible errors, with dhis2r and the rich r package universal and tools like tidyverse, Rmarkdown, Quarto, Shiny, etc.</p>
+<p>Pull data from a DHIS2 instance into R without the hassle of logging into the DHIS2 user interface periodically (every day, week, month, quarter, or year) to download the same data or make the same routine data analysis steps based on fixed or relative periods.</p>
+<p><strong><em>In short, dhis2r will save you time in the future</em></strong>, especially if you do routine reporting like immunisation programs.</p>
 <div class="section level3">
 <h3 id="motivation-for-this-package">Motivation for this package<a class="anchor" aria-label="anchor" href="#motivation-for-this-package"></a>
 </h3>
-<p><a href="https://dhis2.org/" class="external-link">DHIS2</a> is an open-source, web-based Health Management Information System (HMIS), and currently being adopted in the education sector as the Education Management Information System (EMIS) several countries.</p>
-<p>More than 73 countries worldwide use DHIS2 for collecting and analyzing health data. 2.4 billion people (30% of the world’s population) live in countries where DHIS2 is used. DHIS2 is offered free of charge as a global public good.(source: <a href="https://dhis2.org/" class="external-link uri">https://dhis2.org/</a>)</p>
+<p><a href="https://dhis2.org/" class="external-link">DHIS2</a> is an open-source, web-based Health Management Information System (HMIS), and currently being adopted in the education sector as the Education Management Information System (EMIS) in several countries.</p>
+<p>More than 73 countries worldwide use DHIS2 for collecting and analyzing health data. 2.4 billion people (30% of the world’s population) live in countries where DHIS2 is used. (source: <a href="https://dhis2.org/" class="external-link uri">https://dhis2.org/</a>)</p>
+<p>With the increasing number of data managers/analysts downloading data from dhis2 instances to make <strong>routine period</strong> reports, data visualisation and dashboards, this R package can make it much easier to pull the required data in one click and much faster.</p>
+<p>There are over 2 million users of R, and some of them periodically analyse data from DHIS2, like me; and support health programs which affect over the 2.4 billion people.</p>
+<div class="section level5">
+<h5 id="some-of-the-scenarios-this-r-package-can-change-for-data-managers-">Some of the scenarios this R package can change for data managers :<a class="anchor" aria-label="anchor" href="#some-of-the-scenarios-this-r-package-can-change-for-data-managers-"></a>
+</h5>
+<ul>
+<li><p>During routine periodic (monthly, quarterly, yearly) reporting, you login into a DHIS2 instance, make several clicks to choose the period, organisation unit and indicator and then download data. If you have made an error yet closed the browser tab, you have to do the same task repeatedly. On top of that, you must also go through the same hassle the next month, quarter and year.</p></li>
+<li><p>Sometimes you have several data requests, yet only one variable changes and you have to respond to them with limited time.</p></li>
+<li><p>Sometimes, you need to change browsers or call a colleague to download data on your behalf.</p></li>
+<li><p>Most reports after an immunisation campaign are similar, i.e. with identical data visualisations and conclusions on whether the campaign was successful. The only thing that changes is the data.</p></li>
+</ul>
+<p><em>Why do you have to carry out the same data download and data analysis steps, periodically?</em></p>
+</div>
+<div class="section level5">
+<h5 id="how-this-package-solves-most-of-the-above-issues">How this package solves most of the above issues.<a class="anchor" aria-label="anchor" href="#how-this-package-solves-most-of-the-above-issues"></a>
+</h5>
+<ul>
+<li><p><strong>dhis2r</strong> package can automate most of the steps to download data from a DHIS2 instance, and you can get the data with just one click since all the steps are written in terms of code.</p></li>
+<li><p><strong>dhis2r</strong> opens up opportunities to automate data requests, periodic reports and dashboards with other technologies.</p></li>
+<li><p>If a data manager has made an error by choosing the wrong period, they need to change one character string and rerun the report.</p></li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section level2">
@@ -105,12 +127,13 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"amanyiraho/dhis2r"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+<h2 id="examples-on-how-to-use-this-package">Examples on how to use this package<a class="anchor" aria-label="anchor" href="#examples-on-how-to-use-this-package"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a get data from a Dhis2 instance.</p>
+<p>This is a basic example which shows you how to a get data from a Dhis2 instance.</p>
 <div class="section level4">
 <h4 id="connect-to-dhis2-instance">Connect to DHIS2 instance<a class="anchor" aria-label="anchor" href="#connect-to-dhis2-instance"></a>
 </h4>
+<p>Using your password and username login in the DHIS instance</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span>
 <span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>, </span>
@@ -122,7 +145,8 @@
 <div class="section level3">
 <h3 id="getting-metadata">Getting metadata<a class="anchor" aria-label="anchor" href="#getting-metadata"></a>
 </h3>
-<p>Getting metadata about data Elements</p>
+<p>Get metadata using the above created connect</p>
+<p>You can start with with metadata availabe on that DHIS2 instance</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1,036 × 2</span></span>
@@ -139,7 +163,7 @@
 <span><span class="co">#&gt;  9 Age of LLINs                              JuTpJ2Ywq5b</span></span>
 <span><span class="co">#&gt; 10 Albendazole given at ANC (2nd trimester)  hCVSHjcml9g</span></span>
 <span><span class="co">#&gt; # … with 1,026 more rows</span></span></code></pre></div>
-<p>Getting metadata about organisation Units</p>
+<p>You also get metadata about organisation Units</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,fields <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span></span>
@@ -161,24 +185,23 @@
 <div class="section level3">
 <h3 id="getting-analytics-data">Getting analytics data<a class="anchor" aria-label="anchor" href="#getting-analytics-data"></a>
 </h3>
+<p>Analytics data can include data from indicators, dataElements, program indicators, etc which returns the reported values</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"FTRrcoaog83"</span>, <span class="co">#Accute Flaccid Paralysis (Deaths &lt; 5 yrs),</span></span>
 <span>                                    org_unit <span class="op">=</span> <span class="st">"ImspTQPwCqd"</span>, <span class="co">#Sierra Leone (National level)</span></span>
 <span>                                    period <span class="op">=</span> <span class="st">"LAST_12_MONTHS"</span>,</span>
 <span>                                    output_scheme <span class="op">=</span> <span class="st">"NAME"</span></span>
 <span>                                                 <span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 8 × 4</span></span>
-<span><span class="co">#&gt;   analytic                                  org_unit     period         value</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;                                     &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;</span></span>
-<span><span class="co">#&gt; 1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2022  61   </span></span>
-<span><span class="co">#&gt; 2 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone December 2022  31   </span></span>
-<span><span class="co">#&gt; 3 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2022   23   </span></span>
-<span><span class="co">#&gt; 4 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone November 2022  1    </span></span>
-<span><span class="co">#&gt; 5 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone October 2022   3    </span></span>
-<span><span class="co">#&gt; 6 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone September 2022 101  </span></span>
-<span><span class="co">#&gt; 7 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone August 2022    254  </span></span>
-<span><span class="co">#&gt; 8 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone March 2022     1</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
+<span><span class="co">#&gt;   analytic                                  org_unit     period        value</span></span>
+<span><span class="co">#&gt;   &lt;fct&gt;                                     &lt;fct&gt;        &lt;chr&gt;         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2022    34</span></span>
+<span><span class="co">#&gt; 2 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2022     12</span></span></code></pre></div>
+<div class="section level6">
+<h6 id="you-can-do-way-more-with-dhis2r-refer-to-the-acticles-where-i-will-be-posting-demos-and-different-use-cases">You can do way more with dhis2r, refer to the acticles where I will be posting demos and different use cases.<a class="anchor" aria-label="anchor" href="#you-can-do-way-more-with-dhis2r-refer-to-the-acticles-where-i-will-be-posting-demos-and-different-use-cases"></a>
+</h6>
 <p>Please note that the dhis2r project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
 </div>
 </div>
 </div>
