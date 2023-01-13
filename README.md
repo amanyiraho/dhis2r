@@ -44,7 +44,7 @@ There are over 2 million users of R, and some of them periodically
 analyse data from DHIS2, like me; and support health programs which
 affect over the 2.4 billion people.
 
-##### Some of the scenarios this R package can change for data managers :
+#### Some of the scenarios this R package can change for data managers :
 
 - During routine periodic (monthly, quarterly, yearly) reporting, you
   login into a DHIS2 instance, make several clicks to choose the period,
@@ -66,7 +66,7 @@ affect over the 2.4 billion people.
 *Why do you have to carry out the same data download and data analysis
 steps, periodically?*
 
-##### How this package solves most of the above issues.
+#### How this package solves most of the above issues.
 
 - **dhis2r** package can automate most of the steps to download data
   from a DHIS2 instance, and you can get the data with just one click
