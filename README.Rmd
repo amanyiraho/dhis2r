@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
 **dhis2r** is an R client for the DHIS2 web API.
 
-Pull data from a DHIS2 instance into R without the hassle of logging into the DHIS2 user interface periodically (every day, week, month, quarter, or year) to download the same data or make the same routine data analysis steps based on fixed or relative periods.
+Pull data from a DHIS2 instance into R without the hassle of logging into the DHIS2 user interface periodically (every day, week, month, quarter, or year) to download the same data or make the same routine data analysis steps based on fixed or relative periods
 
 ***In short, dhis2r will save you time in the future***, especially if you do routine reporting like immunisation programs.
 
