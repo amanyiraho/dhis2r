@@ -111,7 +111,7 @@ dhis2_play_connection$get_metadata(endpoint = "organisationUnits",fields =  c("n
 
 ### Getting analytics data 
 
-Analytics data can include data from indicators, dataElements, program indicators, etc which returns the reported values
+Analytics data can include data from indicators, dataElements, program indicators, etc which returns the reported values.
 
 
 ```{r}
