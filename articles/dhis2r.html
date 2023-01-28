@@ -118,37 +118,37 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 4</span></span></span>
-<span><span class="co">#&gt;    displayName                  singular                 plural            href </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Category Options             categoryOption           categoryOptions   http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Programs                     program                  programs          http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Option Sets                  optionSet                optionSets        http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Organisation Unit Group Sets organisationUnitGroupSet organisationUnit… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Dashboards                   dashboard                dashboards        http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Event Reports                eventReport              eventReports      http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Documents                    document                 documents         http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Organisation Unit Groups     organisationUnitGroup    organisationUnit… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Api Token                    apiToken                 apiToken          http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Event Charts                 eventChart               eventCharts       http…</span></span>
+<span><span class="co">#&gt;    displayName              singular              plural                 href   </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> External File Resources  externalFileResource  externalFileResources  https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Category Combos          categoryCombo         categoryCombos         https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> User Groups              userGroup             userGroups             https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Icons                    icon                  icons                  https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Category Option Combos   categoryOptionCombo   categoryOptionCombos   https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Proposals                proposal              proposals              https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Organisation Unit Levels organisationUnitLevel organisationUnitLevels https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Event Reports            eventReport           eventReports           https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Program Rule Actions     programRuleAction     programRuleActions     https:…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Visualizations           visualization         visualizations         https:…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 77 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,046 × 2</span></span></span>
-<span><span class="co">#&gt;    name                                        id         </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Accute Flaccid Paralysis (Deaths &lt; 5 yrs)<span style="color: #949494;">"</span> FTRrcoaog83</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Actiontracker_Action status<span style="color: #949494;">"</span>               f8JYVWLC7rE</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Actiontracker_Description<span style="color: #949494;">"</span>                 GsbZkewUna5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>Actiontracker_Method<span style="color: #949494;">"</span>                      W50aguV39tU</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>Actiontracker_Remarks / comments<span style="color: #949494;">"</span>          FnengvwgsQv</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>Actiontracker_Review Date<span style="color: #949494;">"</span>                 nodiP54ocf5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>Actiontracker_Solution <span style="color: #949494;">"</span>                   upT2cOT6UfJ</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Action Linkage<span style="color: #949494;">"</span>  Y4CIGFwWYJD</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Gap Linkage<span style="color: #949494;">"</span>     kBkyDytdOmC</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>Actiontracker_Title<span style="color: #949494;">"</span>                       JbMaVyglSit</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,036 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 2</span></span></span>
+<span><span class="co">#&gt;    name                                      id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  hCVSHjcml9g</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,026 more rows</span></span></span></code></pre></div>
 <p>The code above only returns it’s name and code/ID used on DHIS2, we
 shall use the code to get analytics.</p>
 <div class="section level4">
@@ -212,20 +212,20 @@ shall use the code to get analytics.</p>
 <p>dataElements</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>,<span class="st">"aggregationType"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,046 × 3</span></span></span>
-<span><span class="co">#&gt;    name                                        aggregationType id         </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Accute Flaccid Paralysis (Deaths &lt; 5 yrs)<span style="color: #949494;">"</span> SUM             FTRrcoaog83</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Actiontracker_Action status<span style="color: #949494;">"</span>               NONE            f8JYVWLC7rE</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Actiontracker_Description<span style="color: #949494;">"</span>                 NONE            GsbZkewUna5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>Actiontracker_Method<span style="color: #949494;">"</span>                      NONE            W50aguV39tU</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>Actiontracker_Remarks / comments<span style="color: #949494;">"</span>          NONE            FnengvwgsQv</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>Actiontracker_Review Date<span style="color: #949494;">"</span>                 NONE            nodiP54ocf5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>Actiontracker_Solution <span style="color: #949494;">"</span>                   NONE            upT2cOT6UfJ</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Action Linkage<span style="color: #949494;">"</span>  NONE            Y4CIGFwWYJD</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>Actiontracker_Solution To Gap Linkage<span style="color: #949494;">"</span>     NONE            kBkyDytdOmC</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>Actiontracker_Title<span style="color: #949494;">"</span>                       NONE            JbMaVyglSit</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,036 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 3</span></span></span>
+<span><span class="co">#&gt;    name                                      aggregationType id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) SUM             FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   SUM             P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         SUM             FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   SUM             M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     NONE            WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      SUM             uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            AVERAGE         eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              AVERAGE         qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              SUM             JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  SUM             hCVSHjcml9g</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,026 more rows</span></span></span></code></pre></div>
 <p>organisationUnits</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span>

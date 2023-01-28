@@ -149,20 +149,20 @@
 <p>You can start with with metadata availabe on that DHIS2 instance</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 1,046 × 2</span></span>
-<span><span class="co">#&gt;    name                                        id         </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                                       &lt;chr&gt;      </span></span>
-<span><span class="co">#&gt;  1 "Accute Flaccid Paralysis (Deaths &lt; 5 yrs)" FTRrcoaog83</span></span>
-<span><span class="co">#&gt;  2 "Actiontracker_Action status"               f8JYVWLC7rE</span></span>
-<span><span class="co">#&gt;  3 "Actiontracker_Description"                 GsbZkewUna5</span></span>
-<span><span class="co">#&gt;  4 "Actiontracker_Method"                      W50aguV39tU</span></span>
-<span><span class="co">#&gt;  5 "Actiontracker_Remarks / comments"          FnengvwgsQv</span></span>
-<span><span class="co">#&gt;  6 "Actiontracker_Review Date"                 nodiP54ocf5</span></span>
-<span><span class="co">#&gt;  7 "Actiontracker_Solution "                   upT2cOT6UfJ</span></span>
-<span><span class="co">#&gt;  8 "Actiontracker_Solution To Action Linkage"  Y4CIGFwWYJD</span></span>
-<span><span class="co">#&gt;  9 "Actiontracker_Solution To Gap Linkage"     kBkyDytdOmC</span></span>
-<span><span class="co">#&gt; 10 "Actiontracker_Title"                       JbMaVyglSit</span></span>
-<span><span class="co">#&gt; # … with 1,036 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 1,036 × 2</span></span>
+<span><span class="co">#&gt;    name                                      id         </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                                     &lt;chr&gt;      </span></span>
+<span><span class="co">#&gt;  1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
+<span><span class="co">#&gt;  2 Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt;  3 Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt;  4 Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0</span></span>
+<span><span class="co">#&gt;  5 Additional medication                     WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt;  6 Additional notes related to facility      uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt;  7 Admission Date                            eMyVanycQSC</span></span>
+<span><span class="co">#&gt;  8 Age in years                              qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt;  9 Age of LLINs                              JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; 10 Albendazole given at ANC (2nd trimester)  hCVSHjcml9g</span></span>
+<span><span class="co">#&gt; # … with 1,026 more rows</span></span></code></pre></div>
 <p>You also get metadata about organisation Units</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -185,7 +185,7 @@
 <div class="section level3">
 <h3 id="getting-analytics-data">Getting analytics data<a class="anchor" aria-label="anchor" href="#getting-analytics-data"></a>
 </h3>
-<p>Analytics data can include data from indicators, dataElements, program indicators, etc which returns the reported values</p>
+<p>Analytics data can include data from indicators, dataElements, program indicators, etc which returns the reported values.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"FTRrcoaog83"</span>, <span class="co">#Accute Flaccid Paralysis (Deaths &lt; 5 yrs),</span></span>
 <span>                                    org_unit <span class="op">=</span> <span class="st">"ImspTQPwCqd"</span>, <span class="co">#Sierra Leone (National level)</span></span>
