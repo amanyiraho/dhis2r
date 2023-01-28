@@ -5,11 +5,11 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/amanyiraho/dhis2r/workflows/R-CMD-check/badge.svg)](https://github.com/amanyiraho/dhis2r/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/amanyiraho/dhis2r/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amanyiraho/dhis2r?branch=master)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
@@ -114,20 +114,20 @@ You can start with with metadata availabe on that DHIS2 instance
 
 ``` r
 dhis2_play_connection$get_metadata(endpoint = "dataElements")
-#> # A tibble: 1,046 × 2
-#>    name                                        id         
-#>    <chr>                                       <chr>      
-#>  1 "Accute Flaccid Paralysis (Deaths < 5 yrs)" FTRrcoaog83
-#>  2 "Actiontracker_Action status"               f8JYVWLC7rE
-#>  3 "Actiontracker_Description"                 GsbZkewUna5
-#>  4 "Actiontracker_Method"                      W50aguV39tU
-#>  5 "Actiontracker_Remarks / comments"          FnengvwgsQv
-#>  6 "Actiontracker_Review Date"                 nodiP54ocf5
-#>  7 "Actiontracker_Solution "                   upT2cOT6UfJ
-#>  8 "Actiontracker_Solution To Action Linkage"  Y4CIGFwWYJD
-#>  9 "Actiontracker_Solution To Gap Linkage"     kBkyDytdOmC
-#> 10 "Actiontracker_Title"                       JbMaVyglSit
-#> # … with 1,036 more rows
+#> # A tibble: 1,036 × 2
+#>    name                                      id         
+#>    <chr>                                     <chr>      
+#>  1 Accute Flaccid Paralysis (Deaths < 5 yrs) FTRrcoaog83
+#>  2 Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC
+#>  3 Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS
+#>  4 Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0
+#>  5 Additional medication                     WO8yRIZb7nb
+#>  6 Additional notes related to facility      uF1DLnZNlWe
+#>  7 Admission Date                            eMyVanycQSC
+#>  8 Age in years                              qrur9Dvnyt5
+#>  9 Age of LLINs                              JuTpJ2Ywq5b
+#> 10 Albendazole given at ANC (2nd trimester)  hCVSHjcml9g
+#> # … with 1,026 more rows
 ```
 
 You also get metadata about organisation Units
