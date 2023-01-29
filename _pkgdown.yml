@@ -2,9 +2,9 @@ url: http://www.amanyiraho.com/dhis2r/
 template:
   bootstrap: 5
 authors:
-  GEEKS:
-    html: <img src='man/figures/geeks-logo.png' width='130' alt='GEEKS'/>
   AFENET:
     html: <img src='man/figures/afenet-logo.png' width='130' alt='AFENET'/>
     href: https://www.afenet.net/
-
+  CDC:
+    html: <img src='man/figures/cdc-logo.svg' width='100' alt='CDC'/>
+    href: https://www.cdc.gov/

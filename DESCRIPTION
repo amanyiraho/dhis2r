@@ -1,19 +1,15 @@
 Package: dhis2r
-Title: An R client for the Dhis2 web API
-Version: 0.0.0.9000
+Title: R client for the DHIS2 web API
+Version: 0.1.0
 Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-7747-1367")),
-    person("GEEKS", role = "cph"),
-    person("AFENET", role = "fnd")
+    person("AFENET", role = "cph"),
+    person("CDC", role = "fnd")
   )
-Description: Pull data from a DHIS2 instance into R without the hassle of
-    logging into the DHIS2 user interface every day, week, month, quarter,
-    or year to download the same data or make the same routine data
-    analysis steps based on fixed or relative periods.
+Description: Pull data from a DHIS2 instance into R.
 License: MIT + file LICENSE
-URL: https://github.com/amanyiraho/dhis2r,
-    http://www.amanyiraho.com/dhis2r/
+URL: https://github.com/amanyiraho/dhis2r
 BugReports: https://github.com/amanyiraho/dhis2r/issues
 Imports: 
     attempt,
@@ -26,7 +22,5 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-Depends: R (>= 2.10)
 Encoding: UTF-8
-VignetteBuilder: knitr
 RoxygenNote: 7.2.3
