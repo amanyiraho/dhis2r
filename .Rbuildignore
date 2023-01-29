@@ -12,3 +12,5 @@
 ^\.github$
 ^codecov\.yml$
 ^\.covrignore$
+^doc$
+^Meta$

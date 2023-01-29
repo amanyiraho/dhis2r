@@ -14,15 +14,13 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 
 ## Overview
 
-**dhis2r** is an R client for the DHIS2 web API.
+`dhis2r` is an R client for the DHIS2 web API.
 
-Pull data from a DHIS2 instance into R without the hassle of logging
-into the DHIS2 user interface periodically (every day, week, month,
-quarter, or year) to download the same data or make the same routine
-data analysis steps based on fixed or relative periods
+Pull data from a DHIS2 instance into R without logging into the DHIS2
+user interface.
 
-***In short, dhis2r will save you time in the future***, especially if
-you do routine reporting like immunisation programs.
+`dhis2r`, if used with Rmarkdown, quarto, Rshiny, etc., can improve
+routine reporting and data requests.
 
 ### Motivation for this package
 
@@ -36,47 +34,13 @@ health data. 2.4 billion people (30% of the world’s population) live in
 countries where DHIS2 is used. (source: <https://dhis2.org/>)
 
 With the increasing number of data managers/analysts downloading data
-from dhis2 instances to make **routine period** reports, data
+from DHIS2 instances to make **routine period** reports, data
 visualisation and dashboards, this R package can make it much easier to
-pull the required data in one click and much faster.
+pull the required data.
 
-There are over 2 million users of R, and some of them periodically
-analyse data from DHIS2, like me; and support health programs which
-affect over the 2.4 billion people.
-
-#### Some of the scenarios this R package can change for data managers :
-
-- During routine periodic (monthly, quarterly, yearly) reporting, you
-  login into a DHIS2 instance, make several clicks to choose the period,
-  organisation unit and indicator and then download data. If you have
-  made an error yet closed the browser tab, you have to do the same task
-  repeatedly. On top of that, you must also go through the same hassle
-  the next month, quarter and year.
-
-- Sometimes you have several data requests, yet only one variable
-  changes and you have to respond to them with limited time.
-
-- Sometimes, you need to change browsers or call a colleague to download
-  data on your behalf.
-
-- Most reports after an immunisation campaign are similar, i.e. with
-  identical data visualisations and conclusions on whether the campaign
-  was successful. The only thing that changes is the data.
-
-*Why do you have to carry out the same data download and data analysis
-steps, periodically?*
-
-#### How this package solves most of the above issues.
-
-- **dhis2r** package can automate most of the steps to download data
-  from a DHIS2 instance, and you can get the data with just one click
-  since all the steps are written in terms of code.
-
-- **dhis2r** opens up opportunities to automate data requests, periodic
-  reports and dashboards with other technologies.
-
-- If a data manager has made an error by choosing the wrong period, they
-  need to change one character string and rerun the report.
+There are over 2 million R users, some of whom periodically analyse data
+from DHIS2; and support health programs which affect over the 2.4
+billion people.
 
 ## Installation
 
@@ -88,73 +52,37 @@ You can install the development version of dhis2r from
 devtools::install_github("amanyiraho/dhis2r")
 ```
 
-## Examples on how to use this package
+## Usage
 
-This is a basic example which shows you how to a get data from a Dhis2
-instance.
+### How to connect to a DHIS2?
 
-#### Connect to DHIS2 instance
+Users must be authenticated to access a specific DHIS2 instance before
+connecting to it.
 
-Using your password and username login in the DHIS instance
+The easiest way to connect to a DHIS2 instance using dhis2r is to use
+the `username` and `password` of the DHIS2 user.
 
 ``` r
 library(dhis2r)
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", 
-                                    username = "admin", 
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+                                    username = "admin",
                                     password = "district",
                                     api_version = "2.39.0.1",
                                     api_version_position = "before")
 ```
 
-### Getting metadata
+`Dhis2r$new()` returns a `Dhis2r` R6 class which represents a DHIS2
+connection and can be used to query the DHIS2 instance
 
-Get metadata using the above created connect
+*No need to log in again when performing other querying tasks.*
 
-You can start with with metadata availabe on that DHIS2 instance
+### How to pull data from DHIS2
 
-``` r
-dhis2_play_connection$get_metadata(endpoint = "dataElements")
-#> # A tibble: 1,036 × 2
-#>    name                                      id         
-#>    <chr>                                     <chr>      
-#>  1 Accute Flaccid Paralysis (Deaths < 5 yrs) FTRrcoaog83
-#>  2 Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC
-#>  3 Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS
-#>  4 Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0
-#>  5 Additional medication                     WO8yRIZb7nb
-#>  6 Additional notes related to facility      uF1DLnZNlWe
-#>  7 Admission Date                            eMyVanycQSC
-#>  8 Age in years                              qrur9Dvnyt5
-#>  9 Age of LLINs                              JuTpJ2Ywq5b
-#> 10 Albendazole given at ANC (2nd trimester)  hCVSHjcml9g
-#> # … with 1,026 more rows
-```
-
-You also get metadata about organisation Units
-
-``` r
-
-dhis2_play_connection$get_metadata(endpoint = "organisationUnits",fields =  c("name","id", "level"))
-#> # A tibble: 1,332 × 3
-#>    name                      id          level
-#>    <chr>                     <chr>       <int>
-#>  1 Adonkia CHP               Rp268JB6Ne4     4
-#>  2 Afro Arab Clinic          cDw53Ej8rju     4
-#>  3 Agape CHP                 GvFqTavdpGE     4
-#>  4 Ahamadyya Mission Cl      plnHVbJR6p4     4
-#>  5 Ahmadiyya Muslim Hospital BV4IomHvri4     4
-#>  6 Air Port Centre, Lungi    qjboFI0irVu     4
-#>  7 Alkalia CHP               dWOAzMcK2Wt     4
-#>  8 Allen Town Health Post    kbGqmM6ZWWV     4
-#>  9 Approved School CHP       eoYV2p74eVz     4
-#> 10 Arab Clinic               nq7F0t1Pz6t     4
-#> # … with 1,322 more rows
-```
-
-### Getting analytics data
+As an example, let’s pull Analytics data of
+`Acute Flaccid Paralysis (Deaths < 5 yrs)`
 
 Analytics data can include data from indicators, dataElements, program
-indicators, etc which returns the reported values.
+indicators, etc.
 
 ``` r
 dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths < 5 yrs),
@@ -169,7 +97,17 @@ dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Pa
 #> 2 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone January 2022     12
 ```
 
-###### You can do way more with dhis2r, refer to the acticles where I will be posting demos and different use cases.
+You can pull data on the following:
+
+- Information about the account
+- Access rights information about the account
+- Metadata
+- Organisation units
+- Analytics
+- All possible resources
+
+For more in depth illustration use the vignette `dhis2r`
+`vignette("dhis2r")`
 
 Please note that the dhis2r project is released with a [Contributor Code
 of

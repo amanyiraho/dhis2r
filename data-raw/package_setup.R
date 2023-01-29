@@ -15,21 +15,19 @@ my_desc$set("Package", "dhis2r")
 #Set your name
 my_desc$set("Authors@R", "c( person('Robinson', 'Amanyiraho', email = 'amanyiraho@gmail.com',
             role = c('cre', 'aut'), comment = c(ORCID = '0000-0002-7747-1367')),
-            person('GEEKS', role = c('cph')),
-            person('AFENET', role = c('fnd')))")
+            person('AFENET', role = c('cph')),
+            person('CDC', role = c('fnd')))")
 
 # Remove some author fields
 my_desc$del("Maintainer")
 
 # Set the version
-my_desc$set_version("0.0.0.9000")
+my_desc$set_version("0.1.0")
 
 # The title of your package
-my_desc$set(Title = "An R client for the Dhis2 web API")
+my_desc$set(Title = "R client for the DHIS2 web API")
 # The description of your package
-my_desc$set(Description = "Pull data from a DHIS2 instance into R without the hassle of logging into the
-            DHIS2 user interface every day, week, month, quarter, or year to download the same data or
-            make the same routine data analysis steps based on fixed or relative periods.")
+my_desc$set(Description = "Pull data from a DHIS2 instance into R.")
 # The urls
 my_desc$set("URL", "https://github.com/amanyiraho/dhis2r")
 my_desc$set("BugReports", "https://github.com/amanyiraho/dhis2r/issues")
@@ -39,7 +37,7 @@ my_desc$write(file = "DESCRIPTION")
 # If you want to use the MIT licence, code of conduct, and lifecycle badge
 use_mit_license()
 use_code_of_conduct(contact = "amanyiraho@gmail.com")
-use_lifecycle_badge("Experimental")
+use_lifecycle_badge("stable")
 use_news_md()
 
 # Get the dependencies
@@ -49,12 +47,14 @@ use_package("attempt")
 use_package("R6")
 #use_package("purrr")
 use_package("curl")
+use_package("dplyr")
 
 #Suggestion
 use_package("testthat",type = "Suggests")
 use_package("covr",type = "Suggests")
 use_package("knitr",type = "Suggests")
 use_package("rmarkdown",type = "Suggests")
+
 
 #
 
