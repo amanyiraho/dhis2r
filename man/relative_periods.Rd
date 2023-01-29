@@ -12,7 +12,7 @@ A data frame with 30 rows and 2 columns:
 }
 }
 \source{
-\url{<https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/introduction.html>}
+"https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/introduction.html"
 }
 \usage{
 data(relative_periods)

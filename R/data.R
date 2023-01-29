@@ -9,5 +9,5 @@
 #'   \item{period}{Relative period to be used}
 #' }
 #' @usage  data(relative_periods)
-#' @source \url{<https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/introduction.html>}
+#' @source "https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/introduction.html"
 "relative_periods"
