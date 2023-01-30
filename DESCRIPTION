@@ -3,9 +3,7 @@ Title: R client for the DHIS2 web API
 Version: 0.1.0
 Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut"),
-           comment = c(ORCID = "0000-0002-7747-1367")),
-    person("AFENET", role = "cph"),
-    person("CDC", role = "fnd")
+           comment = c(ORCID = "0000-0002-7747-1367"))
   )
 Description: Pull data from a DHIS2 instance into R.
 License: MIT + file LICENSE
