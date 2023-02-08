@@ -1,7 +1,3 @@
 url: http://www.amanyiraho.com/dhis2r/
 template:
   bootstrap: 5
-authors:
-  AFENET:
-    html: <img src='man/figures/afenet-logo.png' width='130' alt='AFENET'/>
-    href: https://www.afenet.net/

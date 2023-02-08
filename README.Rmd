@@ -9,7 +9,6 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  cache = T,
   fig.path = "man/figures/README-",
   out.width = "100%"
 )

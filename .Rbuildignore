@@ -14,3 +14,5 @@
 ^\.covrignore$
 ^doc$
 ^Meta$
+^cran-comments\.md$
+^revdep$
