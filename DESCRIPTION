@@ -1,26 +1,26 @@
 Package: dhis2r
-Title: R client for the DHIS2 web API
+Title: R Client for the 'DHIS2' Web API
 Version: 0.1.0
 Authors@R: c(
-    person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut"),
+    person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut",  "cph"),
            comment = c(ORCID = "0000-0002-7747-1367"))
   )
-Description: Pull data from a DHIS2 instance into R.
+Description: Connet and pull data from a 'DHIS2 (District Health Information Software 2)' instance into R.
 License: MIT + file LICENSE
 URL: https://github.com/amanyiraho/dhis2r
 BugReports: https://github.com/amanyiraho/dhis2r/issues
 Imports: 
-    attempt,
-    curl,
-    dplyr,
-    httr2,
-    R6
+    attempt (>= 0.3.1),
+    curl (>= 4.3.3),
+    dplyr (>= 1.0.10),
+    httr2 (>= 0.2.2),
+    R6 (>= 2.5.1)
 Suggests: 
     covr,
     knitr,
     rmarkdown,
     testthat
-Depends: R (>= 2.10)
+Depends: R (>= 4.1.0)
 Encoding: UTF-8
 VignetteBuilder: knitr
 RoxygenNote: 7.2.3

@@ -4,11 +4,11 @@
 \name{dhis2r-package}
 \alias{dhis2r}
 \alias{dhis2r-package}
-\title{dhis2r: R client for the DHIS2 web API}
+\title{dhis2r: R Client for the 'DHIS2' Web API}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Pull data from a DHIS2 instance into R.
+Connet and pull data from a 'DHIS2 (District Health Information Software 2)' instance into R.
 }
 \seealso{
 Useful links:
@@ -19,13 +19,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Robinson Amanyiraho \email{amanyiraho@gmail.com} (\href{https://orcid.org/0000-0002-7747-1367}{ORCID})
-
-Other contributors:
-\itemize{
-  \item AFENET [copyright holder]
-  \item CDC [funder]
-}
+\strong{Maintainer}: Robinson Amanyiraho \email{amanyiraho@gmail.com} (\href{https://orcid.org/0000-0002-7747-1367}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}
