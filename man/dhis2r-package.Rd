@@ -4,7 +4,7 @@
 \name{dhis2r-package}
 \alias{dhis2r}
 \alias{dhis2r-package}
-\title{dhis2r: R Client for the 'DHIS2' Web API}
+\title{dhis2r: Client for the 'DHIS2' Web API}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
