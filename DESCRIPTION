@@ -1,5 +1,5 @@
 Package: dhis2r
-Title: R Client for the 'DHIS2' Web API
+Title: Client for the 'DHIS2' Web API
 Version: 0.1.0
 Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut",  "cph"),
