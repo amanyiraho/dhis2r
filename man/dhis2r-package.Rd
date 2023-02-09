@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Connet and pull data from a 'DHIS2 (District Health Information Software 2)' instance into R.
+Connect and pull data from a 'DHIS2 (District Health Information Software 2)' instance into R.
 }
 \seealso{
 Useful links:

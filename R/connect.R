@@ -1,4 +1,4 @@
-#' Connect and pull/get data from a Dhis2 instance
+#' Connect and pull/get data from a DHIS2 instance
 #' @format An R6 class called Dhis2r.
 #' @description
 #' To create a DHIS2 connection, you need a DHIS2 base URL, username, password, and an API version
@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' # connect to the dhis2 instance
+#' # connect to the DHIS2 instance
 #' dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
 #'  username = "admin",  password = "district",api_version = "2.39.0.1")
 #'
