@@ -121,19 +121,13 @@
 <div class="section level3">
 <h3 id="how-to-pull-data-from-dhis2">How to pull data from DHIS2<a class="anchor" aria-label="anchor" href="#how-to-pull-data-from-dhis2"></a>
 </h3>
-<p>As an example, let’s pull Analytics data of <code>Acute Flaccid Paralysis (Deaths &lt; 5 yrs)</code></p>
+<p>As an example, let’s pull Analytics data of <code>BCG doses given</code></p>
 <p>Analytics data can include data from indicators, dataElements, program indicators, etc.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"FTRrcoaog83"</span>, <span class="co">#Accute Flaccid Paralysis (Deaths &lt; 5 yrs),</span></span>
-<span>                                    org_unit <span class="op">=</span> <span class="st">"ImspTQPwCqd"</span>, <span class="co">#Sierra Leone (National level)</span></span>
-<span>                                    period <span class="op">=</span> <span class="st">"LAST_12_MONTHS"</span>,</span>
-<span>                                    output_scheme <span class="op">=</span> <span class="st">"NAME"</span></span>
-<span>                                                 <span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
-<span><span class="co">#&gt;   analytic                                  org_unit     period        value</span></span>
-<span><span class="co">#&gt;   &lt;fct&gt;                                     &lt;fct&gt;        &lt;chr&gt;         &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2022    34</span></span>
-<span><span class="co">#&gt; 2 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2022     12</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given</span></span>
+<span><span class="co">#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)</span></span>
+<span><span class="co">#                                     period = "202101",</span></span>
+<span><span class="co">#                                     output_scheme = "NAME" )</span></span></code></pre></div>
 <p>You can pull data on the following:</p>
 <ul>
 <li>Information about the account</li>
@@ -151,6 +145,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=dhis2r" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/amanyiraho/dhis2r/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/amanyiraho/dhis2r/issues" class="external-link">Report a bug</a></li>
 </ul>
@@ -191,6 +186,7 @@
 <li><a href="https://app.codecov.io/gh/amanyiraho/dhis2r?branch=master" class="external-link"><img src="https://codecov.io/gh/amanyiraho/dhis2r/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=dhis2r" class="external-link"><img src="https://www.r-pkg.org/badges/version/dhis2r" alt="CRAN status"></a></li>
 </ul>
 </div>
 
