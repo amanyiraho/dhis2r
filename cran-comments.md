@@ -1,10 +1,21 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Fixed the misspelled word in DESCRIPTION from Connet (8:14) to Connect
+* Include LazyData: true in DESCRIPTION
 
-* In the DESCRIPTION I omitted the redundant "R" from your title. Just wrote : "Client for
-the 'DHIS2' Web API".
+* included in Sys.setenv(TZ = "Africa/Kampala") .Rprofile
+
+* Updated the test that depended on dynamic data
+
+* Commented out code that used dynamic data in README and vignette
+
+* I have tested the package on GITHUB actions and all past using these OSs
+   - {os: macos-latest,   r: 'release'}
+   - {os: windows-latest, r: 'release'}
+   - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
+   - {os: ubuntu-latest,   r: 'release'}
+   - {os: ubuntu-latest,   r: 'oldrel-1'}
+          
 
 
 ## R CMD check results
