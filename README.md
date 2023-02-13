@@ -10,6 +10,8 @@ coverage](https://codecov.io/gh/amanyiraho/dhis2r/branch/master/graph/badge.svg)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/dhis2r)](https://CRAN.R-project.org/package=dhis2r)
 <!-- badges: end -->
 
 ## Overview
@@ -78,23 +80,16 @@ connection and can be used to query the DHIS2 instance
 
 ### How to pull data from DHIS2
 
-As an example, let’s pull Analytics data of
-`Acute Flaccid Paralysis (Deaths < 5 yrs)`
+As an example, let’s pull Analytics data of `BCG doses given`
 
 Analytics data can include data from indicators, dataElements, program
 indicators, etc.
 
 ``` r
-dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths < 5 yrs),
-                                    org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
-                                    period = "LAST_12_MONTHS",
-                                    output_scheme = "NAME"
-                                                 )
-#> # A tibble: 2 × 4
-#>   analytic                                  org_unit     period        value
-#>   <fct>                                     <fct>        <chr>         <dbl>
-#> 1 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone February 2022    34
-#> 2 Accute Flaccid Paralysis (Deaths < 5 yrs) Sierra Leone January 2022     12
+# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
+#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
+#                                     period = "202101",
+#                                     output_scheme = "NAME" )
 ```
 
 You can pull data on the following:
