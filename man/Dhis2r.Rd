@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect.R
 \name{Dhis2r}
 \alias{Dhis2r}
-\title{Connect and pull/get data from a Dhis2 instance}
+\title{Connect and pull/get data from a DHIS2 instance}
 \format{
 An R6 class called Dhis2r.
 }
@@ -15,7 +15,7 @@ You can use a DHIS2 instance connection to get data several times without needin
 }
 \examples{
 \dontrun{
-# connect to the dhis2 instance
+# connect to the DHIS2 instance
 dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
  username = "admin",  password = "district",api_version = "2.39.0.1")
 

@@ -35,12 +35,11 @@ test_that("Type of result of possible fields is a character vector", {
 
 
 
-test_that('Analytics dataframe returned has columns "analytic", "org_unit", "period", "value" are return', {
-
-  expect_equal(names(dhis2_play_connection$get_analytics(analytic = c("FnYCr2EAzWS"),
+test_that('Wrong analytic ID returns an error', {
+  expect_error(dhis2_play_connection$get_analytics(analytic = c("random_id"),
                                                    org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
-                                                   period = "LAST_12_MONTHS",
-                                                   output_scheme = "NAME")), c("analytic", "org_unit", "period", "value"))
+                                                   period = "202302",
+                                                   output_scheme = "NAME"))
 
 })
 
