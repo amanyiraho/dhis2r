@@ -118,24 +118,24 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 4</span></span></span>
-<span><span class="co">#&gt;    displayName              singular              plural                 href   </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Program Sections         programSection        programSections        https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Program Data Elements    programDataElement    programDataElements    https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Organisation Unit Levels organisationUnitLevel organisationUnitLevels https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Indicator Group Sets     indicatorGroupSet     indicatorGroupSets     https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Map Views                mapView               mapViews               https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Tracked Entity Types     trackedEntityType     trackedEntityTypes     https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Relationship Types       relationshipType      relationshipTypes      https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Min Max Data Elements    minMaxDataElement     minMaxDataElements     https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Program Indicator Groups programIndicatorGroup programIndicatorGroups https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Sections                 section               sections               https:…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 77 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt;    displayName             singular             plural                href      </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Visualizations          visualization        visualizations        https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Sections                section              sections              https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Data Approval Workflows dataApprovalWorkflow dataApprovalWorkflows https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> User Roles              userRole             userRoles             https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Push Analysis           pushAnalysis         pushAnalysis          https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Stages          programStage         programStages         https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Min Max Data Elements   minMaxDataElement    minMaxDataElements    https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Sms Commands            smsCommand           smsCommands           https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Dashboards              dashboard            dashboards            https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Categories              category             categories            https://p…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 77 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,046 × 2</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 2</span></span></span>
 <span><span class="co">#&gt;    name                                      id         </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
@@ -148,7 +148,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              qrur9Dvnyt5</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              JuTpJ2Ywq5b</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  hCVSHjcml9g</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,036 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1,026 more rows</span></span></span></code></pre></div>
 <p>The code above only returns it’s name and code/ID used on DHIS2, we
 shall use the code to get analytics.</p>
 <div class="section level4">
@@ -212,7 +212,7 @@ shall use the code to get analytics.</p>
 <p>dataElements</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>,<span class="st">"aggregationType"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,046 × 3</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,036 × 3</span></span></span>
 <span><span class="co">#&gt;    name                                      aggregationType id         </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) SUM             FTRrcoaog83</span></span>
@@ -225,25 +225,25 @@ shall use the code to get analytics.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Age in years                              AVERAGE         qrur9Dvnyt5</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age of LLINs                              SUM             JuTpJ2Ywq5b</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Albendazole given at ANC (2nd trimester)  SUM             hCVSHjcml9g</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,036 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1,026 more rows</span></span></span></code></pre></div>
 <p>organisationUnits</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span>
 <span>                                                        fields <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,334 × 3</span></span></span>
-<span><span class="co">#&gt;    name                        id          level</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Adonkia CHP<span style="color: #949494;">"</span>               Rp268JB6Ne4     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Afro Arab Clinic<span style="color: #949494;">"</span>          cDw53Ej8rju     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Agape CHP<span style="color: #949494;">"</span>                 GvFqTavdpGE     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>Ahamadyya Mission Cl<span style="color: #949494;">"</span>      plnHVbJR6p4     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>Ahmadiyya Muslim Hospital<span style="color: #949494;">"</span> BV4IomHvri4     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>Air Port Centre, Lungi<span style="color: #949494;">"</span>    qjboFI0irVu     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>Alkalia CHP<span style="color: #949494;">"</span>               dWOAzMcK2Wt     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>Allen Town Health Post<span style="color: #949494;">"</span>    kbGqmM6ZWWV     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>Amhara Health Office <span style="color: #949494;">"</span>     t5C2hAOPhYF     2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>Approved School CHP<span style="color: #949494;">"</span>       eoYV2p74eVz     4</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1,324 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1,332 × 3</span></span></span>
+<span><span class="co">#&gt;    name                      id          level</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Adonkia CHP               Rp268JB6Ne4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Afro Arab Clinic          cDw53Ej8rju     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Agape CHP                 GvFqTavdpGE     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Ahamadyya Mission Cl      plnHVbJR6p4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Ahmadiyya Muslim Hospital BV4IomHvri4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Air Port Centre, Lungi    qjboFI0irVu     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Alkalia CHP               dWOAzMcK2Wt     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Allen Town Health Post    kbGqmM6ZWWV     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Approved School CHP       eoYV2p74eVz     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Arab Clinic               nq7F0t1Pz6t     4</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1,322 more rows</span></span></span></code></pre></div>
 <p>You can use <code>":all"</code> in the fields to get all fields of
 metadata associated with a resources</p>
 <p>periodTypes</p>
@@ -286,7 +286,7 @@ metadata associated with a resources</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> ANC LLITN coverage                   Tt5TAvdfdVK</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> ANC TT2 coverage                     puykO1tbcdi</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> ANC visits per clinical professional Lzg9LtG1xg3</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 67 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 67 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get-analtyics">Get analtyics<a class="anchor" aria-label="anchor" href="#get-analtyics"></a>
