@@ -46,6 +46,11 @@ billion people.
 
 ## Installation
 
+Install the stable version from CRAN
+
+``` r
+install.packages("dhis2r")
+```
 You can install the development version of dhis2r from
 [GitHub](https://github.com/) with:
 
