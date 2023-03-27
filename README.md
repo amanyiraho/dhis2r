@@ -46,11 +46,6 @@ billion people.
 
 ## Installation
 
-Install the stable version from CRAN
-
-``` r
-install.packages("dhis2r")
-```
 You can install the development version of dhis2r from
 [GitHub](https://github.com/) with:
 
@@ -91,10 +86,10 @@ Analytics data can include data from indicators, dataElements, program
 indicators, etc.
 
 ``` r
-# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
-#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
-#                                     period = "202101",
-#                                     output_scheme = "NAME" )
+ dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
+                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
+                                     period = "202101",
+                                     output_scheme = "NAME" )
 ```
 
 You can pull data on the following:

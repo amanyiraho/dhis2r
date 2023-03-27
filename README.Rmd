@@ -61,7 +61,7 @@ Users must be authenticated to access a specific DHIS2 instance before connectin
 The easiest way to connect to a DHIS2 instance using dhis2r is to use the `username` and `password` of the DHIS2 user.
 
 
-```{r}
+``` r
 library(dhis2r)
 dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
                                     username = "admin",
@@ -82,11 +82,11 @@ As an example, let's pull Analytics data of `BCG doses given`
 
 Analytics data can include data from indicators, dataElements, program indicators, etc.
 
-```{r}
-# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
-#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
-#                                     period = "202101",
-#                                     output_scheme = "NAME" )
+``` r
+ dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
+                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
+                                     period = "202101",
+                                     output_scheme = "NAME" )
 
 ```
 

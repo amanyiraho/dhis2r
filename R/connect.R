@@ -72,10 +72,11 @@ Dhis2r <- R6::R6Class(
       args <- list(base_url = base_url, username = username, password = password, api_version_position = api_version_position)
       #Check that at least one argument is not null
 
-      attempt::stop_if_any(args, is.null, "You need to specify all the four arguements")
+      attempt::stop_if_any(args, is.null,"You need to specify all arguements")
+      attempt::stop_if_none(args, is.character, "All arguements should be type character")
+
 
       if(is.null(api_version)){
-
         self$request_sent <- request(base_url = base_url) |>
           req_url_path_append("api")
 
@@ -115,11 +116,13 @@ Dhis2r <- R6::R6Class(
                   # Check for internet
                   check_internet()
 
-                 reponse <- self$request_sent  |>
+           response_object <- self$request_sent  |>
                    req_url_path_append("me") |>
                    req_perform()
 
-                 response_data  <-  reponse |>
+           print(response_object$url)
+
+                 response_data  <-  response_object |>
                    resp_body_json(simplifyVector = TRUE)
 
                  self$access_rights <- unlist(response_data[["access"]])
@@ -150,23 +153,31 @@ Dhis2r <- R6::R6Class(
 
                  if(is.null(endpoint)){
 
-                   reponse <- self$request_sent |>
+                   response_object <- self$request_sent |>
                      req_url_path_append("resources") |>
                      req_perform()
 
-                   response_data  <-  reponse |>
+                   print(response_object$url)
+
+                   response_data  <-  response_object |>
                      resp_body_json(simplifyVector = TRUE)
 
                    tibble::tibble(response_data$resources)
 
                  }else{
 
-                   reponse <- self$request_sent |>
+
+                   attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
+
+                   response_object <- self$request_sent |>
                      req_url_path_append(endpoint) |>
                      req_url_query(fields = paste0(fields, collapse = ",")) |>
                      req_perform()
 
-                   response_data  <-  reponse |>
+                   print(response_object$url)
+
+
+                   response_data  <-  response_object |>
                      resp_body_json(simplifyVector = TRUE)
 
 
@@ -184,18 +195,22 @@ Dhis2r <- R6::R6Class(
     #' @param endpoint a resource, get the available resources using `get_metadata()` without any arguments
     #'
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    get_metadata_fields = function(endpoint = NULL) {
-                  # Check for internet
-                  check_internet()
+    get_metadata_fields = function(endpoint) {
+      # Check for internet
+      check_internet()
+      attempt::stop_if(endpoint, is.null, "endpoint shouldnot be NULL")
+      attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
 
-                 reponse <- self$request_sent |>
+      response_object <- self$request_sent |>
                    req_url_path_append(endpoint) |>
                    req_url_query(fields = ":all") |>
                    req_url_query(paging = "true") |>
                    req_url_query(pageSize = "1") |>
                    req_perform()
 
-                 response_data  <-  reponse |>
+                 print(response_object$url)
+
+                 response_data  <-  response_object |>
                    resp_body_json(simplifyVector = TRUE)
 
 
@@ -216,6 +231,11 @@ Dhis2r <- R6::R6Class(
     get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME")) {
                   # Check for internet
                   check_internet()
+                  args <- list(analytic = analytic,org_unit= org_unit ,period = period, output_scheme = output_scheme)
+      #Check that at least one argument is not null
+
+                attempt::stop_if_any(args, is.null,"You need to specify all arguements")
+                attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
                  output_scheme <- match.arg(output_scheme)
 
@@ -223,13 +243,16 @@ Dhis2r <- R6::R6Class(
                  org_unit <- paste0("dimension=ou:", paste0(org_unit,collapse = ";"))
                  period <- paste0("dimension=pe:",  paste0(period,collapse = ";"))
 
-                 reponse <- self$request_sent |>
+                 response_object <- self$request_sent |>
                    req_url_path_append("analytics") |>
                    req_url_query(dimension= I(paste(analytic, org_unit, period, sep = "&"))) |>
                    req_url_query(outputIdScheme = output_scheme) |>
                    req_perform()
 
-                 response_data  <-  reponse |>
+                 print(response_object$url)
+
+
+                 response_data  <-  response_object |>
                    resp_body_json(simplifyVector = TRUE, flatten = TRUE)
 
                  if(length(response_data$rows) == 0){

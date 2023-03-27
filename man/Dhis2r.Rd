@@ -141,7 +141,7 @@ A data frame
 \subsection{Method \code{get_metadata_fields()}}{
 Get all possible fields for a specific metadata resource from a DHIS2 instance
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_metadata_fields(endpoint = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_metadata_fields(endpoint)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
