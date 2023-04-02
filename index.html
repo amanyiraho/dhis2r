@@ -95,11 +95,8 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install the stable version from CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"dhis2r"</span><span class="op">)</span></span></code></pre></div>
 <p>You can install the development version of dhis2r from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"amanyiraho/dhis2r"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -111,7 +108,7 @@
 </h3>
 <p>Users must be authenticated to access a specific DHIS2 instance before connecting to it.</p>
 <p>The easiest way to connect to a DHIS2 instance using dhis2r is to use the <code>username</code> and <code>password</code> of the DHIS2 user.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span>
 <span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>,</span>
 <span>                                    username <span class="op">=</span> <span class="st">"admin"</span>,</span>
@@ -126,11 +123,11 @@
 </h3>
 <p>As an example, let’s pull Analytics data of <code>BCG doses given</code></p>
 <p>Analytics data can include data from indicators, dataElements, program indicators, etc.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given</span></span>
-<span><span class="co">#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)</span></span>
-<span><span class="co">#                                     period = "202101",</span></span>
-<span><span class="co">#                                     output_scheme = "NAME" )</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"s46m5MS0hxu"</span>, <span class="co">#BCG doses given</span></span>
+<span>                                     org_unit <span class="op">=</span> <span class="st">"ImspTQPwCqd"</span>, <span class="co">#Sierra Leone (National level)</span></span>
+<span>                                     period <span class="op">=</span> <span class="st">"202101"</span>,</span>
+<span>                                     output_scheme <span class="op">=</span> <span class="st">"NAME"</span> <span class="op">)</span></span></code></pre></div>
 <p>You can pull data on the following:</p>
 <ul>
 <li>Information about the account</li>
