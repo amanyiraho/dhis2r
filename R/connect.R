@@ -61,43 +61,57 @@ Dhis2r <- R6::R6Class(
     #' @param base_url Base url e.g https://play.dhis2.org/
     #' @param username Registered username e.g "admin"
     #' @param password Registered password e.g "district"
+    #' @param api_token Personal Access Token (PAT) to use instead of username and password
     #' @param api_version The api version e.g "33"
     #' @param api_version_position position where the api_version is after or before in web API url i.e /api/
     #' @return A new `Dhis2r` object
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    initialize = function(base_url , username ,  password , api_version = NULL, api_version_position = c("after", "before")) {
+    initialize = function(base_url , username = NULL,  password = NULL, api_token = NULL, api_version = NULL, api_version_position = c("after", "before")) {
 
       api_version_position <- match.arg(api_version_position)
 
-      args <- list(base_url = base_url, username = username, password = password, api_version_position = api_version_position)
+      args <- list(base_url = base_url, api_version_position = api_version_position)
       #Check that at least one argument is not null
 
       attempt::stop_if_any(args, is.null,"You need to specify all arguements")
       attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
+      if(is.null(api_token)){
+        up <- list(username = username, password = password)
+        attempt::stop_if_any(up, is.null,"You need to specify either api_token or both, username and password")
+        attempt::stop_if_none(up, is.character, "The username and password argument should be type character")
+        self$request_sent <- request(base_url = base_url) |>
+          req_auth_basic(username = username, password = password )
+      }else if(!is.character(api_token)) {
+        stop("The api_token argument should be type character")
+      }
+      else {
+        self$request_sent <- request(base_url = base_url) |>
+          req_headers("Authorization" = paste("ApiToken", api_token, sep=" "))
+      }
+
 
       if(is.null(api_version)){
-        self$request_sent <- request(base_url = base_url) |>
+        self$request_sent <- self$request_sent |>
           req_url_path_append("api")
 
 
       }else if(!is.null(api_version) &  api_version_position == "before"){
 
-        self$request_sent <- request(base_url = base_url) |>
+        self$request_sent <- self$request_sent |>
           req_url_path_append(api_version) |>
           req_url_path_append("api")
 
 
       }else if(!is.null(api_version) &  api_version_position == "after"){
 
-        self$request_sent <- request(base_url = base_url) |>
+        self$request_sent <- self$request_sent |>
           req_url_path_append("api") |>
           req_url_path_append(api_version)
 
       }
 
       self$request_sent <-  self$request_sent |>
-        req_auth_basic(username = username, password = password ) |>
         req_url_query(paging = "false") |>
         req_headers("Accept" = "application/json") |>
         httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
