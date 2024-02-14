@@ -81,7 +81,7 @@ You can get more fields beyond ID and name
 
 
 ```{r}
- dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
+dhis2_play_connection$get_metadata_fields(endpoint = "organisationUnits")
 
 ```
 
@@ -123,10 +123,15 @@ dhis2_play_connection$get_metadata(endpoint = "indicators")
 ### Get analtyics
 
 ```{r}
-# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu",
-#                                     org_unit = c("O6uvpzGd5pu", "fdc6uOvgoji"),
-#                                     period = "202101",
-#                                     output_scheme = "NAME")
+ dt <- dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu",
+                                #    org_unit = c("O6uvpzGd5pu", "fdc6uOvgoji"),
+                                    org_unit =   c("C9uduqDZr9d", "fXT1scbEObM", "m0XorV4WWg0", "U514Dz4v9pv"),
+                                    period = "LAST_QUARTER",
+                                    output_scheme = "UID",
+                                    show_org_hierarchy = T )
+
+
+
 
 ```
 

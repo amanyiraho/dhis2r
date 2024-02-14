@@ -224,18 +224,20 @@ Dhis2r <- R6::R6Class(
     #' @param analytic  vector of ID of specific analytic(s) from a DHIS2 instance
     #' @param org_unit  vector of ID of specific organisation unit(s) from a DHIS2 instance
     #' @param period  vector of relative or fixed periods from a DHIS2 instance
-    #' @param output_scheme  Output type ID or Names of fields
-    #'
+    #' @param output_scheme  Output type ID or Names of fields (currently will return IDS still underdevelopment)
+    #' @param show_org_hierarchy Show result with organisation unit hierarchy
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME")) {
+    get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME"), show_org_hierarchy = FALSE) {
                   # Check for internet
                   check_internet()
-                  args <- list(analytic = analytic,org_unit= org_unit ,period = period, output_scheme = output_scheme)
+                  args <- list(analytic = analytic,org_unit= org_unit ,period = period,
+                               output_scheme = output_scheme)
       #Check that at least one argument is not null
 
                 attempt::stop_if_any(args, is.null,"You need to specify all arguements")
                 attempt::stop_if_none(args, is.character, "All arguements should be type character")
+                attempt::stop_if_not(show_org_hierarchy, is.logical, "show_hierarchy is MUST be logical value i.e TRUE or FALSE")
 
                  output_scheme <- match.arg(output_scheme)
 
@@ -247,6 +249,7 @@ Dhis2r <- R6::R6Class(
                    req_url_path_append("analytics") |>
                    req_url_query(dimension= I(paste(analytic, org_unit, period, sep = "&"))) |>
                    req_url_query(outputIdScheme = output_scheme) |>
+                   req_url_query(showHierarchy= ifelse(show_org_hierarchy, "true", "false")) |>
                    req_perform()
 
                  print(response_object$url)
@@ -255,22 +258,38 @@ Dhis2r <- R6::R6Class(
                  response_data  <-  response_object |>
                    resp_body_json(simplifyVector = TRUE, flatten = TRUE)
 
+                 response_data
+
+
                  if(length(response_data$rows) == 0){
 
                    as.data.frame(response_data$rows)
 
-                 }else{
-                   as.data.frame(response_data$rows) |>
-                      setNames(c("analytic", "org_unit", "period", "value")) |>
-                     tibble::as_tibble() |>
+                 } else {
+
+                 value_data  <- as.data.frame(response_data$rows) |>
+                     setNames(c("analytic", "orgunitid", "period", "value")) |>
                      dplyr::mutate(analytic = as.factor(analytic),
                                    org_unit = as.factor(org_unit),
                                    value = as.numeric(value))
-                   }
 
+                   if(show_org_hierarchy == TRUE){
 
+                     value_data
 
-               }
+                   } else ( output_scheme == "UID"){
+
+                     as.data.frame(dt$metaData$ouNameHierarchy) |>
+                       tidyr::pivot_longer(cols = tidyselect::everything(),names_to ="orgunitid", values_to = "orgunitlevel" ) |>
+                       mutate(orgunitlevel = stringr::str_remove(orgunitlevel, pattern = "/")) |>
+                       tidyr::separate_wider_delim(cols = orgunitlevel, delim = "/", names_sep = "", too_few = "align_start") |>
+                       dplyr::right_join(value_data, by = c("orgunitid" = "orgunitid"))
+
+                     }
+
+                 }
+
+    }
 
 
     )

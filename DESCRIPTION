@@ -14,7 +14,9 @@ Imports:
     curl (>= 4.3.3),
     dplyr (>= 1.0.10),
     httr2 (>= 0.2.2),
-    R6 (>= 2.5.1)
+    R6 (>= 2.5.1),
+    stringr,
+    tidyr
 Suggests: 
     covr,
     knitr,

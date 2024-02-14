@@ -165,7 +165,8 @@ Get all possible analytics resources from a DHIS2 instance i.e
   analytic,
   org_unit,
   period,
-  output_scheme = c("UID", "NAME")
+  output_scheme = c("UID", "NAME"),
+  show_org_hierarchy = FALSE
 )}\if{html}{\out{</div>}}
 }
 
@@ -179,6 +180,8 @@ Get all possible analytics resources from a DHIS2 instance i.e
 \item{\code{period}}{vector of relative or fixed periods from a DHIS2 instance}
 
 \item{\code{output_scheme}}{Output type ID or Names of fields}
+
+\item{\code{show_org_hierarchy}}{Show result with organisation unit hierarchy}
 }
 \if{html}{\out{</div>}}
 }
