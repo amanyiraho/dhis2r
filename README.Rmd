@@ -75,7 +75,9 @@ Alternatively you can generate a [personal access token](https://docs.dhis2.org/
 
 ``` r
 library(dhis2r)
+
 # Replace the value of api_token with the token you have generated
+
 dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
                                     api_token = "d2pat_5xVA12xyUbWNedQxy4ohH77WlxRGVvZZ1151814092")
 ```

@@ -73,6 +73,19 @@ dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
                                     api_version_position = "before")
 ```
 
+Alternatively you can generate a [personal access
+token](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
+and use that to connect.
+
+``` r
+library(dhis2r)
+
+# Replace the value of api_token with the token you have generated
+
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+                                    api_token = "d2pat_5xVA12xyUbWNedQxy4ohH77WlxRGVvZZ1151814092")
+```
+
 `Dhis2r$new()` returns a `Dhis2r` R6 class which represents a DHIS2
 connection and can be used to query the DHIS2 instance
 

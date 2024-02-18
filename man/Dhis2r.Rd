@@ -62,6 +62,7 @@ period = "LAST_12_MONTHS",
 \item \href{#method-Dhis2r-get_metadata}{\code{Dhis2r$get_metadata()}}
 \item \href{#method-Dhis2r-get_metadata_fields}{\code{Dhis2r$get_metadata_fields()}}
 \item \href{#method-Dhis2r-get_analytics}{\code{Dhis2r$get_analytics()}}
+\item \href{#method-Dhis2r-get_any_analytic}{\code{Dhis2r$get_any_analytic()}}
 \item \href{#method-Dhis2r-clone}{\code{Dhis2r$clone()}}
 }
 }
@@ -73,8 +74,9 @@ Create a connection to a DHIS2 instance using basic authentication
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Dhis2r$new(
   base_url,
-  username,
-  password,
+  username = NULL,
+  password = NULL,
+  api_token = NULL,
   api_version = NULL,
   api_version_position = c("after", "before")
 )}\if{html}{\out{</div>}}
@@ -88,6 +90,8 @@ Create a connection to a DHIS2 instance using basic authentication
 \item{\code{username}}{Registered username e.g "admin"}
 
 \item{\code{password}}{Registered password e.g "district"}
+
+\item{\code{api_token}}{Personal Access Token (PAT) to use instead of username and password}
 
 \item{\code{api_version}}{The api version e.g "33"}
 
@@ -183,7 +187,27 @@ Get all possible analytics resources from a DHIS2 instance i.e
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A vector of all possible fields for a specific metadata
+A data frame of the analytics resource
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Dhis2r-get_any_analytic"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_any_analytic}{}}}
+\subsection{Method \code{get_any_analytic()}}{
+Get all any analytics resource from a DHIS2 instance to cater for long DHIS2 favorites
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_any_analytic(endpoint_url)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{endpoint_url}}{string part of Analytic(s) from a DHIS2 instance api endpoint starting from `analytics.json?dimension=dx%3...`}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data frame of the analytics resource
 }
 }
 \if{html}{\out{<hr>}}

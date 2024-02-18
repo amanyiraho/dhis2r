@@ -116,6 +116,7 @@ dhis2_play_connection$get_metadata(endpoint = "periodTypes", fields = ":all")
 ```
 
 indicators
+
 ```{r}
 dhis2_play_connection$get_metadata(endpoint = "indicators")
 ```
