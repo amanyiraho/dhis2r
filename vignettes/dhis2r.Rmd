@@ -29,15 +29,13 @@ dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
                                     api_version_position = "before")
 ```
 
-
-> [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)
+[Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)
 
 
 ### Get user information
 
 ```{r}
 #dhis2_play_connection$get_user_info()
-
 ```
 
  Get information about the account 
