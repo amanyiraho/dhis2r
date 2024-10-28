@@ -1,42 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/404.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/articles/dhis2r.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/authors.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/news/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/reference/Dhis2r.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/reference/dhis2r-package.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.amanyiraho.com/dhis2r/reference/relative_periods.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>http://www.amanyiraho.com/dhis2r/404.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/LICENSE-text.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/LICENSE.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/articles/dhis2r.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/articles/index.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/authors.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/index.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/news/index.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/reference/Dhis2r.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/reference/dhis2r-package.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/reference/index.html</loc></url>
+<url><loc>http://www.amanyiraho.com/dhis2r/reference/relative_periods.html</loc></url>
 </urlset>
+
