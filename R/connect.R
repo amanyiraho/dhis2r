@@ -10,10 +10,12 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' # Load dhis2r
+#' library(dhis2r)
 #' # connect to the DHIS2 instance
-#' dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
-#'  username = "admin",  password = "district",api_version = "2.39.0.1")
+#' dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+#' username = "admin",
+#' password = "district")
 #'
 #' # get all the available resources
 #' dhis2_play_connection$get_metadata()
@@ -35,8 +37,7 @@
 #' period = "LAST_12_MONTHS",
 #'  output_scheme = "NAME")
 #'
-#' }
-
+#'
 
 Dhis2r <- R6::R6Class(
 

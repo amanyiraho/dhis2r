@@ -14,10 +14,12 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection
 You can use a DHIS2 instance connection to get data several times without needing to manually supply your user credentials on each API call.
 }
 \examples{
-\dontrun{
+# Load dhis2r
+library(dhis2r)
 # connect to the DHIS2 instance
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
- username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+username = "admin",
+password = "district")
 
 # get all the available resources
 dhis2_play_connection$get_metadata()
@@ -39,7 +41,7 @@ org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
 period = "LAST_12_MONTHS",
  output_scheme = "NAME")
 
-}
+
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

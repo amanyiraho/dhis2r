@@ -44,7 +44,13 @@ There are over 2 million R users, some of whom periodically analyse data from DH
 
 ## Installation
 
-You can install the development version of dhis2r from [GitHub](https://github.com/) with:
+You can install the stable version of dhis2r from CRAN with:
+
+``` r
+install.packages("dhis2r")
+```
+
+You can install also the development version of dhis2r from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
