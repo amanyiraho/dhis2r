@@ -112,7 +112,7 @@ Dhis2r <- R6::R6Class(
       }
 
       self$request_sent <-  self$request_sent |>
-        req_url_query(paging = "false") |>
+      #  req_url_query(paging = "false") |>
         req_headers("Accept" = "application/json") |>
         httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
         httr2::req_retry(max_tries = 5)
@@ -233,7 +233,7 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description Get all possible analytics resources from a DHIS2 instance i.e
     #'
-    #' @return A vector of all possible fields for a specific metadata
+    #' @return A data frame of the analytics resource
     #'
     #' @param analytic  vector of ID of specific analytic(s) from a DHIS2 instance
     #' @param org_unit  vector of ID of specific organisation unit(s) from a DHIS2 instance
@@ -284,11 +284,47 @@ Dhis2r <- R6::R6Class(
 
 
 
-               }
+               },
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    #' @description Get all any analytics resource from a DHIS2 instance to cater for long DHIS2 favorites
+    #'
+    #' @return A data frame of the analytics resource
+    #'
+    #' @param endpoint_url string part of Analytic(s) from a DHIS2 instance api endpoint starting from 'analytics.json?dimension='
+    #'
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    get_any_analytic = function(endpoint_url) {
+      # Check for internet
+      check_internet()
+      args <- list(endpoint_url = endpoint_url)
+      #Check that at least one argument is not null
+
+      attempt::stop_if_any(args, is.null,"You need to specify all arguements")
+      attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
 
+      response_object <- self$request_sent |>
+        req_url_path_append(endpoint_url) |>
+        req_perform()
+
+      print(response_object$url)
+
+
+      response_data  <-  response_object |>
+        resp_body_json(simplifyVector = TRUE, flatten = TRUE)
+
+      if(length(response_data$rows) == 0){
+
+        as.data.frame(response_data$rows)
+
+      }else{
+        as.data.frame(response_data$rows) |>
+          tibble::as_tibble()
+      }
+    }
     )
-
   )
 
 

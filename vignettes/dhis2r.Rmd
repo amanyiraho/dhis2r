@@ -22,22 +22,21 @@ library(dhis2r)
 Connect to the DHIS2 instance using `Dhis2r$new()`
 
 ```{r}
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", 
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
                                     username = "admin",
-                                    password = "district",
-                                    api_version = "2.39.0.1",
-                                    api_version_position = "before")
+                                    password = "district"
+                               #     api_version = "2.41.1",
+                               #     api_version_position = "after"
+                                    )
 ```
 
-
-> [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)
 
 
 ### Get user information
 
 ```{r}
+# [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)
 dhis2_play_connection$get_user_info()
-
 ```
 
  Get information about the account 
@@ -115,7 +114,8 @@ periodTypes
 dhis2_play_connection$get_metadata(endpoint = "periodTypes", fields = ":all")
 ```
 
-indicators
+### indicators
+
 ```{r}
 dhis2_play_connection$get_metadata(endpoint = "indicators")
 ```
@@ -137,6 +137,4 @@ dhis2_play_connection$get_metadata(endpoint = "indicators")
 #                                     output_scheme = "NAME")
 
 ```
-
-
 
