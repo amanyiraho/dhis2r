@@ -202,7 +202,7 @@ Get all any analytics resource from a DHIS2 instance to cater for long DHIS2 fav
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{endpoint_url}}{string part of Analytic(s) from a DHIS2 instance api endpoint starting from `analytics.json?dimension=dx%3...`}
+\item{\code{endpoint_url}}{string part of Analytic(s) from a DHIS2 instance api endpoint starting from 'analytics.json?dimension='}
 }
 \if{html}{\out{</div>}}
 }

@@ -114,7 +114,7 @@ periodTypes
 dhis2_play_connection$get_metadata(endpoint = "periodTypes", fields = ":all")
 ```
 
-indicators
+### indicators
 
 ```{r}
 dhis2_play_connection$get_metadata(endpoint = "indicators")
@@ -138,4 +138,3 @@ dhis2_play_connection$get_metadata(endpoint = "indicators")
 
 ```
 
-*Thank you*

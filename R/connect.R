@@ -291,7 +291,7 @@ Dhis2r <- R6::R6Class(
     #'
     #' @return A data frame of the analytics resource
     #'
-    #' @param endpoint_url   string part of Analytic(s) from a DHIS2 instance api endpoint starting from `analytics.json?dimension=dx%3...`
+    #' @param endpoint_url string part of Analytic(s) from a DHIS2 instance api endpoint starting from 'analytics.json?dimension='
     #'
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -323,15 +323,8 @@ Dhis2r <- R6::R6Class(
         as.data.frame(response_data$rows) |>
           tibble::as_tibble()
       }
-
-
-
     }
-
-
-
     )
-
   )
 
 
