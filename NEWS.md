@@ -1,3 +1,10 @@
+# dhis2r 0.2.1
+
+## Bug fix
+
+* Updated the vignette to use the `username` and `password` instead of `PAT` since the public server is regularly updated 
+
+
 # dhis2r 0.2.0
 
 ## New features

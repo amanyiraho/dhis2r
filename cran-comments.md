@@ -1,12 +1,9 @@
 ## Resubmission
 
-This is a resubmission of a currently Archived on 2024-06-01 for policy violation. On Internet access.
+This is a resubmission. In this version I have:
 
-I crossed checked the CRAN Package Check Results Last updated on 2024-06-01 and the failures were do to change in the testing Server host link from "https://play.dhis2.org/" to "https://play.im.dhis2.org/stable-2-40-5"
+* Updated the vignette to username and password instead of PAT since the public server is regularly updated 
 
-* I have updated all the tests and vignettes.
-
-* I wasn't able to fix this in time due to family responsibilities at the moment.
 
 * I have tested the package on GITHUB actions and all past using these OSs
    - {os: macos-latest,   r: 'release'}
