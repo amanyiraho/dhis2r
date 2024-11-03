@@ -25,6 +25,14 @@ In this vignette I used a Personal Access Token (PAT) as a more secure alternati
 
 ```{r}
 dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+                                    username = "admin",
+                                    password = "district")
+```
+
+
+
+``` r
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
                                     api_token = "d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066")
 ```
 
