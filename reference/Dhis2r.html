@@ -9,7 +9,7 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection"><meta pro
 
     <a class="navbar-brand me-2" href="../index.html">dhis2r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection"><meta pro
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Connect and pull/get data from a DHIS2 instance</h1>
-      <small class="dont-index">Source: <a href="https://github.com/amanyiraho/dhis2r/blob/master/R/connect.R" class="external-link"><code>R/connect.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/amanyiraho/dhis2r/blob/v0.2.1/R/connect.R" class="external-link"><code>R/connect.R</code></a></small>
       <div class="d-none name"><code>Dhis2r.Rd</code></div>
     </div>
 
@@ -265,32 +265,80 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load dhis2r</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># connect to the DHIS2 instance</span></span></span>
-<span class="r-in"><span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va">Dhis2r</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>,</span></span>
-<span class="r-in"><span> username <span class="op">=</span> <span class="st">"admin"</span>,  password <span class="op">=</span> <span class="st">"district"</span>,api_version <span class="op">=</span> <span class="st">"2.39.0.1"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va">Dhis2r</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.im.dhis2.org/stable-2-40-5"</span>,</span></span>
+<span class="r-in"><span>username <span class="op">=</span> <span class="st">"admin"</span>,</span></span>
+<span class="r-in"><span>password <span class="op">=</span> <span class="st">"district"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get all the available resources</span></span></span>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/resources"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 89 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    displayName                       singular                       plural href </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Indicator Groups                  indicatorGroup                 indic… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Organisation Unit Group Sets      organisationUnitGroupSet       organ… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Validation Notification Templates validationNotificationTemplate valid… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Legend Sets                       legendSet                      legen… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Categories                        category                       categ… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Program Data Elements             programDataElement             progr… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Tracked Entity Types              trackedEntityType              track… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> External File Resources           externalFileResource           exter… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Program Indicator Groups          programIndicatorGroup          progr… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Event Reports                     eventReport                    event… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 79 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get organisation Units with the default fields i.e c("name","id")</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `response_data[[1]]`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get a vector of all possible fields of a organisation unit resource</span></span></span>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "access"                 "ancestors"              "attributeValues"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "children"               "code"                   "created"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "dataSets"               "dimensionItem"          "dimensionItemType"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "displayFormName"        "displayName"            "displayShortName"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "externalAccess"         "favorite"               "favorites"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "href"                   "id"                     "lastUpdated"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "leaf"                   "legendSets"             "level"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "name"                   "openingDate"            "organisationUnitGroups"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "parent"                 "path"                   "programs"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "sharing"                "shortName"              "translations"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "userAccesses"           "userGroupAccesses"      "users"                 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get organisation Units with additional fields i.e c("name","id", "level")</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span></span>
 <span class="r-in"><span>fields <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `response_data[[1]]`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Uvn6LCg7dVU"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>org_unit <span class="op">=</span>   <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"O6uvpzGd5pu"</span>, <span class="st">"fdc6uOvgoji"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>period <span class="op">=</span> <span class="st">"LAST_12_MONTHS"</span>,</span></span>
 <span class="r-in"><span> output_scheme <span class="op">=</span> <span class="st">"NAME"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in req_perform(req_url_query(req_url_query(req_url_path_append(self$request_sent,     "analytics"), dimension = I(paste(analytic, org_unit, period,     sep = "&amp;"))), outputIdScheme = output_scheme)):</span> HTTP 409 Conflict.</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">dhis2r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,20 +29,32 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/amanyiraho/dhis2r/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/amanyiraho/dhis2r/blob/v0.2.1/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.2.0" id="dhis2r-020">dhis2r 0.2.0<a class="anchor" aria-label="anchor" href="#dhis2r-020"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.2.1" id="dhis2r-021">dhis2r 0.2.1<a class="anchor" aria-label="anchor" href="#dhis2r-021"></a></h2><p class="text-muted">CRAN release: 2024-11-04</p>
 <div class="section level3">
-<h3 id="improvements-0-2-0">Improvements<a class="anchor" aria-label="anchor" href="#improvements-0-2-0"></a></h3>
-<ul><li><p>Add authentication via personal access token <a href="https://github.com/Brar" class="external-link">@Brar</a></p></li>
-<li><p>Added <code>get_any_analytic()</code> to cater for long DHIS2 favorites</p></li>
+<h3 id="bug-fix-0-2-1">Bug fix<a class="anchor" aria-label="anchor" href="#bug-fix-0-2-1"></a></h3>
+<ul><li>Updated the vignette to use the <code>username</code> and <code>password</code> instead of <code>PAT</code> since the public server is regularly updated</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.2.0" id="dhis2r-020">dhis2r 0.2.0<a class="anchor" aria-label="anchor" href="#dhis2r-020"></a></h2><p class="text-muted">CRAN release: 2024-10-29</p>
+<div class="section level3">
+<h3 id="new-features-0-2-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-2-0"></a></h3>
+<ul><li><p>In <code>Dhis2r$new()</code> now includes <code>api_token = NULL</code> for authentication via personal access token option(<a href="https://github.com/Brar" class="external-link">@Brar</a>, <a href="https://github.com/amanyiraho/dhis2r/issues/12" class="external-link">#12</a>).</p></li>
+<li><p>New <code>dhis2_connection$get_any_analytic()</code> to GET long DHIS2 resources.</p></li>
+<li><p>Functions now print out the resource link being queried</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="minor-improvements-and-fixes-0-2-0">Minor improvements and fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-fixes-0-2-0"></a></h3>
+<ul><li>Updated the public server URL in examples and vignettes to “<a href="https://play.im.dhis2.org/stable-2-40-5" class="external-link uri">https://play.im.dhis2.org/stable-2-40-5</a>”</li>
 </ul></div>
 </div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.1" id="dhis2r-011">dhis2r 0.1.1<a class="anchor" aria-label="anchor" href="#dhis2r-011"></a></h2><p class="text-muted">CRAN release: 2023-02-15</p>
-<ul><li><p>Fix R CMD check failures on CRAN</p></li>
+<ul><li><p>Fix R CMD check failures on CRAN.</p></li>
 <li><p>Added a NEWS.md file to track changes to the package.</p></li>
 </ul></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

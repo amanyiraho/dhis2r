@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">dhis2r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Getting started with dhis2r</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/amanyiraho/dhis2r/blob/master/vignettes/dhis2r.Rmd" class="external-link"><code>vignettes/dhis2r.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/amanyiraho/dhis2r/blob/v0.2.1/vignettes/dhis2r.Rmd" class="external-link"><code>vignettes/dhis2r.Rmd</code></a></small>
       <div class="d-none name"><code>dhis2r.Rmd</code></div>
     </div>
 
@@ -68,29 +68,32 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span></code></pre></div>
 <p>Connect to the DHIS2 instance using <code>Dhis2r$new()</code></p>
+<p>In this vignette I used a Personal Access Token (PAT) as a more
+secure alternative to HTTP Basic Authentication, and should be your
+preferred choice when creating a new app/script etc.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.im.dhis2.org/stable-2-40-5"</span>,</span>
 <span>                                    username <span class="op">=</span> <span class="st">"admin"</span>,</span>
-<span>                                    password <span class="op">=</span> <span class="st">"district"</span></span>
-<span>                               <span class="co">#     api_version = "2.41.1",</span></span>
-<span>                               <span class="co">#     api_version_position = "after"</span></span>
-<span>                                    <span class="op">)</span></span></code></pre></div>
+<span>                                    password <span class="op">=</span> <span class="st">"district"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.im.dhis2.org/stable-2-40-5"</span>,</span>
+<span>                                    api_token <span class="op">=</span> <span class="st">"d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066"</span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="get-user-information">Get user information<a class="anchor" aria-label="anchor" href="#get-user-information"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)</span></span>
 <span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_user_info</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/me"</span></span>
 <span><span class="co">#&gt;              name             email </span></span>
 <span><span class="co">#&gt;     "John Traore" "dummy@dhis2.org"</span></span></code></pre></div>
 <p>Get information about the account</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="va">account_info</span></span>
 <span><span class="co">#&gt;                   created </span></span>
 <span><span class="co">#&gt; "2013-04-18T17:15:08.407"</span></span></code></pre></div>
 <p>Get access rights information about the account</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="va">access_rights</span></span>
 <span><span class="co">#&gt;      manage externalize       write        read      update      delete </span></span>
 <span><span class="co">#&gt;        TRUE       FALSE        TRUE        TRUE        TRUE        TRUE</span></span></code></pre></div>
@@ -99,26 +102,26 @@
 <h3 id="get-metadata">Get metadata<a class="anchor" aria-label="anchor" href="#get-metadata"></a>
 </h3>
 <p>Get all resources on which you can get metadata on.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/resources"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 89 × 4</span></span></span>
 <span><span class="co">#&gt;    displayName                       singular                       plural href </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Data Elements                     dataElement                    dataE… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Validation Notification Templates validationNotificationTemplate valid… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> External File Resources           externalFileResource           exter… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Users                             user                           users  http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Data Set Notification Templates   dataSetNotificationTemplate    dataS… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Sections                  programSection                 progr… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Sms Commands                      smsCommand                     smsCo… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Data Sets                         dataSet                        dataS… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Predictors                        predictor                      predi… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Options                           option                         optio… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Indicator Groups                  indicatorGroup                 indic… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Organisation Unit Group Sets      organisationUnitGroupSet       organ… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Validation Notification Templates validationNotificationTemplate valid… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Legend Sets                       legendSet                      legen… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Categories                        category                       categ… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Data Elements             programDataElement             progr… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Tracked Entity Types              trackedEntityType              track… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> External File Resources           externalFileResource           exter… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Program Indicator Groups          programIndicatorGroup          progr… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Event Reports                     eventReport                    event… http…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 79 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
@@ -136,7 +139,7 @@ shall use the code to get analytics.</p>
 </h4>
 <p>You can get more fields beyond ID and name</p>
 <p><em>NOTE</em> All resources have different fields</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
 <span><span class="co">#&gt;  [1] "access"            "aggregationLevels" "aggregationType"  </span></span>
@@ -151,7 +154,7 @@ shall use the code to get analytics.</p>
 <span><span class="co">#&gt; [28] "shortName"         "translations"      "url"              </span></span>
 <span><span class="co">#&gt; [31] "user"              "userAccesses"      "userGroupAccesses"</span></span>
 <span><span class="co">#&gt; [34] "valueType"         "zeroIsSignificant"</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
 <span><span class="co">#&gt;  [1] "access"                 "ancestors"              "attributeValues"       </span></span>
@@ -165,7 +168,7 @@ shall use the code to get analytics.</p>
 <span><span class="co">#&gt; [25] "parent"                 "path"                   "programs"              </span></span>
 <span><span class="co">#&gt; [28] "sharing"                "shortName"              "translations"          </span></span>
 <span><span class="co">#&gt; [31] "userAccesses"           "userGroupAccesses"      "users"</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
 <span><span class="co">#&gt;  [1] "access"                        "annualized"                   </span></span>
@@ -193,7 +196,7 @@ shall use the code to get analytics.</p>
 <h3 id="getting-metadata-fields-beyond-id-and-name">Getting metadata fields beyond ID and Name<a class="anchor" aria-label="anchor" href="#getting-metadata-fields-beyond-id-and-name"></a>
 </h3>
 <p>dataElements</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>,<span class="st">"aggregationType"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid%2CaggregationType"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
@@ -205,7 +208,7 @@ shall use the code to get analytics.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span></span></span></code></pre></div>
 <p>organisationUnits</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span>
 <span>                                                        fields <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel"</span></span>
@@ -220,7 +223,7 @@ shall use the code to get analytics.</p>
 <p>You can use <code>":all"</code> in the fields to get all fields of
 metadata associated with a resources</p>
 <p>periodTypes</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"periodTypes"</span>, fields <span class="op">=</span> <span class="st">":all"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/periodTypes?fields=%3Aall"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 19 × 4</span></span></span>
@@ -249,7 +252,7 @@ metadata associated with a resources</p>
 <div class="section level3">
 <h3 id="indicators">indicators<a class="anchor" aria-label="anchor" href="#indicators"></a>
 </h3>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=name%2Cid"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
@@ -264,12 +267,12 @@ metadata associated with a resources</p>
 <div class="section level3">
 <h3 id="get-analtyics">Get analtyics<a class="anchor" aria-label="anchor" href="#get-analtyics"></a>
 </h3>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu",</span></span>
 <span><span class="co">#                                     org_unit = c("O6uvpzGd5pu", "fdc6uOvgoji"),</span></span>
 <span><span class="co">#                                     period = "202101",</span></span>
 <span><span class="co">#                                     output_scheme = "NAME")</span></span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths &lt; 5 yrs)</span></span>
 <span><span class="co">#                                     org_unit =   c("ImspTQPwCqd"), #Sierra Leone (National level)</span></span>
 <span><span class="co">#                                     period = "LAST_12_MONTHS",</span></span>

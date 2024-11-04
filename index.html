@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">dhis2r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,8 +79,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of dhis2r from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the stable version of dhis2r from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"dhis2r"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install also the development version of dhis2r from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"amanyiraho/dhis2r"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -90,32 +93,43 @@
 <div class="section level3">
 <h3 id="how-to-connect-to-a-dhis2">How to connect to a DHIS2?<a class="anchor" aria-label="anchor" href="#how-to-connect-to-a-dhis2"></a>
 </h3>
-<p>Users must be authenticated to access a specific DHIS2 instance before connecting to it.</p>
+<p>Users must be authenticated to access a specific DHIS2 instance before connecting to it. You can use</p>
+<ol style="list-style-type: decimal">
+<li><p><code>username</code> and <code>password</code></p></li>
+<li><p>Personal Access Token (PAT)</p></li>
+</ol>
+<div class="section level4">
+<h4 id="id_1-using-username-and-password">1. Using <code>username</code> and <code>password</code>
+<a class="anchor" aria-label="anchor" href="#id_1-using-username-and-password"></a>
+</h4>
 <p>The easiest way to connect to a DHIS2 instance using dhis2r is to use the <code>username</code> and <code>password</code> of the DHIS2 user.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span>
-<span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>,</span>
-<span>                                    username <span class="op">=</span> <span class="st">"admin"</span>,</span>
-<span>                                    password <span class="op">=</span> <span class="st">"district"</span>,</span>
-<span>                                    api_version <span class="op">=</span> <span class="st">"2.39.0.1"</span>,</span>
-<span>                                    api_version_position <span class="op">=</span> <span class="st">"before"</span><span class="op">)</span></span></code></pre></div>
-<p>Alternatively you can generate a <a href="https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication" class="external-link">personal access token</a> and use that to connect.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span>
+<span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.im.dhis2.org/stable-2-40-5"</span>,</span>
+<span>                                    username <span class="op">=</span> <span class="st">"admin"</span>,</span>
+<span>                                    password <span class="op">=</span> <span class="st">"district"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="id_2-using-personal-access-token-pat">2. Using Personal Access Token (PAT)<a class="anchor" aria-label="anchor" href="#id_2-using-personal-access-token-pat"></a>
+</h4>
+<p>Alternatively you can generate a <a href="https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication" class="external-link">personal access token</a> and use that to connect.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/amanyiraho/dhis2r" class="external-link">dhis2r</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Replace the value of api_token with the token you have generated</span></span>
 <span></span>
-<span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.dhis2.org/"</span>,</span>
-<span>                                    api_token <span class="op">=</span> <span class="st">"d2pat_5xVA12xyUbWNedQxy4ohH77WlxRGVvZZ1151814092"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">dhis2_play_connection</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Dhis2r.html">Dhis2r</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>base_url <span class="op">=</span> <span class="st">"https://play.im.dhis2.org/stable-2-40-5"</span>,</span>
+<span>                                    api_token <span class="op">=</span> <span class="st">"d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066"</span><span class="op">)</span></span></code></pre></div>
 <p><code>Dhis2r$new()</code> returns a <code>Dhis2r</code> R6 class which represents a DHIS2 connection and can be used to query the DHIS2 instance</p>
 <p><em>No need to log in again when performing other querying tasks.</em></p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="how-to-pull-data-from-dhis2">How to pull data from DHIS2<a class="anchor" aria-label="anchor" href="#how-to-pull-data-from-dhis2"></a>
 </h3>
 <p>As an example, let’s pull Analytics data of <code>BCG doses given</code></p>
 <p>Analytics data can include data from indicators, dataElements, program indicators, etc.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"s46m5MS0hxu"</span>, <span class="co">#BCG doses given</span></span>
 <span>                                     org_unit <span class="op">=</span> <span class="st">"ImspTQPwCqd"</span>, <span class="co">#Sierra Leone (National level)</span></span>
 <span>                                     period <span class="op">=</span> <span class="st">"202101"</span>,</span>
