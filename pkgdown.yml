@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   dhis2r: dhis2r.html
-last_built: 2024-11-04T12:07Z
+last_built: 2024-11-10T12:13Z
 urls:
-  reference: http://www.amanyiraho.com/dhis2r/reference
-  article: http://www.amanyiraho.com/dhis2r/articles
+  reference: https://dhis2r.amanyiraho.com/reference
+  article: https://dhis2r.amanyiraho.com/articles
