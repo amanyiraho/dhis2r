@@ -1,3 +1,7 @@
-url: http://www.amanyiraho.com/dhis2r/
+url: https://dhis2r.amanyiraho.com/
 template:
   bootstrap: 5
+news:
+  releases:
+  - text: "dhis2r 0.2.0"
+    href: https://www.amanyiraho.com/blog/dhis2r-0-2-0/
