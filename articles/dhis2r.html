@@ -114,18 +114,18 @@ preferred choice when creating a new app/script etc.</p>
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/resources"</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 89 × 4</span></span></span>
-<span><span class="co">#&gt;    displayName                       singular                       plural href </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Indicator Groups                  indicatorGroup                 indic… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Organisation Unit Group Sets      organisationUnitGroupSet       organ… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Sms Commands                      smsCommand                     smsCo… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Program Rules                     programRule                    progr… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Category Combos                   categoryCombo                  categ… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Validation Notification Templates validationNotificationTemplate valid… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> User Roles                        userRole                       userR… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Organisation Unit Levels          organisationUnitLevel          organ… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Program Sections                  programSection                 progr… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Option Groups                     optionGroup                    optio… http…</span></span>
+<span><span class="co">#&gt;    displayName                     singular                    plural      href </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Program Rules                   programRule                 programRul… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Aggregate Data Exchanges        aggregateDataExchange       aggregateD… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Tracked Entity Instance Filters trackedEntityInstanceFilter trackedEnt… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Program Stages                  programStage                programSta… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Options                         option                      options     http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Sections                programSection              programSec… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Proposals                       proposal                    proposals   http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Option Group Sets               optionGroupSet              optionGrou… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Indicator Groups                indicatorGroup              indicatorG… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Job Configurations              jobConfiguration            jobConfigu… http…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 79 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
@@ -166,16 +166,17 @@ shall use the code to get analytics.</p>
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
 <span><span class="co">#&gt;  [1] "access"                 "ancestors"              "attributeValues"       </span></span>
-<span><span class="co">#&gt;  [4] "children"               "code"                   "created"               </span></span>
+<span><span class="co">#&gt;  [4] "children"               "created"                "createdBy"             </span></span>
 <span><span class="co">#&gt;  [7] "dataSets"               "dimensionItem"          "dimensionItemType"     </span></span>
 <span><span class="co">#&gt; [10] "displayFormName"        "displayName"            "displayShortName"      </span></span>
 <span><span class="co">#&gt; [13] "externalAccess"         "favorite"               "favorites"             </span></span>
 <span><span class="co">#&gt; [16] "href"                   "id"                     "lastUpdated"           </span></span>
-<span><span class="co">#&gt; [19] "leaf"                   "legendSets"             "level"                 </span></span>
-<span><span class="co">#&gt; [22] "name"                   "openingDate"            "organisationUnitGroups"</span></span>
-<span><span class="co">#&gt; [25] "parent"                 "path"                   "programs"              </span></span>
-<span><span class="co">#&gt; [28] "sharing"                "shortName"              "translations"          </span></span>
-<span><span class="co">#&gt; [31] "userAccesses"           "userGroupAccesses"      "users"</span></span></code></pre></div>
+<span><span class="co">#&gt; [19] "lastUpdatedBy"          "leaf"                   "legendSets"            </span></span>
+<span><span class="co">#&gt; [22] "level"                  "name"                   "openingDate"           </span></span>
+<span><span class="co">#&gt; [25] "organisationUnitGroups" "parent"                 "path"                  </span></span>
+<span><span class="co">#&gt; [28] "programs"               "sharing"                "shortName"             </span></span>
+<span><span class="co">#&gt; [31] "translations"           "user"                   "userAccesses"          </span></span>
+<span><span class="co">#&gt; [34] "userGroupAccesses"      "users"</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>

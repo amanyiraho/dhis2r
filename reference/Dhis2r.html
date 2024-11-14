@@ -282,18 +282,18 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection</p>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/resources"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 89 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    displayName                       singular                       plural href </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Indicator Groups                  indicatorGroup                 indic… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Organisation Unit Group Sets      organisationUnitGroupSet       organ… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Sms Commands                      smsCommand                     smsCo… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Program Rules                     programRule                    progr… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Category Combos                   categoryCombo                  categ… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Validation Notification Templates validationNotificationTemplate valid… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> User Roles                        userRole                       userR… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Organisation Unit Levels          organisationUnitLevel          organ… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Program Sections                  programSection                 progr… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Option Groups                     optionGroup                    optio… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    displayName                     singular                    plural      href </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Program Rules                   programRule                 programRul… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Aggregate Data Exchanges        aggregateDataExchange       aggregateD… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Tracked Entity Instance Filters trackedEntityInstanceFilter trackedEnt… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Program Stages                  programStage                programSta… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Options                         option                      options     http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Program Sections                programSection              programSec… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Proposals                       proposal                    proposals   http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Option Group Sets               optionGroupSet              optionGrou… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Indicator Groups                indicatorGroup              indicatorG… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Job Configurations              jobConfiguration            jobConfigu… http…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 79 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get organisation Units with the default fields i.e c("name","id")</span></span></span>
@@ -313,16 +313,17 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection</p>
 <span class="r-in"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "access"                 "ancestors"              "attributeValues"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "children"               "code"                   "created"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "children"               "created"                "createdBy"             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "dataSets"               "dimensionItem"          "dimensionItemType"     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [10] "displayFormName"        "displayName"            "displayShortName"      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [13] "externalAccess"         "favorite"               "favorites"             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [16] "href"                   "id"                     "lastUpdated"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "leaf"                   "legendSets"             "level"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "name"                   "openingDate"            "organisationUnitGroups"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "parent"                 "path"                   "programs"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "sharing"                "shortName"              "translations"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "userAccesses"           "userGroupAccesses"      "users"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "lastUpdatedBy"          "leaf"                   "legendSets"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "level"                  "name"                   "openingDate"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "organisationUnitGroups" "parent"                 "path"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "programs"               "sharing"                "shortName"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "translations"           "user"                   "userAccesses"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "userGroupAccesses"      "users"                 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get organisation Units with additional fields i.e c("name","id", "level")</span></span></span>
 <span class="r-in"><span></span></span>
