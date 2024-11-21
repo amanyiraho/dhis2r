@@ -1,6 +1,6 @@
 Package: dhis2r
 Title: Client for the 'DHIS2' Web API
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut",  "cph"),
            comment = c(ORCID = "0000-0002-7747-1367"))
