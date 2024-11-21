@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started with dhis2r">
 </head>
 <body>
@@ -92,7 +92,7 @@ preferred choice when creating a new app/script etc.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)</span></span>
 <span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_user_info</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/me"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/me</span></span>
 <span><span class="co">#&gt;              name             email </span></span>
 <span><span class="co">#&gt;     "John Traore" "dummy@dhis2.org"</span></span></code></pre></div>
 <p>Get information about the account</p>
@@ -112,34 +112,40 @@ preferred choice when creating a new app/script etc.</p>
 <p>Get all resources on which you can get metadata on.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/resources"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/resources</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 89 × 4</span></span></span>
 <span><span class="co">#&gt;    displayName                     singular                    plural      href </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Program Rules                   programRule                 programRul… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Aggregate Data Exchanges        aggregateDataExchange       aggregateD… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Tracked Entity Instance Filters trackedEntityInstanceFilter trackedEnt… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Program Stages                  programStage                programSta… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Options                         option                      options     http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Program Sections                programSection              programSec… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Proposals                       proposal                    proposals   http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Option Group Sets               optionGroupSet              optionGrou… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Indicator Groups                indicatorGroup              indicatorG… http…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Job Configurations              jobConfiguration            jobConfigu… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Program Rule Actions            programRuleAction           programRul… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Job Configurations              jobConfiguration            jobConfigu… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Program Rules                   programRule                 programRul… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Constants                       constant                    constants   http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Data Approval Workflows         dataApprovalWorkflow        dataApprov… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Category Combos                 categoryCombo               categoryCo… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Data Set Notification Templates dataSetNotificationTemplate dataSetNot… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Program Stage Sections          programStageSection         programSta… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Analytics Table Hooks           analyticsTableHook          analyticsT… http…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Event Hooks                     eventHook                   eventHooks  http…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 79 more rows</span></span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid"</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
-<span><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 50 × 2</span></span></span>
+<span><span class="co">#&gt;    name                                      id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> adresse exact                             eTuKNBLi58g</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age in years                              qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Age of LLINs                              JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 40 more rows</span></span></span></code></pre></div>
 <p>The code above only returns it’s name and code/ID used on DHIS2, we
 shall use the code to get analytics.</p>
 <div class="section level4">
@@ -149,7 +155,7 @@ shall use the code to get analytics.</p>
 <p><em>NOTE</em> All resources have different fields</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span><span class="co">#&gt;  [1] "access"            "aggregationLevels" "aggregationType"  </span></span>
 <span><span class="co">#&gt;  [4] "attributeValues"   "categoryCombo"     "code"             </span></span>
 <span><span class="co">#&gt;  [7] "created"           "createdBy"         "dataElementGroups"</span></span>
@@ -164,22 +170,21 @@ shall use the code to get analytics.</p>
 <span><span class="co">#&gt; [34] "valueType"         "zeroIsSignificant"</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span><span class="co">#&gt;  [1] "access"                 "ancestors"              "attributeValues"       </span></span>
-<span><span class="co">#&gt;  [4] "children"               "created"                "createdBy"             </span></span>
+<span><span class="co">#&gt;  [4] "children"               "code"                   "created"               </span></span>
 <span><span class="co">#&gt;  [7] "dataSets"               "dimensionItem"          "dimensionItemType"     </span></span>
 <span><span class="co">#&gt; [10] "displayFormName"        "displayName"            "displayShortName"      </span></span>
 <span><span class="co">#&gt; [13] "externalAccess"         "favorite"               "favorites"             </span></span>
 <span><span class="co">#&gt; [16] "href"                   "id"                     "lastUpdated"           </span></span>
-<span><span class="co">#&gt; [19] "lastUpdatedBy"          "leaf"                   "legendSets"            </span></span>
-<span><span class="co">#&gt; [22] "level"                  "name"                   "openingDate"           </span></span>
-<span><span class="co">#&gt; [25] "organisationUnitGroups" "parent"                 "path"                  </span></span>
-<span><span class="co">#&gt; [28] "programs"               "sharing"                "shortName"             </span></span>
-<span><span class="co">#&gt; [31] "translations"           "user"                   "userAccesses"          </span></span>
-<span><span class="co">#&gt; [34] "userGroupAccesses"      "users"</span></span></code></pre></div>
+<span><span class="co">#&gt; [19] "leaf"                   "legendSets"             "level"                 </span></span>
+<span><span class="co">#&gt; [22] "name"                   "openingDate"            "organisationUnitGroups"</span></span>
+<span><span class="co">#&gt; [25] "parent"                 "path"                   "programs"              </span></span>
+<span><span class="co">#&gt; [28] "sharing"                "shortName"              "translations"          </span></span>
+<span><span class="co">#&gt; [31] "userAccesses"           "userGroupAccesses"      "users"</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata_fields</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span><span class="co">#&gt;  [1] "access"                        "annualized"                   </span></span>
 <span><span class="co">#&gt;  [3] "attributeValues"               "code"                         </span></span>
 <span><span class="co">#&gt;  [5] "created"                       "createdBy"                    </span></span>
@@ -207,34 +212,46 @@ shall use the code to get analytics.</p>
 <p>dataElements</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"dataElements"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>,<span class="st">"aggregationType"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid%2CaggregationType"</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
-<span><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid%2CaggregationType</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 50 × 3</span></span></span>
+<span><span class="co">#&gt;    name                                      aggregationType id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) SUM             FTRrcoaog83</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Acute Flaccid Paralysis (AFP) follow-up   SUM             P3jJH5Tu5VC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Acute Flaccid Paralysis (AFP) new         SUM             FQ2o8UBlcrS</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Acute Flaccid Paralysis (AFP) referrals   SUM             M62VHgYT2n0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Additional medication                     NONE            WO8yRIZb7nb</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Additional notes related to facility      SUM             uF1DLnZNlWe</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Admission Date                            AVERAGE         eMyVanycQSC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> adresse exact                             NONE            eTuKNBLi58g</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Age in years                              AVERAGE         qrur9Dvnyt5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Age of LLINs                              SUM             JuTpJ2Ywq5b</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 40 more rows</span></span></span></code></pre></div>
 <p>organisationUnits</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"organisationUnits"</span>,</span>
 <span>                                                        fields <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="st">"id"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel"</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
-<span><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 50 × 3</span></span></span>
+<span><span class="co">#&gt;    name                      id          level</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Adonkia CHP               Rp268JB6Ne4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Afro Arab Clinic          cDw53Ej8rju     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Agape CHP                 GvFqTavdpGE     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Ahamadyya Mission Cl      plnHVbJR6p4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Ahmadiyya Muslim Hospital BV4IomHvri4     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Air Port Centre, Lungi    qjboFI0irVu     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Alkalia CHP               dWOAzMcK2Wt     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Allen Town Health Post    kbGqmM6ZWWV     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Antananarivo              w8OOoqYFAWI     2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Approved School CHP       eoYV2p74eVz     4</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 40 more rows</span></span></span></code></pre></div>
 <p>You can use <code>":all"</code> in the fields to get all fields of
 metadata associated with a resources</p>
 <p>periodTypes</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"periodTypes"</span>, fields <span class="op">=</span> <span class="st">":all"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/periodTypes?fields=%3Aall"</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/periodTypes?fields=%3Aall</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 19 × 4</span></span></span>
 <span><span class="co">#&gt;    name            isoDuration isoFormat   frequencyOrder</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
@@ -263,29 +280,51 @@ metadata associated with a resources</p>
 </h3>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span>endpoint <span class="op">=</span> <span class="st">"indicators"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=name%2Cid"</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 1</span></span></span>
-<span><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;int [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;int [1]&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=name%2Cid</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 50 × 2</span></span></span>
+<span><span class="co">#&gt;    name                                 id         </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> ANC 1-3 Dropout Rate                 ReUHfIn0pTQ</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> ANC 1 Coverage                       Uvn6LCg7dVU</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> ANC 2 Coverage                       OdiHJayrsKo</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> ANC 3 Coverage                       sB79w2hiLp8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> ANC =&gt; 4 Coverage                    AUqdhY4mpvp</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> ANC IPT 1 Coverage                   dwEq7wi6nXV</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> ANC IPT 2 Coverage                   c8fABiNpT0B</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> ANC LLITN coverage                   Tt5TAvdfdVK</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> ANC TT2 coverage                     puykO1tbcdi</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> ANC visits per clinical professional Lzg9LtG1xg3</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 40 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get-analtyics">Get analtyics<a class="anchor" aria-label="anchor" href="#get-analtyics"></a>
 </h3>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu",</span></span>
-<span><span class="co">#                                     org_unit = c("O6uvpzGd5pu", "fdc6uOvgoji"),</span></span>
-<span><span class="co">#                                     period = "202101",</span></span>
-<span><span class="co">#                                     output_scheme = "NAME")</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"s46m5MS0hxu"</span>,</span>
+<span>                                    org_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"O6uvpzGd5pu"</span>, <span class="st">"fdc6uOvgoji"</span><span class="op">)</span>,</span>
+<span>                                    period <span class="op">=</span> <span class="st">"202101"</span>,</span>
+<span>                                    output_scheme <span class="op">=</span> <span class="st">"NAME"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/analytics?dimension=dx%3As46m5MS0hxu&amp;dimension=ou%3AO6uvpzGd5pu%3Bfdc6uOvgoji&amp;dimension=pe%3A202101&amp;outputIdScheme=NAME</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 4</span></span></span>
+<span><span class="co">#&gt;   analytic        org_unit period       value</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> BCG doses given Bombali  January 2021   537</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> BCG doses given Bo       January 2021  <span style="text-decoration: underline;">1</span>196</span></span></code></pre></div>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths &lt; 5 yrs)</span></span>
-<span><span class="co">#                                     org_unit =   c("ImspTQPwCqd"), #Sierra Leone (National level)</span></span>
-<span><span class="co">#                                     period = "LAST_12_MONTHS",</span></span>
-<span><span class="co">#                                     output_scheme = "NAME")</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dhis2_play_connection</span><span class="op">$</span><span class="fu">get_analytics</span><span class="op">(</span>analytic <span class="op">=</span> <span class="st">"FTRrcoaog83"</span>, <span class="co">#Accute Flaccid Paralysis (Deaths &lt; 5 yrs)</span></span>
+<span>                                    org_unit <span class="op">=</span>   <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ImspTQPwCqd"</span><span class="op">)</span>, <span class="co">#Sierra Leone (National level)</span></span>
+<span>                                    period <span class="op">=</span> <span class="st">"LAST_12_MONTHS"</span>,</span>
+<span>                                    output_scheme <span class="op">=</span> <span class="st">"NAME"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/analytics?dimension=dx%3AFTRrcoaog83&amp;dimension=ou%3AImspTQPwCqd&amp;dimension=pe%3ALAST_12_MONTHS&amp;outputIdScheme=NAME</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">#&gt;   analytic                                  org_unit     period         value</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone October 2024       3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone September 2024   101</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone August 2024      254</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone March 2024         1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2024     61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2024      23</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
