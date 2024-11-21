@@ -12,6 +12,9 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 [![R-CMD-check](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/amanyiraho/dhis2r/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dhis2r)](https://CRAN.R-project.org/package=dhis2r)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/dhis2r)](https://cranlogs.r-pkg.org/badges/grand-total/dhis2r)
+[![](https://cranlogs.r-pkg.org/badges/dhis2r)](https://cran.r-project.org/package=dhis2r)
+
 <!-- badges: end -->
 
 ## Overview

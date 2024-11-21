@@ -9,7 +9,8 @@
 #'
 #' @export
 #'
-#' @examples
+#' @examplesIf interactive() && curl::has_internet()
+#'
 #' # Load dhis2r
 #' library(dhis2r)
 #' # connect to the DHIS2 instance
@@ -115,7 +116,7 @@ Dhis2r <- R6::R6Class(
       self$request_sent <-  self$request_sent |>
       #  req_url_query(paging = "false") |>
         req_headers("Accept" = "application/json") |>
-        httr2::req_user_agent("dhis2r (http://www.amanyiraho.com/dhis2r/") |>
+        httr2::req_user_agent("dhis2r (http://www.dhis2r.amanyiraho.com/") |>
         httr2::req_retry(max_tries = 5)
 
     },
@@ -129,26 +130,31 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_user_info =  function() {
                   # Check for internet
-                  check_internet()
+        if(has_internet()){
 
-           response_object <- self$request_sent  |>
-                   req_url_path_append("me") |>
-                   req_perform()
+          response_object <- self$request_sent  |>
+            req_url_path_append("me") |>
+           # req_error(body = dhis2_error_message) |>
+            req_perform()
 
-           print(response_object$url)
+          message(response_object$url)
 
-                 response_data  <-  response_object |>
-                   resp_body_json(simplifyVector = TRUE)
+          response_data  <-  response_object |>
+            resp_body_json(simplifyVector = TRUE)
 
-                 self$access_rights <- unlist(response_data[["access"]])
+          self$access_rights <- unlist(response_data[["access"]])
 
-                 self$account_info <- unlist(list(response_data[["userCredentials"]][["createdBy"]][c("name", "username")], response_data["created"]))
+          self$account_info <- unlist(list(response_data[["userCredentials"]][["createdBy"]][c("name", "username")], response_data["created"]))
 
-                 unlist( list( response_data["name"],
-                               response_data["phoneNumber"],
-                               response_data["email"]))
+          unlist( list( response_data["name"],
+                        response_data["phoneNumber"],
+                        response_data["email"]))
 
-               },
+
+        }else{
+          message("No internet connection!")
+        }
+      },
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     #' @description
@@ -163,44 +169,46 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_metadata = function(endpoint = NULL, fields = c("name","id")) {
 
-                # Check for internet
-                check_internet()
 
-                 if(is.null(endpoint)){
+      if(has_internet()){
 
-                   response_object <- self$request_sent |>
-                     req_url_path_append("resources") |>
-                     req_perform()
+        if(is.null(endpoint)){
 
-                   print(response_object$url)
+          response_object <- self$request_sent |>
+            req_url_path_append("resources") |>
+            req_perform()
 
-                   response_data  <-  response_object |>
-                     resp_body_json(simplifyVector = TRUE)
+          message(response_object$url)
 
-                   tibble::tibble(response_data$resources)
+          response_data  <-  response_object |>
+            resp_body_json(simplifyVector = TRUE)
 
-                 }else{
+          tibble::tibble(response_data$resources)
 
-
-                   attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
-
-                   response_object <- self$request_sent |>
-                     req_url_path_append(endpoint) |>
-                     req_url_query(fields = paste0(fields, collapse = ",")) |>
-                     req_perform()
-
-                   print(response_object$url)
+        }else{
 
 
-                   response_data  <-  response_object |>
-                     resp_body_json(simplifyVector = TRUE)
+          attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
+
+          response_object <- self$request_sent |>
+            req_url_path_append(endpoint) |>
+            req_url_query(fields = paste0(fields, collapse = ",")) |>
+            req_perform()
+
+          message(response_object$url)
 
 
-                   tibble::tibble( response_data[[1]])
+          response_data  <-  response_object |>
+            resp_body_json(simplifyVector = TRUE)
 
-              }
+          tibble::tibble( response_data[[endpoint]])
 
-               },
+        }
+
+      }else{
+        message("No internet connection!")
+      }
+      },
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     #' @description Get all possible fields for a specific metadata resource from a DHIS2 instance
@@ -212,25 +220,29 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     get_metadata_fields = function(endpoint) {
       # Check for internet
-      check_internet()
-      attempt::stop_if(endpoint, is.null, "endpoint shouldnot be NULL")
-      attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
 
-      response_object <- self$request_sent |>
-                   req_url_path_append(endpoint) |>
-                   req_url_query(fields = ":all") |>
-                   req_url_query(paging = "true") |>
-                   req_url_query(pageSize = "1") |>
-                   req_perform()
+      if(has_internet()){
 
-                 print(response_object$url)
+        attempt::stop_if(endpoint, is.null, "endpoint shouldnot be NULL")
+        attempt::stop_if_not(endpoint, is.character, "endpoint should be type character")
 
-                 response_data  <-  response_object |>
-                   resp_body_json(simplifyVector = TRUE)
+        response_object <- self$request_sent |>
+          req_url_path_append(endpoint) |>
+          req_url_query(fields = ":all") |>
+          req_url_query(paging = "true") |>
+          req_url_query(pageSize = "1") |>
+          req_perform()
 
+        message(response_object$url)
 
-                 sort(names(response_data[[2]]))
-               },
+        response_data  <-  response_object |>
+          resp_body_json(simplifyVector = TRUE)
+
+        sort(names(response_data[[endpoint]]))
+      }else{
+        message("No internet connection!")
+      }
+  },
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description Get all possible analytics resources from a DHIS2 instance i.e
     #'
@@ -244,48 +256,52 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     get_analytics= function(analytic,org_unit ,period, output_scheme= c("UID", "NAME")) {
-                  # Check for internet
-                  check_internet()
-                  args <- list(analytic = analytic,org_unit= org_unit ,period = period, output_scheme = output_scheme)
-      #Check that at least one argument is not null
 
-                attempt::stop_if_any(args, is.null,"You need to specify all arguements")
-                attempt::stop_if_none(args, is.character, "All arguements should be type character")
+      if(has_internet()){
 
-                 output_scheme <- match.arg(output_scheme)
+        # Check for internet
 
-                 analytic <- paste0("dx:", paste0(analytic,collapse = ";"))
-                 org_unit <- paste0("dimension=ou:", paste0(org_unit,collapse = ";"))
-                 period <- paste0("dimension=pe:",  paste0(period,collapse = ";"))
+        args <- list(analytic = analytic,org_unit= org_unit ,period = period, output_scheme = output_scheme)
+        #Check that at least one argument is not null
 
-                 response_object <- self$request_sent |>
-                   req_url_path_append("analytics") |>
-                   req_url_query(dimension= I(paste(analytic, org_unit, period, sep = "&"))) |>
-                   req_url_query(outputIdScheme = output_scheme) |>
-                   req_perform()
+        attempt::stop_if_any(args, is.null,"You need to specify all arguements")
+        attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
-                 print(response_object$url)
+        output_scheme <- match.arg(output_scheme)
 
+        analytic <- paste0("dx:", paste0(analytic,collapse = ";"))
+        org_unit <- paste0("dimension=ou:", paste0(org_unit,collapse = ";"))
+        period <- paste0("dimension=pe:",  paste0(period,collapse = ";"))
 
-                 response_data  <-  response_object |>
-                   resp_body_json(simplifyVector = TRUE, flatten = TRUE)
+        response_object <- self$request_sent |>
+          req_url_path_append("analytics") |>
+          req_url_query(dimension= I(paste(analytic, org_unit, period, sep = "&"))) |>
+          req_url_query(outputIdScheme = output_scheme) |>
+          req_perform()
 
-                 if(length(response_data$rows) == 0){
-
-                   as.data.frame(response_data$rows)
-
-                 }else{
-                   as.data.frame(response_data$rows) |>
-                      setNames(c("analytic", "org_unit", "period", "value")) |>
-                     tibble::as_tibble() |>
-                     dplyr::mutate(analytic = as.factor(analytic),
-                                   org_unit = as.factor(org_unit),
-                                   value = as.numeric(value))
-                   }
+        message(response_object$url)
 
 
+        response_data  <-  response_object |>
+          resp_body_json(simplifyVector = TRUE, flatten = TRUE)
 
-               },
+        if(length(response_data$rows) == 0){
+
+          as.data.frame(response_data$rows)
+
+        }else{
+          as.data.frame(response_data$rows) |>
+            setNames(c("analytic", "org_unit", "period", "value")) |>
+            tibble::as_tibble() |>
+            dplyr::mutate(analytic = as.factor(analytic),
+                          org_unit = as.factor(org_unit),
+                          value = as.numeric(value))
+        }
+
+      }else{
+        message("No internet connection!")
+      }
+      },
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #' @description Get all any analytics resource from a DHIS2 instance to cater for long DHIS2 favorites
@@ -297,32 +313,37 @@ Dhis2r <- R6::R6Class(
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     get_any_analytic = function(endpoint_url) {
-      # Check for internet
-      check_internet()
-      args <- list(endpoint_url = endpoint_url)
-      #Check that at least one argument is not null
-
-      attempt::stop_if_any(args, is.null,"You need to specify all arguements")
-      attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
 
-      response_object <- self$request_sent |>
-        req_url_path_append(endpoint_url) |>
-        req_perform()
+      if(has_internet()){
 
-      print(response_object$url)
+        args <- list(endpoint_url = endpoint_url)
+        #Check that at least one argument is not null
+
+        attempt::stop_if_any(args, is.null,"You need to specify all arguements")
+        attempt::stop_if_none(args, is.character, "All arguements should be type character")
 
 
-      response_data  <-  response_object |>
-        resp_body_json(simplifyVector = TRUE, flatten = TRUE)
+        response_object <- self$request_sent |>
+          req_url_path_append(endpoint_url) |>
+          req_perform()
 
-      if(length(response_data$rows) == 0){
+        message(response_object$url)
 
-        as.data.frame(response_data$rows)
+        response_data  <-  response_object |>
+          resp_body_json(simplifyVector = TRUE, flatten = TRUE)
+
+        if(length(response_data$rows) == 0){
+
+          as.data.frame(response_data$rows)
+
+        }else{
+          as.data.frame(response_data$rows) |>
+            tibble::as_tibble()
+        }
 
       }else{
-        as.data.frame(response_data$rows) |>
-          tibble::as_tibble()
+        message("No internet connection!")
       }
     }
     )
