@@ -1,0 +1,538 @@
+{
+    "resources": [
+        {
+            "displayName": "Program Rule Actions",
+            "singular": "programRuleAction",
+            "plural": "programRuleActions",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programRuleActions"
+        },
+        {
+            "displayName": "Job Configurations",
+            "singular": "jobConfiguration",
+            "plural": "jobConfigurations",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/jobConfigurations"
+        },
+        {
+            "displayName": "Program Rules",
+            "singular": "programRule",
+            "plural": "programRules",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programRules"
+        },
+        {
+            "displayName": "Constants",
+            "singular": "constant",
+            "plural": "constants",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/constants"
+        },
+        {
+            "displayName": "Data Approval Workflows",
+            "singular": "dataApprovalWorkflow",
+            "plural": "dataApprovalWorkflows",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataApprovalWorkflows"
+        },
+        {
+            "displayName": "Category Combos",
+            "singular": "categoryCombo",
+            "plural": "categoryCombos",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categoryCombos"
+        },
+        {
+            "displayName": "Data Set Notification Templates",
+            "singular": "dataSetNotificationTemplate",
+            "plural": "dataSetNotificationTemplates",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataSetNotificationTemplates"
+        },
+        {
+            "displayName": "Program Stage Sections",
+            "singular": "programStageSection",
+            "plural": "programStageSections",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programStageSections"
+        },
+        {
+            "displayName": "Analytics Table Hooks",
+            "singular": "analyticsTableHook",
+            "plural": "analyticsTableHooks",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/analyticsTableHooks"
+        },
+        {
+            "displayName": "Event Hooks",
+            "singular": "eventHook",
+            "plural": "eventHooks",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/eventHooks"
+        },
+        {
+            "displayName": "Program Data Elements",
+            "singular": "programDataElement",
+            "plural": "programDataElements",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programDataElements"
+        },
+        {
+            "displayName": "Programs",
+            "singular": "program",
+            "plural": "programs",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programs"
+        },
+        {
+            "displayName": "Category Option Combos",
+            "singular": "categoryOptionCombo",
+            "plural": "categoryOptionCombos",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categoryOptionCombos"
+        },
+        {
+            "displayName": "User Groups",
+            "singular": "userGroup",
+            "plural": "userGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/userGroups"
+        },
+        {
+            "displayName": "Data Entry Forms",
+            "singular": "dataEntryForm",
+            "plural": "dataEntryForms",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataEntryForms"
+        },
+        {
+            "displayName": "Data Sets",
+            "singular": "dataSet",
+            "plural": "dataSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataSets"
+        },
+        {
+            "displayName": "Tracked Entity Instance Filters",
+            "singular": "trackedEntityInstanceFilter",
+            "plural": "trackedEntityInstanceFilters",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/trackedEntityInstanceFilters"
+        },
+        {
+            "displayName": "External Map Layers",
+            "singular": "externalMapLayer",
+            "plural": "externalMapLayers",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/externalMapLayers"
+        },
+        {
+            "displayName": "Interpretations",
+            "singular": "interpretation",
+            "plural": "interpretations",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/interpretations"
+        },
+        {
+            "displayName": "Data Stores",
+            "singular": "dataStore",
+            "plural": "dataStores",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataStore"
+        },
+        {
+            "displayName": "Organisation Unit Groups",
+            "singular": "organisationUnitGroup",
+            "plural": "organisationUnitGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnitGroups"
+        },
+        {
+            "displayName": "Sections",
+            "singular": "section",
+            "plural": "sections",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/sections"
+        },
+        {
+            "displayName": "Map Views",
+            "singular": "mapView",
+            "plural": "mapViews",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/mapViews"
+        },
+        {
+            "displayName": "Options",
+            "singular": "option",
+            "plural": "options",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/options"
+        },
+        {
+            "displayName": "Program Stage Working Lists",
+            "singular": "programStageWorkingList",
+            "plural": "programStageWorkingLists",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programStageWorkingLists"
+        },
+        {
+            "displayName": "Attributes",
+            "singular": "attribute",
+            "plural": "attributes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/attributes"
+        },
+        {
+            "displayName": "Categories",
+            "singular": "category",
+            "plural": "categories",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categories"
+        },
+        {
+            "displayName": "Option Sets",
+            "singular": "optionSet",
+            "plural": "optionSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/optionSets"
+        },
+        {
+            "displayName": "Reports",
+            "singular": "report",
+            "plural": "reports",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/reports"
+        },
+        {
+            "displayName": "Maps",
+            "singular": "map",
+            "plural": "maps",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/maps"
+        },
+        {
+            "displayName": "Indicator Types",
+            "singular": "indicatorType",
+            "plural": "indicatorTypes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/indicatorTypes"
+        },
+        {
+            "displayName": "Program Indicators",
+            "singular": "programIndicator",
+            "plural": "programIndicators",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programIndicators"
+        },
+        {
+            "displayName": "Program Indicator Groups",
+            "singular": "programIndicatorGroup",
+            "plural": "programIndicatorGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programIndicatorGroups"
+        },
+        {
+            "displayName": "Category Option Groups",
+            "singular": "categoryOptionGroup",
+            "plural": "categoryOptionGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categoryOptionGroups"
+        },
+        {
+            "displayName": "O Auth2 Clients",
+            "singular": "oAuth2Client",
+            "plural": "oAuth2Clients",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/oAuth2Clients"
+        },
+        {
+            "displayName": "Event Charts",
+            "singular": "eventChart",
+            "plural": "eventCharts",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/eventCharts"
+        },
+        {
+            "displayName": "Tracked Entity Types",
+            "singular": "trackedEntityType",
+            "plural": "trackedEntityTypes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/trackedEntityTypes"
+        },
+        {
+            "displayName": "Relationships",
+            "singular": "relationship",
+            "plural": "relationships",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/relationships"
+        },
+        {
+            "displayName": "Event Visualizations",
+            "singular": "eventVisualization",
+            "plural": "eventVisualizations",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/eventVisualizations"
+        },
+        {
+            "displayName": "Icons",
+            "singular": "icon",
+            "plural": "icons",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/icons"
+        },
+        {
+            "displayName": "Tracked Entity Instances",
+            "singular": "trackedEntityInstance",
+            "plural": "trackedEntityInstances",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/trackedEntityInstances"
+        },
+        {
+            "displayName": "Validation Results",
+            "singular": "validationResult",
+            "plural": "validationResults",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/validationResults"
+        },
+        {
+            "displayName": "Organisation Unit Levels",
+            "singular": "organisationUnitLevel",
+            "plural": "organisationUnitLevels",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnitLevels"
+        },
+        {
+            "displayName": "Proposals",
+            "singular": "proposal",
+            "plural": "proposals",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/metadata/proposals"
+        },
+        {
+            "displayName": "Program Notification Templates",
+            "singular": "programNotificationTemplate",
+            "plural": "programNotificationTemplates",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programNotificationTemplates"
+        },
+        {
+            "displayName": "Option Group Sets",
+            "singular": "optionGroupSet",
+            "plural": "optionGroupSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/optionGroupSets"
+        },
+        {
+            "displayName": "Tracked Entity Attributes",
+            "singular": "trackedEntityAttribute",
+            "plural": "trackedEntityAttributes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/trackedEntityAttributes"
+        },
+        {
+            "displayName": "Indicators",
+            "singular": "indicator",
+            "plural": "indicators",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/indicators"
+        },
+        {
+            "displayName": "Program Sections",
+            "singular": "programSection",
+            "plural": "programSections",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programSections"
+        },
+        {
+            "displayName": "Category Options",
+            "singular": "categoryOption",
+            "plural": "categoryOptions",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categoryOptions"
+        },
+        {
+            "displayName": "Users",
+            "singular": "user",
+            "plural": "users",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/users"
+        },
+        {
+            "displayName": "Aggregate Data Exchanges",
+            "singular": "aggregateDataExchange",
+            "plural": "aggregateDataExchanges",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/aggregateDataExchanges"
+        },
+        {
+            "displayName": "Relationship Types",
+            "singular": "relationshipType",
+            "plural": "relationshipTypes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/relationshipTypes"
+        },
+        {
+            "displayName": "Indicator Group Sets",
+            "singular": "indicatorGroupSet",
+            "plural": "indicatorGroupSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/indicatorGroupSets"
+        },
+        {
+            "displayName": "Validation Rules",
+            "singular": "validationRule",
+            "plural": "validationRules",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/validationRules"
+        },
+        {
+            "displayName": "External File Resources",
+            "singular": "externalFileResource",
+            "plural": "externalFileResources",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/externalFileResources"
+        },
+        {
+            "displayName": "Sql Views",
+            "singular": "sqlView",
+            "plural": "sqlViews",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/sqlViews"
+        },
+        {
+            "displayName": "Data Approval Levels",
+            "singular": "dataApprovalLevel",
+            "plural": "dataApprovalLevels",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataApprovalLevels"
+        },
+        {
+            "displayName": "User Roles",
+            "singular": "userRole",
+            "plural": "userRoles",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/userRoles"
+        },
+        {
+            "displayName": "Organisation Unit Group Sets",
+            "singular": "organisationUnitGroupSet",
+            "plural": "organisationUnitGroupSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnitGroupSets"
+        },
+        {
+            "displayName": "Option Groups",
+            "singular": "optionGroup",
+            "plural": "optionGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/optionGroups"
+        },
+        {
+            "displayName": "Min Max Data Elements",
+            "singular": "minMaxDataElement",
+            "plural": "minMaxDataElements",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/minMaxDataElements"
+        },
+        {
+            "displayName": "Metadata Versions",
+            "singular": "metadataVersion",
+            "plural": "metadataVersions",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/metadata/version"
+        },
+        {
+            "displayName": "Sms Commands",
+            "singular": "smsCommand",
+            "plural": "smsCommands",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/smsCommands"
+        },
+        {
+            "displayName": "Documents",
+            "singular": "document",
+            "plural": "documents",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/documents"
+        },
+        {
+            "displayName": "Category Option Group Sets",
+            "singular": "categoryOptionGroupSet",
+            "plural": "categoryOptionGroupSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/categoryOptionGroupSets"
+        },
+        {
+            "displayName": "Program Stages",
+            "singular": "programStage",
+            "plural": "programStages",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programStages"
+        },
+        {
+            "displayName": "Routes",
+            "singular": "route",
+            "plural": "routes",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/routes"
+        },
+        {
+            "displayName": "Data Element Group Sets",
+            "singular": "dataElementGroupSet",
+            "plural": "dataElementGroupSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataElementGroupSets"
+        },
+        {
+            "displayName": "Predictors",
+            "singular": "predictor",
+            "plural": "predictors",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/predictors"
+        },
+        {
+            "displayName": "Organisation Units",
+            "singular": "organisationUnit",
+            "plural": "organisationUnits",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits"
+        },
+        {
+            "displayName": "Data Elements",
+            "singular": "dataElement",
+            "plural": "dataElements",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataElements"
+        },
+        {
+            "displayName": "Visualizations",
+            "singular": "visualization",
+            "plural": "visualizations",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/visualizations"
+        },
+        {
+            "displayName": "Dashboard Items",
+            "singular": "dashboardItem",
+            "plural": "dashboardItems",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dashboardItems"
+        },
+        {
+            "displayName": "Event Filters",
+            "singular": "eventFilter",
+            "plural": "eventFilters",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/eventFilters"
+        },
+        {
+            "displayName": "Event Reports",
+            "singular": "eventReport",
+            "plural": "eventReports",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/eventReports"
+        },
+        {
+            "displayName": "Api Token",
+            "singular": "apiToken",
+            "plural": "apiToken",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/apiToken"
+        },
+        {
+            "displayName": "Legend Sets",
+            "singular": "legendSet",
+            "plural": "legendSets",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/legendSets"
+        },
+        {
+            "displayName": "File Resources",
+            "singular": "fileResource",
+            "plural": "fileResources",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/fileResources"
+        },
+        {
+            "displayName": "Message Conversations",
+            "singular": "messageConversation",
+            "plural": "messageConversations",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/messageConversations"
+        },
+        {
+            "displayName": "Indicator Groups",
+            "singular": "indicatorGroup",
+            "plural": "indicatorGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/indicatorGroups"
+        },
+        {
+            "displayName": "Validation Rule Groups",
+            "singular": "validationRuleGroup",
+            "plural": "validationRuleGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/validationRuleGroups"
+        },
+        {
+            "displayName": "Push Analysis",
+            "singular": "pushAnalysis",
+            "plural": "pushAnalysis",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/pushAnalysis"
+        },
+        {
+            "displayName": "Data Element Groups",
+            "singular": "dataElementGroup",
+            "plural": "dataElementGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataElementGroups"
+        },
+        {
+            "displayName": "Data Element Operands",
+            "singular": "dataElementOperand",
+            "plural": "dataElementOperands",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataElementOperands"
+        },
+        {
+            "displayName": "Program Rule Variables",
+            "singular": "programRuleVariable",
+            "plural": "programRuleVariables",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/programRuleVariables"
+        },
+        {
+            "displayName": "Predictor Groups",
+            "singular": "predictorGroup",
+            "plural": "predictorGroups",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/predictorGroups"
+        },
+        {
+            "displayName": "Dashboards",
+            "singular": "dashboard",
+            "plural": "dashboards",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dashboards"
+        },
+        {
+            "displayName": "Validation Notification Templates",
+            "singular": "validationNotificationTemplate",
+            "plural": "validationNotificationTemplates",
+            "href": "https://play.im.dhis2.org/stable-2-40-5/api/validationNotificationTemplates"
+        }
+    ]
+}

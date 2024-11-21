@@ -1,0 +1,111 @@
+{
+    "headers": [
+        {
+            "name": "dx",
+            "column": "Data",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202101": {
+                "name": "January 2021"
+            },
+            "dx": {
+                "name": "Data"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "psbwp3CQEhs": {
+                "name": "Fixed, >1y"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "s46m5MS0hxu": {
+                "name": "BCG doses given"
+            },
+            "Prlt0C1RF0s": {
+                "name": "Fixed, <1y"
+            },
+            "hEFKSsPV5et": {
+                "name": "Outreach, >1y"
+            },
+            "O6uvpzGd5pu": {
+                "name": "Bo"
+            },
+            "V6L425pT3A0": {
+                "name": "Outreach, <1y"
+            },
+            "fdc6uOvgoji": {
+                "name": "Bombali"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "s46m5MS0hxu"
+            ],
+            "pe": [
+                "202101"
+            ],
+            "ou": [
+                "O6uvpzGd5pu",
+                "fdc6uOvgoji"
+            ],
+            "co": [
+                "hEFKSsPV5et",
+                "V6L425pT3A0",
+                "psbwp3CQEhs",
+                "Prlt0C1RF0s"
+            ]
+        }
+    },
+    "rowContext": {
+
+    },
+    "rows": [
+        [
+            "BCG doses given",
+            "Bombali",
+            "January 2021",
+            "537"
+        ],
+        [
+            "BCG doses given",
+            "Bo",
+            "January 2021",
+            "1196"
+        ]
+    ],
+    "height": 2,
+    "headerWidth": 4,
+    "width": 4
+}
