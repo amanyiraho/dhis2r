@@ -14,6 +14,8 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection
 You can use a DHIS2 instance connection to get data several times without needing to manually supply your user credentials on each API call.
 }
 \examples{
+\dontshow{if (interactive() && curl::has_internet()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+
 # Load dhis2r
 library(dhis2r)
 # connect to the DHIS2 instance
@@ -41,7 +43,7 @@ org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
 period = "LAST_12_MONTHS",
  output_scheme = "NAME")
 
-
+\dontshow{\}) # examplesIf}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

@@ -17,6 +17,7 @@ Imports:
     R6 (>= 2.5.1)
 Suggests: 
     covr,
+    httptest2,
     knitr,
     rmarkdown,
     testthat

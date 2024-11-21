@@ -1,3 +1,13 @@
+# dhis2r 0.3.0
+
+## Improvements
+
+* Updated the package to fail gracefully with an informative message if the resource is not available or has changed and doesn't give a check warning nor error
+
+* Now API calls function print a massage "No internet connection!" if there is no internet connection instead of an error
+
+* The url is of the queried API endpoint is printed using `message()` instead of `print()`
+
 # dhis2r 0.2.1
 
 ## Bug fix

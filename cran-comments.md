@@ -2,7 +2,15 @@
 
 This is a resubmission. In this version I have:
 
-* Updated the vignette to username and password instead of PAT since the public server is regularly updated 
+Updated the package to fail gracefully with an informative message if the resource is not available or has changed and doesn't give a check warning nor error. I have achieved this by making sure; 
+
+  * API call functions print a massage "No internet connection!" if there is no internet connection instead of an error
+  
+  * All examples run the if the environment is interactive and has internet
+  
+  * All the tests are skipped on CRAN and are only run if there is an internet connection (Tests are always run during CI using github Actions)
+  
+  * The vignettes are built using a mock up directory to that they can run without internet connection and when resources are unavailable 
 
 
 * I have tested the package on GITHUB actions and all past using these OSs
