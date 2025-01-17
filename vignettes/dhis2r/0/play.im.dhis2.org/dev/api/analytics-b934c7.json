@@ -91,21 +91,21 @@
     "rowContext": {
 
     },
+    "width": 4,
     "rows": [
         [
             "BCG doses given",
             "Bombali",
             "January 2021",
-            "537"
+            "608"
         ],
         [
             "BCG doses given",
             "Bo",
             "January 2021",
-            "1196"
+            "710"
         ]
     ],
     "height": 2,
-    "headerWidth": 4,
-    "width": 4
+    "headerWidth": 4
 }

@@ -1,9 +1,9 @@
 {
     "pager": {
         "page": 1,
-        "total": 1339,
+        "total": 1332,
         "pageSize": 50,
-        "nextPage": "https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?page=2&fields=name%2Cid%2Clevel",
+        "nextPage": "https://play.im.dhis2.org/dev/api/organisationUnits?page=2&fields=name%2Cid%2Clevel",
         "pageCount": 27
     },
     "organisationUnits": [
@@ -46,11 +46,6 @@
             "name": "Allen Town Health Post",
             "id": "kbGqmM6ZWWV",
             "level": 4
-        },
-        {
-            "name": "Antananarivo",
-            "id": "w8OOoqYFAWI",
-            "level": 2
         },
         {
             "name": "Approved School CHP",
@@ -255,6 +250,11 @@
         {
             "name": "Baoma MCHP",
             "id": "t52CJEyLhch",
+            "level": 4
+        },
+        {
+            "name": "Baoma Oil Mill CHC",
+            "id": "Y8foq27WLti",
             "level": 4
         }
     ]

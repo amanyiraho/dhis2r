@@ -1,14 +1,13 @@
 {
     "pager": {
         "page": 1,
-        "total": 1060,
+        "total": 1038,
         "pageSize": 1,
-        "nextPage": "https://play.im.dhis2.org/stable-2-40-5/api/dataElements?page=2&pageSize=1&paging=true&fields=%3Aall",
-        "pageCount": 1060
+        "nextPage": "https://play.im.dhis2.org/dev/api/dataElements?page=2&pageSize=1&paging=true&fields=%3Aall",
+        "pageCount": 1038
     },
     "dataElements": [
         {
-            "href": "https://play.im.dhis2.org/stable-2-40-5/api/dataElements/FTRrcoaog83",
             "code": "DE_1148614",
             "name": "Accute Flaccid Paralysis (Deaths < 5 yrs)",
             "created": "2011-04-20T17:54:58.775",
@@ -55,28 +54,12 @@
                     "value": "aa"
                 }
             ],
-            "externalAccess": false,
-            "publicAccess": "rw------",
             "createdBy": {
                 "id": "GOLswS44mh8",
                 "code": null,
                 "name": "Tom Wakiki",
                 "displayName": "Tom Wakiki",
                 "username": "system"
-            },
-            "userGroupAccesses": [
-
-            ],
-            "userAccesses": [
-
-            ],
-            "access": {
-                "manage": true,
-                "externalize": false,
-                "write": true,
-                "read": true,
-                "update": true,
-                "delete": true
             },
             "favorites": [
 
@@ -141,6 +124,14 @@
             "dimensionItem": "FTRrcoaog83",
             "displayShortName": "Accute French",
             "displayName": "Accute French",
+            "access": {
+                "manage": true,
+                "externalize": false,
+                "write": true,
+                "read": true,
+                "update": true,
+                "delete": true
+            },
             "favorite": false,
             "user": {
                 "id": "GOLswS44mh8",
@@ -149,14 +140,15 @@
                 "displayName": "Tom Wakiki",
                 "username": "system"
             },
+            "href": "https://play.im.dhis2.org/dev/api/dataElements/FTRrcoaog83",
             "displayFormName": "Accute French",
             "id": "FTRrcoaog83",
             "attributeValues": [
                 {
+                    "value": "AFP",
                     "attribute": {
                         "id": "n2xYlNbsfko"
-                    },
-                    "value": "AFP"
+                    }
                 }
             ],
             "categoryCombo": {
@@ -164,10 +156,10 @@
             },
             "dataElementGroups": [
                 {
-                    "id": "idD1wcvBISQ"
+                    "id": "rPGfUFYbcfJ"
                 },
                 {
-                    "id": "rPGfUFYbcfJ"
+                    "id": "idD1wcvBISQ"
                 },
                 {
                     "id": "QAc5FhbeFwl"

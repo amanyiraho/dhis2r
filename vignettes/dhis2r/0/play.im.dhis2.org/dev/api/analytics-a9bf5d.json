@@ -83,9 +83,6 @@
             "ImspTQPwCqd": {
                 "name": "Sierra Leone"
             },
-            "202311": {
-                "name": "November 2023"
-            },
             "202410": {
                 "name": "October 2024"
             },
@@ -95,8 +92,11 @@
             "ou": {
                 "name": "Organisation unit"
             },
-            "202312": {
-                "name": "December 2023"
+            "202411": {
+                "name": "November 2024"
+            },
+            "202412": {
+                "name": "December 2024"
             },
             "b7fjZVL3q9b": {
                 "name": "5-14y"
@@ -116,8 +116,6 @@
                 "FTRrcoaog83"
             ],
             "pe": [
-                "202311",
-                "202312",
                 "202401",
                 "202402",
                 "202403",
@@ -127,7 +125,9 @@
                 "202407",
                 "202408",
                 "202409",
-                "202410"
+                "202410",
+                "202411",
+                "202412"
             ],
             "ou": [
                 "ImspTQPwCqd"
@@ -146,45 +146,21 @@
     "rowContext": {
 
     },
+    "width": 4,
     "rows": [
         [
             "Accute Flaccid Paralysis (Deaths < 5 yrs)",
             "Sierra Leone",
-            "October 2024",
-            "3"
-        ],
-        [
-            "Accute Flaccid Paralysis (Deaths < 5 yrs)",
-            "Sierra Leone",
-            "September 2024",
-            "101"
-        ],
-        [
-            "Accute Flaccid Paralysis (Deaths < 5 yrs)",
-            "Sierra Leone",
-            "August 2024",
-            "254"
-        ],
-        [
-            "Accute Flaccid Paralysis (Deaths < 5 yrs)",
-            "Sierra Leone",
-            "March 2024",
-            "1"
-        ],
-        [
-            "Accute Flaccid Paralysis (Deaths < 5 yrs)",
-            "Sierra Leone",
             "February 2024",
-            "61"
+            "34"
         ],
         [
             "Accute Flaccid Paralysis (Deaths < 5 yrs)",
             "Sierra Leone",
             "January 2024",
-            "23"
+            "12"
         ]
     ],
-    "height": 6,
-    "headerWidth": 4,
-    "width": 4
+    "height": 2,
+    "headerWidth": 4
 }

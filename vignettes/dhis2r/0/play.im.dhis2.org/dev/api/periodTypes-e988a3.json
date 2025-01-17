@@ -103,6 +103,12 @@
             "frequencyOrder": 365
         },
         {
+            "name": "FinancialSep",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyySep",
+            "frequencyOrder": 365
+        },
+        {
             "name": "FinancialOct",
             "isoDuration": "P1Y",
             "isoFormat": "yyyyOct",
