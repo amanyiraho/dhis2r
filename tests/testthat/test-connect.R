@@ -1,5 +1,5 @@
 
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5/",
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/dev/",
                                     username = "admin",
                                     password = "district"
                                     # api_version = "2.39.0.1",

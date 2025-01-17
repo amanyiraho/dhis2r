@@ -1,0 +1,261 @@
+{
+    "pager": {
+        "page": 1,
+        "total": 1332,
+        "pageSize": 50,
+        "nextPage": "https://play.im.dhis2.org/dev/api/organisationUnits?page=2&fields=name%2Cid%2Clevel",
+        "pageCount": 27
+    },
+    "organisationUnits": [
+        {
+            "name": "Adonkia CHP",
+            "id": "Rp268JB6Ne4",
+            "level": 4
+        },
+        {
+            "name": "Afro Arab Clinic",
+            "id": "cDw53Ej8rju",
+            "level": 4
+        },
+        {
+            "name": "Agape CHP",
+            "id": "GvFqTavdpGE",
+            "level": 4
+        },
+        {
+            "name": "Ahamadyya Mission Cl",
+            "id": "plnHVbJR6p4",
+            "level": 4
+        },
+        {
+            "name": "Ahmadiyya Muslim Hospital",
+            "id": "BV4IomHvri4",
+            "level": 4
+        },
+        {
+            "name": "Air Port Centre, Lungi",
+            "id": "qjboFI0irVu",
+            "level": 4
+        },
+        {
+            "name": "Alkalia CHP",
+            "id": "dWOAzMcK2Wt",
+            "level": 4
+        },
+        {
+            "name": "Allen Town Health Post",
+            "id": "kbGqmM6ZWWV",
+            "level": 4
+        },
+        {
+            "name": "Approved School CHP",
+            "id": "eoYV2p74eVz",
+            "level": 4
+        },
+        {
+            "name": "Arab Clinic",
+            "id": "nq7F0t1Pz6t",
+            "level": 4
+        },
+        {
+            "name": "Baama CHC",
+            "id": "r5WWF9WDzoa",
+            "level": 4
+        },
+        {
+            "name": "Babara CHC",
+            "id": "yMCshbaVExv",
+            "level": 4
+        },
+        {
+            "name": "Badala MCHP",
+            "id": "tlMeFk8C4CG",
+            "level": 4
+        },
+        {
+            "name": "Badjia",
+            "id": "YuQRtpLP10I",
+            "level": 3
+        },
+        {
+            "name": "Bafodia CHC",
+            "id": "Jiymtq0A01x",
+            "level": 4
+        },
+        {
+            "name": "Bagruwa",
+            "id": "jPidqyo7cpF",
+            "level": 3
+        },
+        {
+            "name": "Baiama CHP",
+            "id": "XtuhRhmbrJM",
+            "level": 4
+        },
+        {
+            "name": "Bai Bureh Memorial Hospital",
+            "id": "BH7rDkWjUqc",
+            "level": 4
+        },
+        {
+            "name": "Baiima CHP",
+            "id": "c41XRVOYNJm",
+            "level": 4
+        },
+        {
+            "name": "Bai Largo MCHP",
+            "id": "Rll4VmTDRiE",
+            "level": 4
+        },
+        {
+            "name": "Bailor CHP",
+            "id": "Eyj2kiEJ7M3",
+            "level": 4
+        },
+        {
+            "name": "Baiwala CHP",
+            "id": "HFyjUvMjQ8H",
+            "level": 4
+        },
+        {
+            "name": "Bakeloko CHP",
+            "id": "MHAWZr2Caxw",
+            "level": 4
+        },
+        {
+            "name": "Bambara Kaima CHP",
+            "id": "LOpWauwwghf",
+            "level": 4
+        },
+        {
+            "name": "Bambara MCHP",
+            "id": "mUuCjQWMaOc",
+            "level": 4
+        },
+        {
+            "name": "Bambawolo CHP",
+            "id": "TNbHYOuQi8s",
+            "level": 4
+        },
+        {
+            "name": "Bambuibu Tommy MCHP",
+            "id": "aSfF9kuNINJ",
+            "level": 4
+        },
+        {
+            "name": "Bambukoro MCHP",
+            "id": "wYLjA4vN6Y9",
+            "level": 4
+        },
+        {
+            "name": "Banana Island MCHP",
+            "id": "jjtzkzrmG7s",
+            "level": 4
+        },
+        {
+            "name": "Bandajuma Clinic CHC",
+            "id": "FNnj3jKGS7i",
+            "level": 4
+        },
+        {
+            "name": "Bandajuma Kpolihun CHP",
+            "id": "ABM75Q1UfoP",
+            "level": 4
+        },
+        {
+            "name": "Bandajuma MCHP",
+            "id": "rx9ubw0UCqj",
+            "level": 4
+        },
+        {
+            "name": "Bandajuma Sinneh MCHP",
+            "id": "OZ1olxsTyNa",
+            "level": 4
+        },
+        {
+            "name": "Bandajuma Yawei CHC",
+            "id": "MpcMjLmbATv",
+            "level": 4
+        },
+        {
+            "name": "Bandakarifaia MCHP",
+            "id": "qO2JLjYrg91",
+            "level": 4
+        },
+        {
+            "name": "Bandaperie CHP",
+            "id": "U7yKrx2QVet",
+            "level": 4
+        },
+        {
+            "name": "Bandasuma CHP",
+            "id": "uPshwz3B3Uu",
+            "level": 4
+        },
+        {
+            "name": "Bandasuma Fiama MCHP",
+            "id": "aF6iPGbrcRk",
+            "level": 4
+        },
+        {
+            "name": "Bandawor MCHP",
+            "id": "lpAPY3QOY2D",
+            "level": 4
+        },
+        {
+            "name": "Bandusuma MCHP",
+            "id": "t1aAdpBbDB3",
+            "level": 4
+        },
+        {
+            "name": "Bangambaya MCHP",
+            "id": "xQIU41mR69s",
+            "level": 4
+        },
+        {
+            "name": "Bangoma MCHP",
+            "id": "pdF4XIHIGPx",
+            "level": 4
+        },
+        {
+            "name": "Banka Makuloh MCHP",
+            "id": "rxc497GUdDt",
+            "level": 4
+        },
+        {
+            "name": "Baoma",
+            "id": "vWbkYPRmKyS",
+            "level": 3
+        },
+        {
+            "name": "Baomahun CHC",
+            "id": "FLjwMPWLrL2",
+            "level": 4
+        },
+        {
+            "name": "Baoma (Koya) CHC",
+            "id": "Yj2ni275yPJ",
+            "level": 4
+        },
+        {
+            "name": "Baoma Kpenge CHP",
+            "id": "a1dP5m3Clw4",
+            "level": 4
+        },
+        {
+            "name": "Baoma (Luawa) MCHP",
+            "id": "TQ5DSmdliN7",
+            "level": 4
+        },
+        {
+            "name": "Baoma MCHP",
+            "id": "t52CJEyLhch",
+            "level": 4
+        },
+        {
+            "name": "Baoma Oil Mill CHC",
+            "id": "Y8foq27WLti",
+            "level": 4
+        }
+    ]
+}

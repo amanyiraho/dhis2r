@@ -1,0 +1,190 @@
+{
+    "pager": {
+        "page": 1,
+        "total": 1332,
+        "pageSize": 1,
+        "nextPage": "https://play.im.dhis2.org/dev/api/organisationUnits?page=2&pageSize=1&paging=true&fields=%3Aall",
+        "pageCount": 1332
+    },
+    "organisationUnits": [
+        {
+            "code": "OU_651071",
+            "name": "Adonkia CHP",
+            "created": "2012-02-17T15:54:39.987",
+            "lastUpdated": "2017-05-22T15:21:48.515",
+            "translations": [
+
+            ],
+            "favorites": [
+
+            ],
+            "sharing": {
+                "external": false,
+                "users": {
+
+                },
+                "userGroups": {
+
+                }
+            },
+            "shortName": "Adonkia CHP",
+            "dimensionItemType": "ORGANISATION_UNIT",
+            "legendSets": [
+
+            ],
+            "parent": {
+                "id": "qtr8GGlm4gg"
+            },
+            "children": [
+
+            ],
+            "path": "/ImspTQPwCqd/at6UHUQatSo/qtr8GGlm4gg/Rp268JB6Ne4",
+            "openingDate": "2010-01-01T00:00:00.000",
+            "dataSets": [
+                {
+                    "id": "N4fIX1HL3TQ"
+                },
+                {
+                    "id": "Y8gAn9DfAGU"
+                },
+                {
+                    "id": "pBOMPrpg1QX"
+                },
+                {
+                    "id": "YZhd4nu3mzY"
+                },
+                {
+                    "id": "QX4ZTUbOt3a"
+                },
+                {
+                    "id": "TuL8IOPzpHh"
+                },
+                {
+                    "id": "EKWVBc5C0ms"
+                },
+                {
+                    "id": "ULowA8V3ucd"
+                },
+                {
+                    "id": "Nyh6laLdBEJ"
+                },
+                {
+                    "id": "YFTk3VdO9av"
+                },
+                {
+                    "id": "eZDhcZi6FLP"
+                },
+                {
+                    "id": "j38YW1Am7he"
+                },
+                {
+                    "id": "V8MHeZHIrcP"
+                },
+                {
+                    "id": "aLpVgfXiz0f"
+                },
+                {
+                    "id": "VTdjfLXXmoi"
+                },
+                {
+                    "id": "Lpw6GcnTrmS"
+                },
+                {
+                    "id": "BfMAe6Itzgt"
+                },
+                {
+                    "id": "rsyjyJmYD4J"
+                },
+                {
+                    "id": "SF8FDSqw30D"
+                },
+                {
+                    "id": "ce7DSxx5H2I"
+                },
+                {
+                    "id": "PLq9sJluXvc"
+                }
+            ],
+            "programs": [
+                {
+                    "id": "q04UBOqq3rp"
+                },
+                {
+                    "id": "kla3mAPgvCH"
+                },
+                {
+                    "id": "M3xtLkYBlKI"
+                },
+                {
+                    "id": "MoUd5BTQ3lY"
+                },
+                {
+                    "id": "uy2gU8kT1jF"
+                },
+                {
+                    "id": "VBqh0ynB2wv"
+                },
+                {
+                    "id": "eBAyeGv0exc"
+                },
+                {
+                    "id": "qDkgAbB5Jlk"
+                },
+                {
+                    "id": "IpHINAT79UW"
+                },
+                {
+                    "id": "bMcwwoVnbSR"
+                },
+                {
+                    "id": "lxAQ7Zs9VYR"
+                },
+                {
+                    "id": "ur1Edk5Oe2n"
+                },
+                {
+                    "id": "WSGAb5XwJ3Y"
+                }
+            ],
+            "users": [
+
+            ],
+            "leaf": true,
+            "dimensionItem": "Rp268JB6Ne4",
+            "displayShortName": "Adonkia CHP",
+            "displayName": "Adonkia CHP",
+            "access": {
+                "manage": true,
+                "externalize": false,
+                "write": true,
+                "read": true,
+                "update": true,
+                "delete": true
+            },
+            "favorite": false,
+            "href": "https://play.im.dhis2.org/dev/api/organisationUnits/Rp268JB6Ne4",
+            "displayFormName": "Adonkia CHP",
+            "id": "Rp268JB6Ne4",
+            "attributeValues": [
+
+            ],
+            "organisationUnitGroups": [
+                {
+                    "id": "f25dqv3Y7Z0"
+                }
+            ],
+            "level": 4,
+            "ancestors": [
+                {
+                    "id": "ImspTQPwCqd"
+                },
+                {
+                    "id": "at6UHUQatSo"
+                },
+                {
+                    "id": "qtr8GGlm4gg"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "pager": {
+        "page": 1,
+        "total": 1038,
+        "pageSize": 1,
+        "nextPage": "https://play.im.dhis2.org/dev/api/dataElements?page=2&pageSize=1&paging=true&fields=%3Aall",
+        "pageCount": 1038
+    },
+    "dataElements": [
+        {
+            "code": "DE_1148614",
+            "name": "Accute Flaccid Paralysis (Deaths < 5 yrs)",
+            "created": "2011-04-20T17:54:58.775",
+            "lastUpdated": "2017-05-19T15:13:52.488",
+            "translations": [
+                {
+                    "locale": "fr",
+                    "property": "SHORT_NAME",
+                    "value": "Accute French"
+                },
+                {
+                    "locale": "en_FK",
+                    "property": "FORM_NAME",
+                    "value": "aa"
+                },
+                {
+                    "locale": "en_GB",
+                    "property": "NAME",
+                    "value": "Accute Flaccid Paralysis (Deaths < 5 yrs)"
+                },
+                {
+                    "locale": "fr",
+                    "property": "NAME",
+                    "value": "Accute French"
+                },
+                {
+                    "locale": "en_FK",
+                    "property": "SHORT_NAME",
+                    "value": "aa"
+                },
+                {
+                    "locale": "en_GB",
+                    "property": "SHORT_NAME",
+                    "value": "Accute Flaccid Paral"
+                },
+                {
+                    "locale": "en_FK",
+                    "property": "DESCRIPTION",
+                    "value": "aa"
+                },
+                {
+                    "locale": "en_FK",
+                    "property": "NAME",
+                    "value": "aa"
+                }
+            ],
+            "createdBy": {
+                "id": "GOLswS44mh8",
+                "code": null,
+                "name": "Tom Wakiki",
+                "displayName": "Tom Wakiki",
+                "username": "system"
+            },
+            "favorites": [
+
+            ],
+            "sharing": {
+                "owner": "GOLswS44mh8",
+                "external": false,
+                "users": {
+
+                },
+                "userGroups": {
+
+                },
+                "public": "rw------"
+            },
+            "shortName": "Accute Flaccid Paral (Deaths < 5 yrs)",
+            "dimensionItemType": "DATA_ELEMENT",
+            "legendSets": [
+
+            ],
+            "aggregationType": "SUM",
+            "valueType": "NUMBER",
+            "domainType": "AGGREGATE",
+            "url": "",
+            "dataSetElements": [
+                {
+                    "dataSet": {
+                        "id": "ce7DSxx5H2I"
+                    },
+                    "dataElement": {
+                        "id": "FTRrcoaog83"
+                    },
+                    "categoryCombo": {
+                        "id": "pbvcDRasDav"
+                    }
+                },
+                {
+                    "dataSet": {
+                        "id": "pBOMPrpg1QX"
+                    },
+                    "dataElement": {
+                        "id": "FTRrcoaog83"
+                    }
+                },
+                {
+                    "dataSet": {
+                        "id": "YFTk3VdO9av"
+                    },
+                    "dataElement": {
+                        "id": "FTRrcoaog83"
+                    },
+                    "categoryCombo": {
+                        "id": "dPmavA0qloX"
+                    }
+                }
+            ],
+            "aggregationLevels": [
+
+            ],
+            "zeroIsSignificant": false,
+            "optionSetValue": false,
+            "dimensionItem": "FTRrcoaog83",
+            "displayShortName": "Accute French",
+            "displayName": "Accute French",
+            "access": {
+                "manage": true,
+                "externalize": false,
+                "write": true,
+                "read": true,
+                "update": true,
+                "delete": true
+            },
+            "favorite": false,
+            "user": {
+                "id": "GOLswS44mh8",
+                "code": null,
+                "name": "Tom Wakiki",
+                "displayName": "Tom Wakiki",
+                "username": "system"
+            },
+            "href": "https://play.im.dhis2.org/dev/api/dataElements/FTRrcoaog83",
+            "displayFormName": "Accute French",
+            "id": "FTRrcoaog83",
+            "attributeValues": [
+                {
+                    "value": "AFP",
+                    "attribute": {
+                        "id": "n2xYlNbsfko"
+                    }
+                }
+            ],
+            "categoryCombo": {
+                "id": "bjDvmb4bfuf"
+            },
+            "dataElementGroups": [
+                {
+                    "id": "rPGfUFYbcfJ"
+                },
+                {
+                    "id": "idD1wcvBISQ"
+                },
+                {
+                    "id": "QAc5FhbeFwl"
+                }
+            ]
+        }
+    ]
+}

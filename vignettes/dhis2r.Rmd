@@ -28,7 +28,7 @@ Connect to the DHIS2 instance using `Dhis2r$new()`
 In this vignette I used a Personal Access Token (PAT) as a more secure alternative to HTTP Basic Authentication, and should be your preferred choice when creating a new app/script etc. 
 
 ```{r}
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/dev",
                                     username = "admin",
                                     password = "district")
 ```

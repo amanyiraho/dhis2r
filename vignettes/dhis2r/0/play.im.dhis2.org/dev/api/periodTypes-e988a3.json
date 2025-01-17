@@ -1,0 +1,124 @@
+{
+    "periodTypes": [
+        {
+            "name": "Daily",
+            "isoDuration": "P1D",
+            "isoFormat": "yyyyMMdd",
+            "frequencyOrder": 1
+        },
+        {
+            "name": "Weekly",
+            "isoDuration": "P7D",
+            "isoFormat": "yyyyWn",
+            "frequencyOrder": 7
+        },
+        {
+            "name": "WeeklyWednesday",
+            "isoDuration": "P7D",
+            "isoFormat": "yyyyWedWn",
+            "frequencyOrder": 7
+        },
+        {
+            "name": "WeeklyThursday",
+            "isoDuration": "P7D",
+            "isoFormat": "yyyyThuWn",
+            "frequencyOrder": 7
+        },
+        {
+            "name": "WeeklySaturday",
+            "isoDuration": "P7D",
+            "isoFormat": "yyyySatWn",
+            "frequencyOrder": 7
+        },
+        {
+            "name": "WeeklySunday",
+            "isoDuration": "P7D",
+            "isoFormat": "yyyySunWn",
+            "frequencyOrder": 7
+        },
+        {
+            "name": "BiWeekly",
+            "isoDuration": "P14D",
+            "isoFormat": "yyyyBiWn",
+            "frequencyOrder": 14
+        },
+        {
+            "name": "Monthly",
+            "isoDuration": "P1M",
+            "isoFormat": "yyyyMM",
+            "frequencyOrder": 30
+        },
+        {
+            "name": "BiMonthly",
+            "isoDuration": "P2M",
+            "isoFormat": "yyyyMMB",
+            "frequencyOrder": 61
+        },
+        {
+            "name": "Quarterly",
+            "isoDuration": "P3M",
+            "isoFormat": "yyyyQn",
+            "frequencyOrder": 91
+        },
+        {
+            "name": "QuarterlyNov",
+            "isoDuration": "P3M",
+            "isoFormat": "yyyyNovQn",
+            "frequencyOrder": 91
+        },
+        {
+            "name": "SixMonthly",
+            "isoDuration": "P6M",
+            "isoFormat": "yyyySn",
+            "frequencyOrder": 182
+        },
+        {
+            "name": "SixMonthlyApril",
+            "isoDuration": "P6M",
+            "isoFormat": "yyyyAprilSn",
+            "frequencyOrder": 182
+        },
+        {
+            "name": "SixMonthlyNov",
+            "isoDuration": "P6M",
+            "isoFormat": "yyyyNovSn",
+            "frequencyOrder": 182
+        },
+        {
+            "name": "Yearly",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyy",
+            "frequencyOrder": 365
+        },
+        {
+            "name": "FinancialApril",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyyApril",
+            "frequencyOrder": 365
+        },
+        {
+            "name": "FinancialJuly",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyyJuly",
+            "frequencyOrder": 365
+        },
+        {
+            "name": "FinancialSep",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyySep",
+            "frequencyOrder": 365
+        },
+        {
+            "name": "FinancialOct",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyyOct",
+            "frequencyOrder": 365
+        },
+        {
+            "name": "FinancialNov",
+            "isoDuration": "P1Y",
+            "isoFormat": "yyyyNov",
+            "frequencyOrder": 365
+        }
+    ]
+}

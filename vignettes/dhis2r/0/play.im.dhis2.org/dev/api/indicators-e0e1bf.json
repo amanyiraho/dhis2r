@@ -1,0 +1,211 @@
+{
+    "pager": {
+        "page": 1,
+        "total": 77,
+        "pageSize": 50,
+        "nextPage": "https://play.im.dhis2.org/dev/api/indicators?page=2&fields=name%2Cid",
+        "pageCount": 2
+    },
+    "indicators": [
+        {
+            "name": "ANC 1-3 Dropout Rate",
+            "id": "ReUHfIn0pTQ"
+        },
+        {
+            "name": "ANC 1 Coverage",
+            "id": "Uvn6LCg7dVU"
+        },
+        {
+            "name": "ANC 2 Coverage",
+            "id": "OdiHJayrsKo"
+        },
+        {
+            "name": "ANC 3 Coverage",
+            "id": "sB79w2hiLp8"
+        },
+        {
+            "name": "ANC => 4 Coverage",
+            "id": "AUqdhY4mpvp"
+        },
+        {
+            "name": "ANC IPT 1 Coverage",
+            "id": "dwEq7wi6nXV"
+        },
+        {
+            "name": "ANC IPT 2 Coverage",
+            "id": "c8fABiNpT0B"
+        },
+        {
+            "name": "ANC LLITN coverage",
+            "id": "Tt5TAvdfdVK"
+        },
+        {
+            "name": "ANC TT2 coverage",
+            "id": "puykO1tbcdi"
+        },
+        {
+            "name": "ANC visits per clinical professional",
+            "id": "Lzg9LtG1xg3"
+        },
+        {
+            "name": "ANC visits total",
+            "id": "dy1a1mseGR7"
+        },
+        {
+            "name": "BCG Coverage <1y",
+            "id": "FnYCr2EAzWS"
+        },
+        {
+            "name": "BCG Coverage - Adjusted for reporting",
+            "id": "iCBpPh3ehjg"
+        },
+        {
+            "name": "BCG doses coverage at facility",
+            "id": "Z33QjkcycFQ"
+        },
+        {
+            "name": "BCG Stock PHU",
+            "id": "OEWO2PpiUKx"
+        },
+        {
+            "name": "Births attended by skilled health personnel (estimated pregancies)",
+            "id": "elTqMUTRgdk"
+        },
+        {
+            "name": "Births attended by skilled health personnel (registered live births)",
+            "id": "ulgL07PF8rq"
+        },
+        {
+            "name": "Births total",
+            "id": "gNAXtpqAqW2"
+        },
+        {
+            "name": "Complicated deliveries total",
+            "id": "po1QxztD1K1"
+        },
+        {
+            "name": "Consumption vs population",
+            "id": "aRabHjSGuGK"
+        },
+        {
+            "name": "Diarrhoea <5 y incidence rate (%)",
+            "id": "JIVMtpjVZqJ"
+        },
+        {
+            "name": "Dropout rate Penta 1 - 3",
+            "id": "EdN7qlmI5FS"
+        },
+        {
+            "name": "Dropout rate Penta 1 - Measles",
+            "id": "d9thHOJMROr"
+        },
+        {
+            "name": "ER Census reports produced Result vs Target",
+            "id": "ryFBhJdetdM"
+        },
+        {
+            "name": "ER Children trained on key survival skills Result vs Target",
+            "id": "MkXHDfrFRKV"
+        },
+        {
+            "name": "ER Teacher accommodation constructed Urban Result vs Target",
+            "id": "qmCKRmVj4WX"
+        },
+        {
+            "name": "ER Teachers trained Result vs Target",
+            "id": "oTOpKabJA1v"
+        },
+        {
+            "name": "ER Teacher training programs designed Result vs Target",
+            "id": "ULW9dQOiiTS"
+        },
+        {
+            "name": "ER Technical support visits Result vs Target",
+            "id": "iug406zdfTE"
+        },
+        {
+            "name": "ER Technical support visits Rural Result vs Target",
+            "id": "EY8gsfEomc0"
+        },
+        {
+            "name": "ER Visits in schools Rural Result vs Target",
+            "id": "X2XfzgH4NOR"
+        },
+        {
+            "name": "Exclusive breast feeding at Penta 3",
+            "id": "X3taFC1HtE5"
+        },
+        {
+            "name": "FIC <1y",
+            "id": "eTDtyyaSA7f"
+        },
+        {
+            "name": "FIC <1y - Adjusted for reporting",
+            "id": "IT8EAeFRAat"
+        },
+        {
+            "name": "HIV: testing and counseling 15-24y",
+            "id": "sMTMkudvLCD"
+        },
+        {
+            "name": "HIV: testing and counseling <15y",
+            "id": "lI5Q5vkydYu"
+        },
+        {
+            "name": "HIV: testing and counseling 25-49y",
+            "id": "lOiynlltFdy"
+        },
+        {
+            "name": "HIV: testing and counseling >49y",
+            "id": "btgZ1oeF9pJ"
+        },
+        {
+            "name": "Inpatient cases per 10 000 population",
+            "id": "gKv1pdjF3wM"
+        },
+        {
+            "name": "Inpatient cases under 5 y per 100 00 population",
+            "id": "TwdhB9Db4Po"
+        },
+        {
+            "name": "Inpatient visits per 10 000 people",
+            "id": "zkukIvlFlhy"
+        },
+        {
+            "name": "IPT doses total",
+            "id": "W7MxOZjZ1VC"
+        },
+        {
+            "name": "Live births in the community",
+            "id": "RdkKj1rVp8R"
+        },
+        {
+            "name": "Live births in the PHU",
+            "id": "Rigf2d2Zbjp"
+        },
+        {
+            "name": "Maternal death rate by registered live births",
+            "id": "tcs5YGnjiKo"
+        },
+        {
+            "name": "Measles Coverage <1y",
+            "id": "FbKK4ofIv5R"
+        },
+        {
+            "name": "Measles Stock End Balance",
+            "id": "loEBZlcsTlx"
+        },
+        {
+            "name": "Moderate malnutrition rate",
+            "id": "joIQbN4L1Ok"
+        },
+        {
+            "name": "NVP during labour rate",
+            "id": "GfYjGL16D0W"
+        },
+        {
+            "name": "OPV 0 Coverage <1y",
+            "id": "n5nS0SmkUpq"
+        }
+    ]
+}

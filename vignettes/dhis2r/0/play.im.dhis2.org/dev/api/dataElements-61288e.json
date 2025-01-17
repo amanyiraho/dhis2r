@@ -1,0 +1,261 @@
+{
+    "pager": {
+        "page": 1,
+        "total": 1038,
+        "pageSize": 50,
+        "nextPage": "https://play.im.dhis2.org/dev/api/dataElements?page=2&fields=name%2Cid%2CaggregationType",
+        "pageCount": 21
+    },
+    "dataElements": [
+        {
+            "name": "Accute Flaccid Paralysis (Deaths < 5 yrs)",
+            "aggregationType": "SUM",
+            "id": "FTRrcoaog83"
+        },
+        {
+            "name": "Acute Flaccid Paralysis (AFP) follow-up",
+            "aggregationType": "SUM",
+            "id": "P3jJH5Tu5VC"
+        },
+        {
+            "name": "Acute Flaccid Paralysis (AFP) new",
+            "aggregationType": "SUM",
+            "id": "FQ2o8UBlcrS"
+        },
+        {
+            "name": "Acute Flaccid Paralysis (AFP) referrals",
+            "aggregationType": "SUM",
+            "id": "M62VHgYT2n0"
+        },
+        {
+            "name": "Additional medication",
+            "aggregationType": "NONE",
+            "id": "WO8yRIZb7nb"
+        },
+        {
+            "name": "Additional notes related to facility",
+            "aggregationType": "SUM",
+            "id": "uF1DLnZNlWe"
+        },
+        {
+            "name": "Admission Date",
+            "aggregationType": "AVERAGE",
+            "id": "eMyVanycQSC"
+        },
+        {
+            "name": "Age in years",
+            "aggregationType": "AVERAGE",
+            "id": "qrur9Dvnyt5"
+        },
+        {
+            "name": "Age of LLINs",
+            "aggregationType": "SUM",
+            "id": "JuTpJ2Ywq5b"
+        },
+        {
+            "name": "Albendazole given at ANC (2nd trimester)",
+            "aggregationType": "SUM",
+            "id": "hCVSHjcml9g"
+        },
+        {
+            "name": "All access routes are clearly marked and safe",
+            "aggregationType": "SUM",
+            "id": "rxt7nvPyRUi"
+        },
+        {
+            "name": "Allergies (multi-select)",
+            "aggregationType": "NONE",
+            "id": "ZxH5QHtTTtX"
+        },
+        {
+            "name": "All other follow-ups",
+            "aggregationType": "SUM",
+            "id": "RUv0hqER0zV"
+        },
+        {
+            "name": "All other new",
+            "aggregationType": "SUM",
+            "id": "A2VfEfPflHV"
+        },
+        {
+            "name": "All other referrals",
+            "aggregationType": "SUM",
+            "id": "laZLQdnucV1"
+        },
+        {
+            "name": "All sterilisation equipment is validated / licensed",
+            "aggregationType": "SUM",
+            "id": "U7v0q0amJqi"
+        },
+        {
+            "name": "Anaemia follow-up",
+            "aggregationType": "SUM",
+            "id": "jmWyJFtE7Af"
+        },
+        {
+            "name": "Anaemia new",
+            "aggregationType": "SUM",
+            "id": "HLPuaFB7Frw"
+        },
+        {
+            "name": "Anaemia referrals",
+            "aggregationType": "SUM",
+            "id": "yqBkn9CWKih"
+        },
+        {
+            "name": "An alternative to communicate if telephone line is off is always available",
+            "aggregationType": "SUM",
+            "id": "sPQgYGhXnXI"
+        },
+        {
+            "name": "ANC 1st visit",
+            "aggregationType": "SUM",
+            "id": "fbfJHSPpUQD"
+        },
+        {
+            "name": "ANC 2nd visit",
+            "aggregationType": "SUM",
+            "id": "cYeuwXTCPkU"
+        },
+        {
+            "name": "ANC 3rd visit",
+            "aggregationType": "SUM",
+            "id": "Jtf34kNZhzP"
+        },
+        {
+            "name": "ANC 4th or more visits",
+            "aggregationType": "SUM",
+            "id": "hfdmMSPBgLG"
+        },
+        {
+            "name": "Animal Bites - Rabid (Deaths < 5 yrs)",
+            "aggregationType": "SUM",
+            "id": "LjNlMTl9Nq9"
+        },
+        {
+            "name": "Appropriate hand washing facilities are available",
+            "aggregationType": "SUM",
+            "id": "a57FmdPj3Zl"
+        },
+        {
+            "name": "ARI treated with antibiotics (pneumonia) follow-up",
+            "aggregationType": "SUM",
+            "id": "FHD3wiSM7Sn"
+        },
+        {
+            "name": "ARI treated with antibiotics (pneumonia) new",
+            "aggregationType": "SUM",
+            "id": "iKGjnOOaPlE"
+        },
+        {
+            "name": "ARI treated with antibiotics (pneumonia) referrals",
+            "aggregationType": "SUM",
+            "id": "XTqOHygxDj5"
+        },
+        {
+            "name": "ARI treated without antibiotics (cough) follow-up",
+            "aggregationType": "SUM",
+            "id": "RF4VFVGdFRO"
+        },
+        {
+            "name": "ARI treated without antibiotics (cough) new",
+            "aggregationType": "SUM",
+            "id": "Cm4XUw6VAxv"
+        },
+        {
+            "name": "ARI treated without antibiotics (cough) referrals",
+            "aggregationType": "SUM",
+            "id": "oLfWYAJhZb2"
+        },
+        {
+            "name": "ART clients with new adverse clinical event",
+            "aggregationType": "SUM",
+            "id": "NJnhOzjaLYk"
+        },
+        {
+            "name": "ART defaulters",
+            "aggregationType": "SUM",
+            "id": "aIJZ2d2QgVV"
+        },
+        {
+            "name": "ART enrollment stage 1",
+            "aggregationType": "SUM",
+            "id": "BOSZApCrBni"
+        },
+        {
+            "name": "ART enrollment stage 2",
+            "aggregationType": "SUM",
+            "id": "dGdeotKpRed"
+        },
+        {
+            "name": "ART enrollment stage 3",
+            "aggregationType": "SUM",
+            "id": "eRwOwCpMzyP"
+        },
+        {
+            "name": "ART enrollment stage 4",
+            "aggregationType": "SUM",
+            "id": "zYkwbCBALhn"
+        },
+        {
+            "name": "ART entry point: No diagnostic testing",
+            "aggregationType": "SUM",
+            "id": "I5MLuG16arn"
+        },
+        {
+            "name": "ART entry point: No old patients",
+            "aggregationType": "SUM",
+            "id": "LVaUdM3CERi"
+        },
+        {
+            "name": "ART entry point: No other",
+            "aggregationType": "SUM",
+            "id": "vJSPn2R6gVe"
+        },
+        {
+            "name": "ART entry point: No PMTCT",
+            "aggregationType": "SUM",
+            "id": "kVOiLDV4OC6"
+        },
+        {
+            "name": "ART entry point: No transfer in",
+            "aggregationType": "SUM",
+            "id": "HDZOFvdXsqE"
+        },
+        {
+            "name": "ART entry point: No transfer out",
+            "aggregationType": "SUM",
+            "id": "soACnRV9gOI"
+        },
+        {
+            "name": "ART entry point: No walk in",
+            "aggregationType": "SUM",
+            "id": "FTy5pcJZ3yX"
+        },
+        {
+            "name": "ART entry point: TB",
+            "aggregationType": "SUM",
+            "id": "Yf4u4QOIdsi"
+        },
+        {
+            "name": "ART new clients started on ARV",
+            "aggregationType": "SUM",
+            "id": "QrhlrvV6Xs8"
+        },
+        {
+            "name": "ART No clients who stopped TRT due to adverse clinical status/event",
+            "aggregationType": "SUM",
+            "id": "wfKKFhBn0Q0"
+        },
+        {
+            "name": "ART No clients who stopped TRT due to TRT failure",
+            "aggregationType": "SUM",
+            "id": "GMd99K8gVut"
+        },
+        {
+            "name": "ART No clients with change of regimen due to drug toxicity",
+            "aggregationType": "SUM",
+            "id": "F53rTVTmSuF"
+        }
+    ]
+}
